@@ -1,5 +1,5 @@
 import React from "react";
-import { useRoutes } from "react-router-dom";
+import { useRoutes, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Product from "./pages/Product";
@@ -16,7 +16,8 @@ function App() {
    { path: "support", element: <Support /> },
    { path: "humanoids", element: <Humanoids /> },
    { path: "category/:useType", element: <Category /> },
-   { path: "*", element: <Error404 /> },
+   { path: "/404", element: <Error404 /> },
+   { path: "*", element: <Navigate to="/404" /> },
  ]);
  return element;
 }
