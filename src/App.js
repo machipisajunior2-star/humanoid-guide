@@ -12,10 +12,10 @@ function App() {
  let element = useRoutes([
    { path: "/", element: <Home /> },
    { path: "about", element: <About /> },
-   { path: "products", element: <Product /> },
-   { path: "events", element: <Support /> },
-   { path: "contact", element: <Humanoids /> },
-   { path: "category", element: <Category /> },
+   { path: "product/:productSlag", element: <Product /> },
+   { path: "support", element: <Support /> },
+   { path: "humanoids", element: <Humanoids /> },
+   { path: "category/:useType", element: <Category /> },
    { path: "*", element: <Error404 /> },
  ]);
  return element;
