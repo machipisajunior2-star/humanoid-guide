@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProduct } from "../redux/product/productActions";
+import Videos from "../components/Videos";
 
 export default function Product() {
   let { productSlag } = useParams();
@@ -18,6 +19,7 @@ export default function Product() {
     <>
       <h1>Product</h1>
       <p>{data.product.name}</p>
+      <Videos />
     </>
   );
 }
