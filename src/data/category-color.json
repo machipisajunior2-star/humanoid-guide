@@ -1,0 +1,22 @@
+[
+   {
+    "color": "#F86624",
+    "category": "HOME"
+   },
+  {
+    "color": "#A5B452",
+    "category": "CONSUMER"
+  },
+  {
+    "color": "#9381FF",
+    "category": "PROFESSIONAL"
+  },
+  {
+    "color": "#E85D75",
+    "category": "RESEARCH"
+  },
+  {
+    "color": "#E9CE2C",
+    "category": "EDUCATION"
+  }
+]

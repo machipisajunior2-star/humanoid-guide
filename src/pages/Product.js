@@ -7,7 +7,7 @@ import Videos from "../components/Videos";
 export default function Product() {
   let { productSlag } = useParams();
   const dispatch = useDispatch();
-  const data = useSelector((state) => state);
+  const data = useSelector((state) => state.product);
   useEffect(() => {
     dispatch(fetchProduct(productSlag));
   }, [dispatch, productSlag]);

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRoutes, Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Product from "./pages/Product";
@@ -9,6 +10,11 @@ import Category from "./pages/Category";
 import Error404 from "./pages/Error404";
 
 function App() {
+  const themeColor = useSelector(state => state.themeColor);
+  useEffect(() => {
+    document.body.style.backgroundColor = themeColor.colorPalette.background;
+    document.body.style.color = themeColor.colorPalette.text;
+  }, [themeColor]);
  let element = useRoutes([
    { path: "/", element: <Home /> },
    { path: "about", element: <About /> },
