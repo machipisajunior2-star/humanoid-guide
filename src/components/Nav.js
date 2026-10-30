@@ -37,7 +37,7 @@ export default function Nav() {
     `${location.pathname === path ? `${category}_current_page` : `${category}_nav`}`;
   return (
     <section className="app-navigation-con">
-      <div className="heading">
+      <div className={`heading${colorState.colorPalette.text === "#000000" ? " black" : ""}`}>
         <Link to="/">
           <h1
             style={{ color: colorState.colorPalette.text }}
@@ -48,6 +48,7 @@ export default function Nav() {
         </Link>
       </div>
       <div className="navigation-con">
+        <div></div>
         <div className="mobile-menu">
           <BsJustify
             onClick={() => {
@@ -119,10 +120,10 @@ export default function Nav() {
         </ul>
         <ul className="desktop-menu">
           <li
-            className={categoryClass(
+            className={`${categoryClass(
               "/category/all_humanoids",
               "all_humanoids",
-            )}
+            )}${colorState.colorPalette.text === "#000000" ? " black" : ""}`}
           >
             <Link
               style={{ color: colorState.colorPalette.text }}
@@ -131,7 +132,12 @@ export default function Nav() {
               All
             </Link>
           </li>
-          <li className={categoryClass("/category/consumer", "consumer")}>
+          <li
+            className={`${categoryClass(
+              "/category/consumer",
+              "consumer",
+            )}${colorState.colorPalette.text === "#000000" ? " black" : ""}`}
+          >
             <Link
               style={{ color: colorState.colorPalette.text }}
               to="/category/consumer"
@@ -139,7 +145,12 @@ export default function Nav() {
               Consumer
             </Link>
           </li>
-          <li className={categoryClass("/category/research", "research")}>
+          <li
+            className={`${categoryClass(
+              "/category/research",
+              "research",
+            )}${colorState.colorPalette.text === "#000000" ? " black" : ""}`}
+          >
             <Link
               style={{ color: colorState.colorPalette.text }}
               to="/category/research"
@@ -147,7 +158,12 @@ export default function Nav() {
               Research
             </Link>
           </li>
-          <li className={categoryClass("/category/education", "education")}>
+          <li
+            className={`${categoryClass(
+              "/category/education",
+              "education",
+            )}${colorState.colorPalette.text === "#000000" ? " black" : ""}`}
+          >
             <Link
               style={{ color: colorState.colorPalette.text }}
               to="/category/education"
@@ -156,7 +172,10 @@ export default function Nav() {
             </Link>
           </li>
           <li
-            className={categoryClass("/category/professional", "professional")}
+            className={`${categoryClass(
+              "/category/professional",
+              "professional",
+            )}${colorState.colorPalette.text === "#000000" ? " black" : ""}`}
           >
             <Link
               style={{ color: colorState.colorPalette.text }}

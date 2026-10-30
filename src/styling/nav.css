@@ -33,6 +33,14 @@
     color: white !important;
 }
 
+.black a:hover {
+    color: black !important;
+}
+
+.black h1:hover {
+    color: black !important;
+}
+
 .navigation-con {
     padding-right: 15px;
 }
