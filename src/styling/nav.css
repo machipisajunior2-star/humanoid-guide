@@ -15,6 +15,10 @@
   font-family: 'ObliqueOutline';
 }
 
+.heading h1:hover {
+    color: white !important;
+}
+
 .home_heading {
     font-size: 55px;
     padding: 0 16px 0 16px;
@@ -23,15 +27,14 @@
 
 .app-navigation-con a {
     text-decoration: none;
-    color: #d9d9d9;
 }
 
 .app-navigation-con a:hover {
-    color: white;
+    color: white !important;
 }
 
 .navigation-con {
-    padding-right: 10px;
+    padding-right: 15px;
 }
 
 .navigation-con ul {
@@ -44,14 +47,14 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
     padding: 0;             
-    margin: 0;
+    margin: 0 15px 0 0;
     color: grey;
 }
 
 .navigation-con ul li {
-    width: 130px;
+    width: max-content;
     margin-right: 5px;
-    padding-left: 5px;
+    margin-left: 10px;
 }
 
 .navigation-con ul li::marker {
@@ -112,20 +115,98 @@
     list-style-position: inside; 
     color: #E9CE2C;
 }
+.color-con {
+display: inline-flex;
+}
+
+.color-pick {
+    display: none;
+    position: fixed;
+    right: auto;
+    top: 56px;
+    background-color: grey;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.color-pick button {
+   background-color: transparent;
+   border: none;
+   margin: 0;
+   padding: 3px;
+}
+
+.color-pick button:hover {
+    scale: 1.2;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+    @media only screen and (min-width: 800px) and (max-width: 1200px) {
+    .home_heading {
+       font-size: 30px !important;
+    }
+    .heading h1 {
+        font-size: 25px;
+    }
+    .navigation-con ul li a {
+    font-size: 13px;
+}
+    }
 
   @media only screen and (max-width: 800px) {
-    .heading {
-        border-bottom: 0.5px solid rgb(78, 78, 78);
+    .desktop-menu {
+        display: none !important;
+    }
+    .mobile-menu {
+        display: flex;
+    }
+    .mobile-menu-active {
+        rotate: 90deg;
     }
     .home_heading {
-    font-size: 55px;
+    font-size: 35px;
     }
-    .app-navigation-con {
-    display: block;
+    .navigation-con {
+    display: inline-flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+        width: 25%;
+    }
+    
+    .navigation-con ul li::marker {
+        font-size: 35px;
     }
     .navigation-con ul {
-        padding-left: 16px;
+        display: block;
+        position: fixed;
+        padding-right: inherit;
+        padding-left: 9px;
+        padding-bottom: 20px;
+        top: 35px;
+        right: auto;
+        border: 1px solid;
+        border-radius: 10%;
+    }
+    .navigation-con ul li {
+        margin: 0px 0 -16px 0px;
+    }
+    .navigation-con ul li a {
+        font-size: x-small;
+        margin: 0 0 0 -25px;
+    }
+    .color-pick {
+        top: 36px;
     }
   }
+
+    @media only screen and (max-width: 450px) {
+    .home_heading {
+    font-size: 25px !important;
+    }
+    .heading h1 {
+        font-size: 20px;
+    }
+    }
