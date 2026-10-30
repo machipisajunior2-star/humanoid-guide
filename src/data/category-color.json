@@ -1,6 +1,10 @@
 [
   {
     "color": "#FF4C00",
+    "category": "All"
+  },
+  {
+    "color": "#F6AE2D",
     "category": "CONSUMER"
   },
   {

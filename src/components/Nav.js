@@ -64,6 +64,20 @@ export default function Nav() {
             backgroundColor: colorState.colorPalette.background,
           }}
         >
+          <li
+            className={categoryClass(
+              "/category/all_humanoids",
+              "all_humanoids",
+            )}
+          >
+            <Link
+              onClick={() => setIsModalOpen(false)}
+              style={{ color: colorState.colorPalette.text }}
+              to="/category/all_humanoids"
+            >
+              All
+            </Link>
+          </li>
           <li className={categoryClass("/category/consumer", "consumer")}>
             <Link
               onClick={() => setIsModalOpen(false)}
@@ -104,6 +118,19 @@ export default function Nav() {
           </li>
         </ul>
         <ul className="desktop-menu">
+          <li
+            className={categoryClass(
+              "/category/all_humanoids",
+              "all_humanoids",
+            )}
+          >
+            <Link
+              style={{ color: colorState.colorPalette.text }}
+              to="/category/all_humanoids"
+            >
+              All
+            </Link>
+          </li>
           <li className={categoryClass("/category/consumer", "consumer")}>
             <Link
               style={{ color: colorState.colorPalette.text }}

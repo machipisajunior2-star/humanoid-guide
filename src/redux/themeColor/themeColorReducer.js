@@ -1,11 +1,14 @@
 import theme_color from "../../data/theme-color-data.json";
 import {CHANGE_COLOR} from "./themeColorType";
 
+const storage = JSON.parse(localStorage.getItem("colorPalette"))
 const initialState = {
-  colorPalette: { 
-    background: theme_color[0].background, 
-    text: theme_color[0].text 
-  },
+  colorPalette: storage
+    ? storage
+    : {
+        background: theme_color[0].background,
+        text: theme_color[0].text,
+      },
   id: theme_color[0].id,
 };
 

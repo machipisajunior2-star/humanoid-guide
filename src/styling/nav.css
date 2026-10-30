@@ -68,10 +68,16 @@
     font-size: 15px;
 }
 
-.consumer_nav:hover {
+.all_humanoids_nav:hover {
     list-style: disc;
     list-style-position: inside; 
     color: #FF4C00;
+}
+
+.consumer_nav:hover {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #F6AE2D;
 }
 
 .professional_nav:hover {
@@ -92,10 +98,16 @@
     color: #E9CE2C;
 }
 
-.consumer_current_page {
+.all_humanoids_current_page {
     list-style: disc;
     list-style-position: inside; 
     color: #FF4C00;
+}
+
+.consumer_current_page {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #F6AE2D;
 }
 
 .professional_current_page {

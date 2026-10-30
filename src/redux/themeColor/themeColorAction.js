@@ -11,11 +11,10 @@ export const changeColor = (colors, id) => {
 
 export const setColor = (colorId) => {
     const data = theme_color.filter(color => color.id === colorId)
+    const colorPalette = {background: data[0].background, text: data[0].text}
+    localStorage.setItem("colorPalette", JSON.stringify(colorPalette));
     return (dispatch) => {
-        dispatch(changeColor(
-            {background: data[0].background, text: data[0].text}, 
-            data[0].id
-        ))
+        dispatch(changeColor(colorPalette, data[0].id));
     }
 } 
 
