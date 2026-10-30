@@ -1,0 +1,131 @@
+@font-face {font-family: "ObliqueOutline"; src: url(../assets/fonts/Rostex-ObliqueOutline.ttf);}
+
+.app-navigation-con {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    border-bottom: 0.5px solid rgb(78, 78, 78);
+    border-top: 0.5px solid rgb(78, 78, 78);
+}
+
+.heading h1 {
+    margin: 0;
+    padding: 0 16px 0 16px;
+  font-family: 'ObliqueOutline';
+}
+
+.home_heading {
+    font-size: 55px;
+    padding: 0 16px 0 16px;
+    margin: 0;
+}
+
+.app-navigation-con a {
+    text-decoration: none;
+    color: #d9d9d9;
+}
+
+.app-navigation-con a:hover {
+    color: white;
+}
+
+.navigation-con {
+    padding-right: 10px;
+}
+
+.navigation-con ul {
+    display: inline-flex;
+    list-style: circle;
+    list-style-position: inside;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0;             
+    margin: 0;
+    color: grey;
+}
+
+.navigation-con ul li {
+    width: 130px;
+    margin-right: 5px;
+    padding-left: 5px;
+}
+
+.navigation-con ul li::marker {
+    font-size: 45px;
+}
+
+.navigation-con ul li a {
+    position: relative;
+    top: -8px;
+    margin: 0px 0 0 -40px;
+    font-size: 15px;
+}
+
+.consumer_nav:hover {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #FF4C00;
+}
+
+.professional_nav:hover {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #9381FF;
+}
+
+.research_nav:hover {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #33FF57;
+}
+
+.education_nav:hover {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #E9CE2C;
+}
+
+.consumer_current_page {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #FF4C00;
+}
+
+.professional_current_page {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #9381FF;
+}
+
+.research_current_page {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #33FF57;
+}
+
+.education_current_page {
+    list-style: disc;
+    list-style-position: inside; 
+    color: #E9CE2C;
+}
+
+  @media only screen and (max-width: 800px) {
+    .heading {
+        border-bottom: 0.5px solid rgb(78, 78, 78);
+    }
+    .home_heading {
+    font-size: 55px;
+    }
+    .app-navigation-con {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    }
+    .navigation-con ul {
+        padding-left: 16px;
+    }
+  }

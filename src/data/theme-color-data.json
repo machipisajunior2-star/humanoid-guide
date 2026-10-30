@@ -1,12 +1,12 @@
 [
   {
     "background": "#1B211A",
-    "text": "#dee2e6",
+    "text": "#d9d9d9",
     "id": "01"
   },
   {
     "background": "#1F2937",
-    "text": "#dee2e6",
+    "text": "#d9d9d9",
     "id": "02"
   },
   {
@@ -16,12 +16,12 @@
   },
   {
     "background": "#523737",
-    "text": "#dee2e6",
+    "text": "#d9d9d9",
     "id": "04"
   },
   {
     "background": "#1A1A1D",
-    "text": "#dee2e6",
+    "text": "#d9d9d9",
     "id": "05"
   },
   {
