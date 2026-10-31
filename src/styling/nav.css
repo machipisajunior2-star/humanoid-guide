@@ -35,6 +35,7 @@
 
 .black a:hover {
     color: black !important;
+    border-bottom: 1px solid black;
 }
 
 .black h1:hover {
@@ -164,7 +165,13 @@ display: inline-flex;
     display: none;
 }
 
-    @media only screen and (min-width: 800px) and (max-width: 1200px) {
+.theme-selector-active {
+        transition: rotate 0.5s ease-in-out;
+        -webkit-transition: rotate 0.5s ease-in-out;
+        rotate: 90deg;
+}
+
+    @media only screen and (min-width: 865px) and (max-width: 1200px) {
     .home_heading {
        font-size: 30px !important;
     }
@@ -176,15 +183,27 @@ display: inline-flex;
 }
     }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 865px) {
     .desktop-menu {
         display: none !important;
     }
     .mobile-menu {
         display: flex;
     }
+    .theme-selector {
+        margin-left: 4px;
+        padding-top: 5px;
+    }
     .mobile-menu-active {
+        transition: rotate 0.5s ease-in-out;
+        -webkit-transition: rotate 0.5s ease-in-out;
         rotate: 90deg;
+        height: 100%;
+    }
+    .mobile-menu-inactive {
+        transition: rotate 0.5s ease-in-out;
+        -webkit-transition: rotate 0.5s ease-in-out;
+        rotate: 0deg;
     }
     .home_heading {
     font-size: 35px;
