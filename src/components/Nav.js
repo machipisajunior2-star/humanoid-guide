@@ -72,7 +72,7 @@ export default function Nav() {
               setIsModalOpen((isOpen) => !isOpen);
               setIsColorPickerOpen(false);
             }}
-            size="1.5em"
+            size={window.innerWidth < 600 ? "1.2em" : "1.5em"}
             color={colorState.colorPalette.text}
           />
         </div>
@@ -232,7 +232,7 @@ export default function Nav() {
                 setIsModalOpen(false);
                 setIsColorPickerOpen((isOpen) => !isOpen);
               }}
-              size="1.5em"
+              size={window.innerWidth < 600 ? "1.2em" : "1.5em"}
             />
           </div>
           <Zoom>
