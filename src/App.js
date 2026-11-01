@@ -7,6 +7,7 @@ import Product from "./pages/Product";
 import Support from "./pages/Support";
 import Humanoids from "./pages/Humanoids";
 import Category from "./pages/Category";
+import Search from "./pages/Search"
 import Error404 from "./pages/Error404";
 
 function App() {
@@ -17,11 +18,12 @@ function App() {
   }, [themeColor]);
  let element = useRoutes([
    { path: "/", element: <Home /> },
-   { path: "about", element: <About /> },
-   { path: "product/:productSlag", element: <Product /> },
-   { path: "support", element: <Support /> },
    { path: "humanoids", element: <Humanoids /> },
+   { path: "search/:name", element: <Search /> },
    { path: "category/:useType", element: <Category /> },
+   { path: "product/:productSlag", element: <Product /> },
+   { path: "about", element: <About /> },
+   { path: "support", element: <Support /> },
    { path: "/404", element: <Error404 /> },
    { path: "*", element: <Navigate to="/404" /> },
  ]);
