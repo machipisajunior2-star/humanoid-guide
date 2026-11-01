@@ -61,7 +61,7 @@
 }
 
 .search-nav-con p {
-    margin: 0 0 0 7px;
+    margin: 0 0 0 10px;
     font-size: 16px;
 }
 
@@ -346,8 +346,12 @@ display: inline-flex;
     }
 
     @media only screen and (max-width: 315px) {
+        .heading {
+            text-align: center;
+            width: 100%;
+        }
         .heading h1 {
-            font-size: 0.8em !important;
+            font-size: 1em !important;
         }
         .app-navigation-con {
     display: inline-grid;
@@ -355,19 +359,21 @@ display: inline-flex;
         padding-top: 10px;
         }
         .navigation-con {
-            width: 100%;
-            justify-content: space-between;
+width: 100vw;
+        justify-content: space-around;
                     padding: 5px;
         }
             .navigation-con ul {
                         top: 63px;
-        left: 28px;
+        left: 25%;
             }
         .color-pick {
-        top: 72px;
+            right: auto;
+        top: 61px;
         }
             .search-input-con {
-        top: 12%;
+        top: 11%;
+        right: auto;
             }
                 .search-input-con input {
         width: 45vw;

@@ -116,20 +116,52 @@ function NavComponent() {
   };
 
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = (event) => {
       const mobile_menu = document.querySelector(".mobile-menu");
       const modal = document.querySelector(".modal");
+      const color_picker = document.querySelector(".color-pick")
+      const theme_selector = document.querySelector(".theme-selector");
+      
       if (isSearchOpen && window.innerWidth < 700) {
         mobile_menu.style.display = "flex";
+        theme_selector.style.display = "flex";
+        if (event.type === "resize") {
+          theme_selector.style.display = "flex";
+          color_picker.style.display = "none";
+          setIsColorPickerOpen(false);
+        }
+      } else if (window.innerWidth < 700) {
+        theme_selector.style.display = "flex";
+      } else if (isSearchOpen && window.innerWidth > 700) {
+        if (event.type === "resize") {
+          theme_selector.style.display = "none";
+          mobile_menu.style.display = "none";
+        }
+      } else if (window.innerWidth > 700) {
+        theme_selector.style.display = "flex";
       } else if (isSearchOpen && window.innerWidth < 950) {
         mobile_menu.style.display = "none";
+        color_picker.style.display = "none";
       } else if (window.innerWidth < 950) {
         mobile_menu.style.display = "flex";
+        if ((isModalOpen || isColorPickerOpen) && event.type === "resize") {
+          if (isModalOpen && event.type === "resize") {
+            modal.style.display = "none";
+            setIsModalOpen(false);
+          } else {
+            color_picker.style.display = "none";
+            setIsColorPickerOpen(false);
+          }
+        }
       } else if (window.innerWidth > 950) {
         mobile_menu.style.display = "none";
+        theme_selector.style.display = "flex";
         if (isModalOpen) {
           modal.style.display = "none";
-          setIsModalOpen(false)
+          setIsModalOpen(false);
+        } else if (isColorPickerOpen && event.type === "resize") {
+          color_picker.style.display = "none";
+          setIsColorPickerOpen(false);
         }
       }
     };
@@ -138,7 +170,7 @@ function NavComponent() {
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
-  }, [isSearchOpen, isModalOpen]);
+  }, [isSearchOpen, isModalOpen, isColorPickerOpen]);
 
   if (location.pathname === "/404") {
     return null;
@@ -162,7 +194,7 @@ function NavComponent() {
         <button
           className="search-nav-con"
           onClick={() => setIsSearchOpen((isOpen) => !isOpen)}
-          style={{ display: `${isSearchOpen ? "none" : "inline-flex"}` }}
+          style={{ display: `${isSearchOpen ? "none" : "inline-flex"}`}}
         >
           <BsSearch
             size={window.innerWidth < 600 ? "0.8em" : "0.9375em"}
@@ -369,7 +401,7 @@ function NavComponent() {
         </ul>
         <div
           className="color-con"
-          style={{ display: `${isSearchOpen ? "none" : "inline-flex"}` }}
+          style={{ display: `${(isSearchOpen && window.innerWidth > 700)? "none" : "inline-flex"}` }}
         >
           <div
             className={`theme-selector${isColorPickerOpen ? " theme-selector-active" : ""}`}
@@ -380,7 +412,15 @@ function NavComponent() {
                 setIsColorPickerOpen((isOpen) => !isOpen);
                 setIsSearchOpen(false);
               }}
+              color={
+                colorState.colorPalette.text === "#000000" ? "grey" : "#d9d9d9"
+              }
               size={window.innerWidth < 600 ? "1em" : "1.1375em"}
+              style={{
+                ":hover": {
+                  color: `${colorState.colorPalette.text === "#000000" ? "black" : "white"}`,
+                },
+              }}
             />
           </div>
           <Zoom>
