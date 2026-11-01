@@ -1,22 +1,22 @@
 [
   {
     "color": "#FF4C00",
-    "category": "All"
+    "category": "all_humanoids"
   },
   {
     "color": "#F6AE2D",
-    "category": "CONSUMER"
+    "category": "consumer"
   },
   {
     "color": "#33FF57",
-    "category": "PROFESSIONAL"
+    "category": "professional"
   },
   {
     "color": "#E85D75",
-    "category": "RESEARCH"
+    "category": "research"
   },
   {
     "color": "#E9CE2C",
-    "category": "EDUCATION"
+    "category": "education"
   }
 ]

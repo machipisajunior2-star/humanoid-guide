@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import App from './App';
-import Nav from "./components/Nav";
+import NavComponent from "./components/NavComponent";
 import Footer from "./components/Footer";
 import reportWebVitals from './reportWebVitals';
 
@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <Provider store={store}>
-      <Nav />
+      <NavComponent />
       <App />
       <Footer />
     </Provider>

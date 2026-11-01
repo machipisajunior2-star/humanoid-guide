@@ -7,6 +7,7 @@
     width: 100vw;
     border-bottom: 0.5px solid rgb(78, 78, 78);
     border-top: 0.5px solid rgb(78, 78, 78);
+    min-height: 7vh;
 }
 
 .heading h1 {
@@ -43,7 +44,70 @@
 }
 
 .navigation-con {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding-right: 15px;
+    min-width: 50vw;
+}
+
+.search-nav-con {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    margin: 3px 5px 0 0;
+    border: none;
+    background-color: transparent;
+}
+
+.search-nav-con p {
+    margin: 0 0 0 7px;
+    font-size: 16px;
+}
+
+.search-input-con {
+    position: fixed;
+    display: inline-flex;
+    align-items: center;
+    z-index: 1000;
+}
+
+.search-input-con input {
+    width: 43vw;
+    height: 5vh;
+    margin-right: 6px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+}
+
+.search-input-con input:focus {
+    outline: none;
+}
+
+.search-input-con input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 0 transparent inset !important;
+    border: none;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.search-input-con form label {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 25px;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.search-input-con button {
+    border: none;
+    background-color: transparent;
 }
 
 .navigation-con ul {
@@ -143,8 +207,8 @@ display: inline-flex;
 .color-pick {
     display: none;
     position: fixed;
-    right: auto;
-    top: 56px;
+    right: 7px;
+    top: 45px;
     background-color: grey;
     border-radius: 5px;
     padding: 3px;
@@ -179,11 +243,20 @@ display: inline-flex;
         font-size: 25px;
     }
     .navigation-con ul li a {
+    font-size: 12px;
+}
+        .search-nav-con p {
     font-size: 13px;
 }
     }
 
-  @media only screen and (max-width: 865px) {
+  @media only screen and (max-width: 950px) {
+    .search-input-con form {
+        display: inline-flex;
+    }
+    .search-input-con input {
+        width: 35vw;
+    }
     .desktop-menu {
         display: none !important;
     }
@@ -211,10 +284,11 @@ display: inline-flex;
     .navigation-con {
     display: inline-flex;
     align-items: center;
-    justify-content: space-around;
+            justify-content: end;
+        gap: 10px;
         width: 25%;
+        min-width: 0;
     }
-    
     .navigation-con ul li::marker {
         font-size: 35px;
     }
@@ -224,10 +298,11 @@ display: inline-flex;
         padding-right: inherit;
         padding-left: 9px;
         padding-bottom: 20px;
-        top: 35px;
+        top: 40px;
         right: auto;
         border: 1px solid;
         border-radius: 10%;
+        margin: 0;
     }
     .navigation-con ul li {
         margin: 0px 0 -16px 0px;
@@ -238,16 +313,66 @@ display: inline-flex;
     }
     .color-pick {
         top: 36px;
+        right: 5px;
     }
   }
+    @media only screen and (max-width: 700px) {
+        .navigation-con {          
+        gap: 5px;
+        }
+    .search-input-con {
+        top: 8%;
+        right: 0%;
+    }
+    }
 
-    @media only screen and (max-width: 450px) {
+    @media only screen and (max-width: 497px) {
+    .search-nav-con p {
+        display: none;
+    }
+        
+    .search-input-con input {
+        width: 65vw;
+    }
+
     .home_heading {
-    font-size: 25px !important;
+    font-size: 22px !important;
     }
     .heading h1 {
     padding: 0 8px 0 8px;
 
-        font-size: 20px;
+        font-size: 17px;
     }
+    }
+
+    @media only screen and (max-width: 315px) {
+        .heading h1 {
+            font-size: 0.8em !important;
+        }
+        .app-navigation-con {
+    display: inline-grid;
+    justify-content: center;
+        padding-top: 10px;
+        }
+        .navigation-con {
+            width: 100%;
+            justify-content: space-between;
+                    padding: 5px;
+        }
+            .navigation-con ul {
+                        top: 63px;
+        left: 28px;
+            }
+        .color-pick {
+        top: 72px;
+        }
+            .search-input-con {
+        top: 12%;
+            }
+                .search-input-con input {
+        width: 45vw;
+        font-size: 15px;
+    }
+
+
     }
