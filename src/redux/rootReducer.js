@@ -1,10 +1,12 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import productReducer from "./product/productReducer";
-import themeColorReducr from "./themeColor/themeColorReducer"
+import themeColorReducer from "./themeColor/themeColorReducer"
+import categoryColorReducer from "./categoryColor/categoryColorReducer"
 
 const rootReducer = combineReducers({
     product: productReducer,
-    themeColor: themeColorReducr
+    themeColor: themeColorReducer,
+    categoryColor: categoryColorReducer
 })
 
 export default rootReducer
