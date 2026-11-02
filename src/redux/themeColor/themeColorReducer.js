@@ -6,10 +6,10 @@ const initialState = {
   colorPalette: storage
     ? storage
     : {
-        background: theme_color[0].background,
-        text: theme_color[0].text,
+        background: theme_color[5].background,
+        text: theme_color[5].text,
       },
-  id: theme_color[0].id,
+  id: theme_color[5].id,
 };
 
 const colorChangeReducer = (state = initialState, action) => {

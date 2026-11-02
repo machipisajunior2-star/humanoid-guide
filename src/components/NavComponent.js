@@ -83,13 +83,11 @@ function NavComponent() {
   
   useEffect(() => {
     const handleResize = (event) => {
-      const mobile_menu = document.querySelector(".mobile-menu");
       const modal = document.querySelector(".modal");
       const color_picker = document.querySelector(".color-pick");
       const theme_selector = document.querySelector(".theme-selector");
 
       if (isSearchOpen && window.innerWidth < 700) {
-        mobile_menu.style.display = "flex";
         theme_selector.style.display = "flex";
         if (event.type === "resize") {
           theme_selector.style.display = "flex";
@@ -101,15 +99,12 @@ function NavComponent() {
       } else if (isSearchOpen && window.innerWidth > 700) {
         if (event.type === "resize") {
           theme_selector.style.display = "none";
-          mobile_menu.style.display = "none";
         }
       } else if (window.innerWidth > 700) {
-        theme_selector.style.display = "flex";
+        if (theme_selector) theme_selector.style.display = "flex";
       } else if (isSearchOpen && window.innerWidth < 950) {
-        mobile_menu.style.display = "none";
         color_picker.style.display = "none";
       } else if (window.innerWidth < 950) {
-        mobile_menu.style.display = "flex";
         if ((isModalOpen || isColorPickerOpen) && event.type === "resize") {
           if (isModalOpen && event.type === "resize") {
             modal.style.display = "none";
@@ -120,8 +115,7 @@ function NavComponent() {
           }
         }
       } else if (window.innerWidth > 950) {
-        modal.style.display = "none";
-        mobile_menu.style.display = "none";
+        if (modal) modal.style.display = "none";
         theme_selector.style.display = "flex";
         if (isModalOpen) {
           modal.style.display = "none";
@@ -135,8 +129,9 @@ function NavComponent() {
 
     function handleVisibility () {
       const modal = document.querySelector(".modal");
-      modal.style.display = "none";
-    }
+      setIsModalOpen(false);
+      if (modal) modal.style.display = "none";
+    } 
 
     document.body.addEventListener("click", handleResize);
     window.addEventListener("blur", handleVisibility);
@@ -249,7 +244,7 @@ function NavComponent() {
           style={{ display: `${isSearchOpen ? "inline-flex" : "none"}` }}
         >
           <Zoom duration={500}>
-            <form>
+            <form action={`/search/`}>
               <label style={style}>
                 <BsSearch
                   size={window.innerWidth < 600 ? "0.9em" : "0.9375em"}
@@ -278,19 +273,22 @@ function NavComponent() {
             </button>
           </Zoom>
         </div>
-        <div
-          className={`mobile-menu${isModalOpen ? " mobile-menu-active" : " mobile-menu-inactive"}`}
-        >
-          <BsJustify
-            onClick={() => {
-              setIsModalOpen((isOpen) => !isOpen);
-              setIsColorPickerOpen(false);
-              setIsSearchOpen(false);
-            }}
-            size={window.innerWidth < 600 ? "1em" : "1.1375em"}
-            color={colorState.colorPalette.text}
-          />
-        </div>
+        {((!isSearchOpen && window.innerWidth < 950) || window.innerWidth < 700) && (
+          <div
+            className={`mobile-menu${isModalOpen ? " mobile-menu-active" : " mobile-menu-inactive"}`}
+          >
+            <BsJustify
+              onClick={() => {
+                setIsModalOpen((isOpen) => !isOpen);
+                setIsColorPickerOpen(false);
+                setIsSearchOpen(false);
+              }}
+              size={window.innerWidth < 600 ? "1em" : "1.1375em"}
+              color={colorState.colorPalette.text}
+            />
+          </div>
+        )}
+
         <Zoom>
           <ul
             style={{
@@ -327,11 +325,6 @@ function NavComponent() {
                 colorState.colorPalette.text === "#000000" ? "grey" : "#d9d9d9"
               }
               size={window.innerWidth < 600 ? "1em" : "1.1375em"}
-              style={{
-                ":hover": {
-                  color: `${colorState.colorPalette.text === "#000000" ? "black" : "white"}`,
-                },
-              }}
             />
           </div>
           <Zoom>
