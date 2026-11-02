@@ -19,7 +19,7 @@ function App() {
  let element = useRoutes([
    { path: "/", element: <Home /> },
    { path: "humanoids", element: <Humanoids /> },
-   { path: "search/:name", element: <Search /> },
+   { path: "search", element: <Search /> },
    { path: "category/:useType", element: <Category /> },
    { path: "product/:productSlag", element: <Product /> },
    { path: "about", element: <About /> },

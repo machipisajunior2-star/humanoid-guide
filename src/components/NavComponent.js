@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import {
   BsToggles,
   BsBrightnessLowFill,
@@ -19,6 +19,7 @@ import "../styling/nav.css";
 function NavComponent() {
   const location = useLocation();
   const dispatch = useDispatch();
+  let navigate = useNavigate();
   const colorState = useSelector((state) => state.themeColor);
   const categoryColorState = useSelector((state) => state.categoryColor);
   const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
@@ -244,7 +245,12 @@ function NavComponent() {
           style={{ display: `${isSearchOpen ? "inline-flex" : "none"}` }}
         >
           <Zoom duration={500}>
-            <form action={`/search/`}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                navigate(`/search?q=${e.target[0].value}`);
+              }}
+            >
               <label style={style}>
                 <BsSearch
                   size={window.innerWidth < 600 ? "0.9em" : "0.9375em"}
@@ -258,6 +264,7 @@ function NavComponent() {
                   style={{
                     color: `${colorState.colorPalette.text === "#000000" ? "#262626" : "#d9d9d9"}`,
                   }}
+                  required
                 />
               </label>
             </form>
@@ -273,7 +280,8 @@ function NavComponent() {
             </button>
           </Zoom>
         </div>
-        {((!isSearchOpen && window.innerWidth < 950) || window.innerWidth < 700) && (
+        {((!isSearchOpen && window.innerWidth < 950) ||
+          window.innerWidth < 700) && (
           <div
             className={`mobile-menu${isModalOpen ? " mobile-menu-active" : " mobile-menu-inactive"}`}
           >
