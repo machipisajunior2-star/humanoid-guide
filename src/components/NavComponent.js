@@ -84,27 +84,20 @@ function NavComponent() {
   
   useEffect(() => {
     const handleResize = (event) => {
+      const menu_button = document.querySelector(".mobile-menu");
       const modal = document.querySelector(".modal");
       const color_picker = document.querySelector(".color-pick");
       const theme_selector = document.querySelector(".theme-selector");
 
-      if (isSearchOpen && window.innerWidth < 700) {
-        theme_selector.style.display = "flex";
-        if (event.type === "resize") {
-          theme_selector.style.display = "flex";
-          color_picker.style.display = "none";
-          setIsColorPickerOpen(false);
-        }
-      } else if (window.innerWidth < 700) {
+      if (window.innerWidth < 700) {
         theme_selector.style.display = "flex";
       } else if (isSearchOpen && window.innerWidth > 700) {
         if (event.type === "resize") {
+          if (menu_button) menu_button.style.display = "none";
           theme_selector.style.display = "none";
         }
       } else if (window.innerWidth > 700) {
         if (theme_selector) theme_selector.style.display = "flex";
-      } else if (isSearchOpen && window.innerWidth < 950) {
-        color_picker.style.display = "none";
       } else if (window.innerWidth < 950) {
         if ((isModalOpen || isColorPickerOpen) && event.type === "resize") {
           if (isModalOpen && event.type === "resize") {
@@ -158,7 +151,11 @@ function NavComponent() {
           style={{ color: colorState.colorPalette.text }}
           to={`/category/${category.category}`}
         >
-          {category.category === "all_humanoids" ? "All" : (category.category.charAt(0).toLocaleUpperCase() + category.category.slice(1))}
+          {
+            category.category === "all_humanoids" ?
+             "All" :
+             (category.category.charAt(0).toLocaleUpperCase() + category.category.slice(1))
+          }
         </Link>
       </li>,
     );
@@ -169,7 +166,9 @@ function NavComponent() {
     categories_mobile.push(
       <li
         key={id}
-        className={`${categoryColorState.category === category.category ? `${category.category}_current_page` : `${category.category}_nav`}${colorState.colorPalette.text === "#000000" ? " black" : ""}`}
+        className={`${categoryColorState.category === category.category ? 
+        `${category.category}_current_page` : 
+        `${category.category}_nav`}${colorState.colorPalette.text === "#000000" ? " black" : ""}`}
       >
         <Link
           onClick={() => setIsModalOpen(false)}
