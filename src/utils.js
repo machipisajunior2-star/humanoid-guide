@@ -2,9 +2,9 @@
         console.log(themeColor)
       function resizeCanvas() {
         canvas1.width = window.innerWidth / 2;
-        canvas1.height = window.innerHeight / 2;
+        canvas1.height = window.innerHeight / 3;
         canvas2.width = window.innerWidth / 2;
-        canvas2.height = window.innerHeight / 2;
+        canvas2.height = window.innerHeight / 3;
       }
 
       resizeCanvas();

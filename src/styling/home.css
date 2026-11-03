@@ -12,6 +12,7 @@ body {
     width: 100vw;
     padding-top: 5vh;
     padding-bottom: 5vh;
+    border-bottom: 0.5px solid rgb(78, 78, 78);
   }
 
   canvas {
@@ -22,22 +23,22 @@ body {
     mask-image: url("../assets/robot2.png");
     mask-position: center;
     mask-repeat: no-repeat;
-    mask-size: 49vh;
+    mask-size: 33vh;
     -webkit-mask-image: url("../assets/robot2.png");
     -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 49vh;
+    -webkit-mask-size: 33vh;
   }
 
   #canvas-2 {
     mask-image: url("../assets/humanoid.png");
     mask-position: center;
     mask-repeat: no-repeat;
-    mask-size: 49vh;
+    mask-size: 33vh;
     -webkit-mask-image: url("../assets/humanoid.png");
     -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 49vh;
+    -webkit-mask-size: 33vh;
     border: 1px solid black !important;
   }
 
