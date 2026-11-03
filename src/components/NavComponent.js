@@ -191,6 +191,7 @@ function NavComponent() {
       <button
         onClick={() => {
           dispatch(setColor(color.id));
+          setIsColorPickerOpen(false);
           document.querySelector(".color-pick").style.display = "none";
           if (location.pathname === "/") {
             window.location.reload();
@@ -323,7 +324,7 @@ function NavComponent() {
           }}
         >
           <div
-            className={`theme-selector${isColorPickerOpen ? " theme-selector-active" : ""}`}
+            className={`theme-selector${isColorPickerOpen ? " theme-selector-active" : " theme-selector-inactive"}`}
           >
             <BsToggles
               onClick={() => {

@@ -251,6 +251,12 @@ display: inline-flex;
 .theme-selector-active {
         transition: rotate 0.5s ease-in-out;
         -webkit-transition: rotate 0.5s ease-in-out;
+        rotate: -90deg;
+}
+
+.theme-selector-inactive {
+        transition: rotate 0.5s ease-in-out;
+        -webkit-transition: rotate 0.5s ease-in-out;
         rotate: 90deg;
 }
 
