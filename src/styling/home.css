@@ -5,3 +5,70 @@ body {
     padding: 0;
   font-family: 'ABC Favorit';
 }
+ .canvas-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+
+  canvas {
+    background-color: transparent;
+  }
+
+  #canvas-1 {
+    mask-image: url("../assets/robot2.png");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 49vh;
+    -webkit-mask-image: url("../assets/robot2.png");
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 49vh;
+  }
+
+  #canvas-2 {
+    mask-image: url("../assets/humanoid.png");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 49vh;
+    -webkit-mask-image: url("../assets/humanoid.png");
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 49vh;
+    border: 1px solid black !important;
+  }
+
+  @media only screen and (max-width: 700px) {
+    #canvas-1 {
+      mask-size: 30vh;
+      -webkit-mask-size: 30vh;
+    }
+    #canvas-2 {
+      mask-size: 30vh;
+      -webkit-mask-size: 30vh;
+    }
+  }
+
+    @media only screen and (max-width: 350px) {
+    #canvas-1 {
+      mask-size: 25vh;
+      -webkit-mask-size: 25vh;
+    }
+    #canvas-2 {
+      mask-size: 25vh;
+      -webkit-mask-size: 25vh;
+    }
+    }
+        @media only screen and (max-width: 300px) {
+    #canvas-1 {
+      mask-size: 18vh;
+      -webkit-mask-size: 18vh;
+    }
+    #canvas-2 {
+      mask-size: 12vh;
+      -webkit-mask-size: 12vh;
+    }
+        }

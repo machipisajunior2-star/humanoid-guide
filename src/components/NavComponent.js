@@ -192,6 +192,9 @@ function NavComponent() {
         onClick={() => {
           dispatch(setColor(color.id));
           document.querySelector(".color-pick").style.display = "none";
+          if (location.pathname === "/") {
+            window.location.reload();
+          }
         }}
         key={color.id}
       >

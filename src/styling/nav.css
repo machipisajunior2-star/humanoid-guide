@@ -222,6 +222,7 @@ display: inline-flex;
     border-radius: 20px;
     border: 2px solid rgba(128, 128, 128, 0.887);
     padding: 3px;
+    z-index: 1000;
 }
 
 .color-pick button {
@@ -321,6 +322,7 @@ display: inline-flex;
         border: 1px solid;
         border-radius: 10%;
         margin: 0;
+        z-index: 2000;
     }
     .navigation-con ul li {
         margin: 0px 0 -16px 0px;
