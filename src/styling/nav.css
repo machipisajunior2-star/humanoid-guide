@@ -4,7 +4,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
     border-bottom: 0.5px solid rgb(78, 78, 78);
     border-top: 0.5px solid rgb(78, 78, 78);
     min-height: 7vh;

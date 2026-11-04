@@ -1,18 +1,19 @@
 @font-face {font-family: "ABC Favorit"; src: url(../assets/fonts/ABCFavoritMono-Book.otf);}
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
   font-family: 'ABC Favorit';
 }
+
  .canvas-container {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     padding-top: 5vh;
     padding-bottom: 5vh;
-    border-bottom: 0.5px solid rgb(78, 78, 78);
+    overflow-x: hidden;
   }
 
   canvas {
@@ -42,6 +43,117 @@ body {
     border: 1px solid black !important;
   }
 
+  .featured-content {
+    display: grid;
+    align-items: flex-end;
+    background-color: #c7c6c6f0;
+    background-size: cover;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: 85vh;
+    margin: 0 32px;
+    padding: 30px;
+    cursor: pointer;
+    overflow-x: hidden;
+  }
+
+.home_featured_humanoid_container{
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.home_featured {
+  color: black;
+  font-size: 12px;
+  border-radius: 20px;
+  background-color: #4096C8;
+  padding: 10px 20px;
+  text-wrap-mode: nowrap;
+}
+
+.hummanoid_name {
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+  margin: 10px 0 0 0;
+  font-size: 2.5em;
+}
+
+.home_subheading {
+  color: black;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.react-reveal {
+    display: flex;
+    align-items: center;
+}
+
+.category-container {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px 10px;
+  z-index: 1000;
+}
+
+.category-link {
+  color: black;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+  .feature-content-active {
+  animation-name: shift;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes shift {
+  from {
+    background-size: 100%;
+  }
+
+  to {
+    background-size: 103%;
+  }
+}
+
+.feature-content-inactive {
+  animation-name: shift-out;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes shift-out {
+  from {
+    background-size: 103%;
+  }
+
+  to {
+    background-size: 100%;
+  }
+}
+
+  @media only screen and (max-width: 1000px) {
+    .home_featured_humanoid_container {
+      gap: 40px;
+    }
+    .featured-content {
+      background-size: 140vh !important;
+      background-position-y: -28vh;
+    }
+    .hummanoid_name {
+      color: black;
+    }
+  }
+
   @media only screen and (max-width: 700px) {
     #canvas-1 {
       mask-size: 30vh;
@@ -51,25 +163,69 @@ body {
       mask-size: 30vh;
       -webkit-mask-size: 30vh;
     }
+    .featured-content {
+        background-size: 103vh !important;
+        background-position-y: -9vh;  
+    margin: 0 13px
+    }
+    .home_featured_humanoid_container {
+      display: grid;
+      gap: 10px;
+    }
+    .category-container {
+      width: fit-content;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    .featured-content {
+      background-position-y: -12vh;
+      background-position-x: -17vw;
+    }
   }
 
     @media only screen and (max-width: 350px) {
-    #canvas-1 {
-      mask-size: 25vh;
-      -webkit-mask-size: 25vh;
+      #canvas-1 {
+        mask-size: 25vh;
+        -webkit-mask-size: 25vh;
+      }
+      #canvas-2 {
+        mask-size: 25vh;
+        -webkit-mask-size: 25vh;
+      }
+    .featured-content {
+      background-position-y: -15vh;
+      padding: 20px;
     }
-    #canvas-2 {
-      mask-size: 25vh;
-      -webkit-mask-size: 25vh;
+    }
+
+    @media only screen and (max-width: 300px) {
+      #canvas-1 {
+        mask-size: 18vh;
+        -webkit-mask-size: 18vh;
+      }
+      #canvas-2 {
+        mask-size: 12vh;
+        -webkit-mask-size: 12vh;
+      }
+    .featured-content {
+      background-size: 87vh !important;
+      background-position-y: -2vh;
+      font-size: small;
     }
     }
-        @media only screen and (max-width: 300px) {
-    #canvas-1 {
-      mask-size: 18vh;
-      -webkit-mask-size: 18vh;
+
+    @media only screen and (max-width: 230px) {
+      .featured-content {
+        padding: 10px;
+        font-size: xx-small !important;
+        margin: 0 7px;
+        text-wrap: balance;
+        background-position-y: 0vh;
+        background-position-x: -67vw;
+      }
+      .home_featured {
+        font-size: xx-small !important;
+        margin-left: -16px;
+      }
     }
-    #canvas-2 {
-      mask-size: 12vh;
-      -webkit-mask-size: 12vh;
-    }
-        }

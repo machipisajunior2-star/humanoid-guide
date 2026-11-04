@@ -1,5 +1,4 @@
     export function configeAnimation(c, c2, canvas1, canvas2, themeColor) {
-        console.log(themeColor)
       function resizeCanvas() {
         canvas1.width = window.innerWidth / 2;
         canvas1.height = window.innerHeight / 3;

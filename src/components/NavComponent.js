@@ -20,7 +20,7 @@ function NavComponent() {
   const location = useLocation();
   const dispatch = useDispatch();
   let navigate = useNavigate();
-  const colorState = useSelector((state) => state.themeColor);
+  const colorState = useSelector((state) => state.themeColor.colorPalette);
   const categoryColorState = useSelector((state) => state.categoryColor);
   const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -143,12 +143,12 @@ function NavComponent() {
         className={
         `${categoryColorState.category === category.category ? 
         `${category.category}_current_page` : 
-        `${category.category}_nav`}${colorState.colorPalette.text === "#000000" ? " black" : ""}`
+        `${category.category}_nav`}${colorState.text === "#000000" ? " black" : ""}`
         }
       >
         <Link
           onClick={dispatch(setCategoryColor(location.pathname))}
-          style={{ color: colorState.colorPalette.text }}
+          style={{ color: colorState.text }}
           to={`/category/${category.category}`}
         >
           {
@@ -168,11 +168,11 @@ function NavComponent() {
         key={id}
         className={`${categoryColorState.category === category.category ? 
         `${category.category}_current_page` : 
-        `${category.category}_nav`}${colorState.colorPalette.text === "#000000" ? " black" : ""}`}
+        `${category.category}_nav`}${colorState.text === "#000000" ? " black" : ""}`}
       >
         <Link
           onClick={() => setIsModalOpen(false)}
-          style={{ color: colorState.colorPalette.text }}
+          style={{ color: colorState.text }}
           to={`/category/${category.category}`}
         >
           {category.category === "all_humanoids"
@@ -207,7 +207,7 @@ function NavComponent() {
     `${location.pathname === path ? "home_heading" : ""}`;
 
   const style = {
-    backgroundColor: `${colorState.colorPalette.text === "#000000" ? "#CFCFCA" : "#404040"}`,
+    backgroundColor: `${colorState.text === "#000000" ? "#CFCFCA" : "#404040"}`,
     ":focus": {
       border: `2px solid ${categoryColorState.color ? categoryColorState.color : categoryColors[0].color}`,
     },
@@ -220,11 +220,11 @@ function NavComponent() {
   return (
     <section className="app-navigation-con">
       <div
-        className={`heading${colorState.colorPalette.text === "#000000" ? " black" : ""}`}
+        className={`heading${colorState.text === "#000000" ? " black" : ""}`}
       >
         <Link to="/">
           <h1
-            style={{ color: colorState.colorPalette.text }}
+            style={{ color: colorState.text }}
             className={homeClass("/")}
           >
             HUMANOIDS
@@ -239,9 +239,9 @@ function NavComponent() {
         >
           <BsSearch
             size={window.innerWidth < 600 ? "0.8em" : "0.9375em"}
-            color={colorState.colorPalette.text}
+            color={colorState.text}
           />
-          <p style={{ color: colorState.colorPalette.text }}>Search</p>
+          <p style={{ color: colorState.text }}>Search</p>
         </button>
         <div
           className="search-input-con"
@@ -257,7 +257,7 @@ function NavComponent() {
               <label style={style}>
                 <BsSearch
                   size={window.innerWidth < 600 ? "0.9em" : "0.9375em"}
-                  color={`${colorState.colorPalette.text === "#000000" ? "#262626" : "#d9d9d9"}`}
+                  color={`${colorState.text === "#000000" ? "#262626" : "#d9d9d9"}`}
                 />
                 <input
                   id="search-field"
@@ -265,7 +265,7 @@ function NavComponent() {
                   placeholder="Search"
                   autoFocus
                   style={{
-                    color: `${colorState.colorPalette.text === "#000000" ? "#262626" : "#d9d9d9"}`,
+                    color: `${colorState.text === "#000000" ? "#262626" : "#d9d9d9"}`,
                   }}
                   required
                 />
@@ -278,7 +278,7 @@ function NavComponent() {
             >
               <BsXLg
                 size={window.innerWidth < 600 ? "1em" : "1.5em"}
-                color={colorState.colorPalette.text}
+                color={colorState.text}
               />
             </button>
           </Zoom>
@@ -295,7 +295,7 @@ function NavComponent() {
                 setIsSearchOpen(false);
               }}
               size={window.innerWidth < 600 ? "1em" : "1.1375em"}
-              color={colorState.colorPalette.text}
+              color={colorState.text}
             />
           </div>
         )}
@@ -304,7 +304,7 @@ function NavComponent() {
           <ul
             style={{
               display: isModalOpen ? "block" : "none",
-              backgroundColor: colorState.colorPalette.background,
+              backgroundColor: colorState.background,
             }}
             className="modal"
           >
@@ -333,7 +333,7 @@ function NavComponent() {
                 setIsSearchOpen(false);
               }}
               color={
-                colorState.colorPalette.text === "#000000" ? "grey" : "#d9d9d9"
+                colorState.text === "#000000" ? "grey" : "#d9d9d9"
               }
               size={window.innerWidth < 600 ? "1em" : "1.1375em"}
             />
