@@ -68,7 +68,6 @@ body {
   color: black;
   font-size: 12px;
   border-radius: 20px;
-  background-color: #4096C8;
   padding: 10px 20px;
   text-wrap-mode: nowrap;
 }
@@ -82,7 +81,6 @@ body {
 }
 
 .home_subheading {
-  color: black;
   margin-bottom: 0;
   margin-top: 8px;
 }
@@ -103,15 +101,6 @@ body {
 .category-link {
   font-size: 12px;
   text-decoration: none;
-}
-
-.home_featured_humanoid_container .category-container {
-  border: 1px solid black;
-}
-
-
-.home_featured_humanoid_container .category-container .category-link {
-  color: black;
 }
 
   .feature-content-active {

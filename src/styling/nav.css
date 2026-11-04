@@ -177,7 +177,7 @@ input:-webkit-autofill:active {
 .education_nav:hover {
     list-style: disc;
     list-style-position: inside; 
-    color: #E9CE2C;
+    color: #F5B52E;
 }
 
 .all_humanoids_current_page {
@@ -207,7 +207,7 @@ input:-webkit-autofill:active {
 .education_current_page {
     list-style: disc;
     list-style-position: inside; 
-    color: #E9CE2C;
+    color: #F5B52E;
 }
 .color-con {
 display: inline-flex;
