@@ -44,7 +44,7 @@
             c.font = "normal 9px DOTMATRI";
             c2.fillStyle = this.color === "#000000" ? "black" : "#FF4C00";
             c2.fillText(num, this.x, this.y + this.space);
-            c2.font = "normal 9px DOTMATRI";
+            c2.font = "normal 9px DOTMATRI";    
             this.x += 5;
           });
           this.y = this.y + this.space;
