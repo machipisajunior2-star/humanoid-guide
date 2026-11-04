@@ -73,7 +73,7 @@ body {
   text-wrap-mode: nowrap;
 }
 
-.hummanoid_name {
+.humanoid_name {
   display: inline-flex;
   align-items: center;
   gap: 35px;
@@ -93,16 +93,25 @@ body {
 }
 
 .category-container {
-  border: 1px solid black;
   border-radius: 20px;
   padding: 5px 10px;
+  width: fit-content;
+  height: fit-content;
   z-index: 1000;
 }
 
 .category-link {
-  color: black;
   font-size: 12px;
   text-decoration: none;
+}
+
+.home_featured_humanoid_container .category-container {
+  border: 1px solid black;
+}
+
+
+.home_featured_humanoid_container .category-container .category-link {
+  color: black;
 }
 
   .feature-content-active {
@@ -141,6 +150,80 @@ body {
   }
 }
 
+.latest_humanoids_section_container {
+  margin: 60px 32px;
+  padding: 0 0 0 19px;
+  border-left: 1px solid #BFBFBF;
+}
+
+.latest_humanoids_container {
+display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+    column-gap: 2em;
+}
+
+.first_stack {
+  border-left: 1px solid #BFBFBF;
+  padding-left: 19px;
+  width: 55%;
+}
+
+.first_stack .teaser_details_container {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.second_stack {
+  width: 45%;
+  padding: 0 0 19px;
+}
+
+.second_stack .humanoid_teaser:not(:first-child) .teaser_content {
+  display: inline-flex;
+}
+
+.second_stack .humanoid_teaser:not(:first-child) {
+  border-top: 1px solid #BFBFBF;
+  margin: 19px 0 0;
+}
+
+.second_stack .humanoid_teaser .teaser_details_container:not(:first-child) {
+  display: grid;
+  align-items: normal;
+}
+
+.teaser_details_container h2 {
+  vertical-align: middle;
+  margin: 0;
+  font-weight: 200;
+}
+
+.teaser_content {
+  border-radius: 25px;
+  gap: 10px;
+  margin-top: 1em;
+}
+
+
+.teaser_content:hover {
+  background-color: #8c8c8c3b;
+  padding: 7px;
+}
+
+.teaser_image_container img {
+  border-radius: 25px;
+  width: 100%;
+}
+
+.latest_humanoid_name {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
   @media only screen and (max-width: 1000px) {
     .home_featured_humanoid_container {
       gap: 40px;
@@ -149,7 +232,7 @@ body {
       background-size: 140vh !important;
       background-position-y: -28vh;
     }
-    .hummanoid_name {
+    .humanoid_name {
       color: black;
     }
   }
@@ -174,6 +257,26 @@ body {
     }
     .category-container {
       width: fit-content;
+    }
+    
+    .latest_humanoids_container {
+        display: grid;
+    }
+
+    .latest_humanoids_section_container {
+    margin: 60px 19px;
+    padding: 0;
+    border-left: none;
+}
+
+    .first_stack {
+      width: 100%;
+      padding-left: 0;
+      border: none;
+    }
+
+    .second_stack {
+      width: 100%;
     }
   }
 
@@ -213,6 +316,10 @@ body {
       background-position-y: -2vh;
       font-size: small;
     }
+
+          .second_stack .humanoid_teaser:not(:first-child) .teaser_content {
+    display: block;
+}
     }
 
     @media only screen and (max-width: 230px) {
@@ -227,5 +334,17 @@ body {
       .home_featured {
         font-size: xx-small !important;
         margin-left: -16px;
+      }
+
+          .latest_humanoids_section_container {
+        margin: 40px 6px;
+          }
+
+      .teaser_details_container h2 {
+          font-size: small;
+      }
+
+      .category-link {
+        font-size: x-small;
       }
     }

@@ -159,19 +159,19 @@ input:-webkit-autofill:active {
 .consumer_nav:hover {
     list-style: disc;
     list-style-position: inside; 
-    color: #F6AE2D;
+    color: #4C2365;
 }
 
 .professional_nav:hover {
     list-style: disc;
     list-style-position: inside; 
-    color: #9381FF;
+    color: #2E7D32;
 }
 
 .research_nav:hover {
     list-style: disc;
     list-style-position: inside; 
-    color: #33FF57;
+    color: #E85D75;
 }
 
 .education_nav:hover {
@@ -189,19 +189,19 @@ input:-webkit-autofill:active {
 .consumer_current_page {
     list-style: disc;
     list-style-position: inside; 
-    color: #F6AE2D;
+    color: #4C2365;
 }
 
 .professional_current_page {
     list-style: disc;
     list-style-position: inside; 
-    color: #9381FF;
+    color: #2E7D32;
 }
 
 .research_current_page {
     list-style: disc;
     list-style-position: inside; 
-    color: #33FF57;
+    color: #E85D75;
 }
 
 .education_current_page {
