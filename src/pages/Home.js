@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { HiArrowRight } from "react-icons/hi";
 import Slide from "react-reveal/Slide";
@@ -52,8 +52,12 @@ function Home() {
           },
           backgroundImage: `url(${data[id].image[0]})`,
         }}
-        onClick={() => {
-          navigate(`/product/${data[id].slag}`);
+        onClick={(e) => {
+            if (
+              e.target.className !== "category-button-name" &&
+              e.target.className !== "category-button"
+            )
+              navigate(`/product/${data[id].slag}`);
         }}
       >
         <div className="home_featured_humanoid_container">
@@ -84,9 +88,12 @@ function Home() {
               </p>
             </div>
           </div>
-          <div
-            className="category-container"
-            key={`category-container${id}`}
+          <button
+                onClick={() => navigate(
+                  `/category/${data[id].useType.toLowerCase()}`,
+                )}
+            className="category-button"
+            key={`category-button${id}`}
             style={{
               border:
                 id === 6
@@ -98,14 +105,13 @@ function Home() {
               },
             }}
           >
-            <Link
-              to={`/category/${data[id].useType.toLowerCase()}`}
-              className="category-link"
+            <span
+              className="category-button-name"
               style={{ color: id === 6 ? themeColorState.text : "black" }}
             >
               {data[id].useType}
-            </Link>
-          </div>
+            </span>
+          </button>
         </div>
       </section>
     );
@@ -115,22 +121,39 @@ function Home() {
       return (
         <article
           className="humanoid_teaser"
-          onMouseEnter={(e) => {
+          onMouseEnter={() => {
             setIsHumanoidActive(data[id].name);
           }}
-          onMouseLeave={() => {
+          onMouseLeave={(e) => {
+            e.stopPropagation();
             setIsHumanoidActive("");
+          }}
+          onClick={(e) => {
+            if (
+              e.target.className !== "category-button-name" &&
+              e.target.className !== "category-button"
+            )
+              navigate(`/product/${data[id].slag}`);
           }}
           key={`humanoid_teaser_${id}`}
         >
-          <div className="teaser_content">
+          <div
+            className="teaser_content"
+            key={`teaser_content${id}`}
+            style={{
+              ":active": {
+                outline: `2px solid ${colorPicker(data[id].useType.toLowerCase())}`,
+                borderRadius: "25px",
+              },
+            }}
+          >
             <div className="teaser_image_container">
               <img src={data[id].image[0]} alt={data[id].name}></img>
             </div>
             <div className="teaser_details_container">
-              <div className="latest_humanoid_name">
+              <div className="humanoid_name_container">
                 <b
-                  key={`latest_humanoid_name${id}`}
+                  key={`humanoid_name_container${id}`}
                   style={{
                     color:
                       isHumanoidActive === data[id].name
@@ -143,29 +166,29 @@ function Home() {
                 </b>
                 <h2>{data[id].name}</h2>
               </div>
-              <div
-                key={`category-container${id}`}
-                className="category-container"
+              <button
+                onClick={() => navigate(
+                  `/category/${data[id].useType.toLowerCase()}`,
+                )}
+                key={`category-button${id}`}
+                className="category-button"
                 style={{
                   border: `1px solid ${themeColorState.text}`,
                   ":hover": {
-                    background: colorPicker(
-                      data[id].useType.toLowerCase(),
-                    ),
+                    background: colorPicker(data[id].useType.toLowerCase()),
                     border: "transparent",
                   },
                 }}
               >
-                <Link
-                  to={`/category/${data[id].useType.toLowerCase()}`}
-                  className="category-link"
+                <span
+                  className="category-button-name"
                   style={{
                     color: themeColorState.text,
                   }}
                 >
                   {data[id].useType}
-                </Link>
-              </div>
+                </span>
+              </button>
             </div>
           </div>
         </article>
@@ -173,28 +196,52 @@ function Home() {
   }
 
   return (
-      <main id="Home-Page-container">
-        <section className="canvas-container">
-          <canvas ref={canvasRef1} id="canvas-1"></canvas>
-          <canvas ref={canvasRef2} id="canvas-2"></canvas>
-        </section>
-        {createFeatureHumanoid(0)}
-        <section className="latest_humanoids_section_container">
-          <header className="section_heading_container">
-            <h2 className="section_heading">LATEST HUMANOIDS</h2>
-          </header>
-          <div className="latest_humanoids_container">
-            <div className="first_stack">{createArticle(25)}</div>
-            <div className="second_stack">
-              {createArticle(9)}
-              {createArticle(3)}
-              {createArticle(14)}
-            </div>
+    <main id="Home-Page-container">
+      <section className="canvas-container">
+        <canvas ref={canvasRef1} id="canvas-1"></canvas>
+        <canvas ref={canvasRef2} id="canvas-2"></canvas>
+      </section>
+      {createFeatureHumanoid(0)}
+      <section className="humanoids_section_container">
+        <header className="section_heading_container">
+          <h2 className="section_heading">LATEST HUMANOIDS</h2>
+        </header>
+        <div className="humanoids_container">
+          <div className="first_stack">{createArticle(25)}</div>
+          <div className="second_stack">
+            {createArticle(9)}
+            {createArticle(3)}
+            {createArticle(14)}
           </div>
-        </section>
+        </div>
+      </section>
+      <section className="second-feature-humanoid">
         {createFeatureHumanoid(6)}
-      </main>
-    );
+      </section>
+      <section className="humanoids_section_container">
+        <header className="section_heading_container">
+          <h2 className="section_heading">HUMANOIDS HELPERS</h2>
+        </header>
+        <div className="humanoids_container" style={{ flexDirection: "row" }}>
+          <div
+            className="first_stack, helper_stack"
+            style={{
+              borderRight: "1px solid #BFBFBF",
+              borderLeft: "none",
+              padding: "0 19px 0 0",
+            }}
+          >
+            {createArticle(15)}
+          </div>
+          <div className="second_stack">
+            {createArticle(27)}
+            {createArticle(4)}
+            {createArticle(11)}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }
 
 export default Radium(Home)

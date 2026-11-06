@@ -58,6 +58,11 @@ body {
     overflow-x: hidden;
   }
 
+  
+/* .second-feature-humanoid .featured-content {
+  background-size: 103vw !important;
+} */
+
 .home_featured_humanoid_container{
   display: inline-flex;
   justify-content: space-between;
@@ -90,15 +95,16 @@ body {
     align-items: center;
 }
 
-.category-container {
+.category-button {
   border-radius: 20px;
   padding: 5px 10px;
   width: fit-content;
   height: fit-content;
   z-index: 1000;
+  background: none;
 }
 
-.category-link {
+.category-button-name {
   font-size: 12px;
   text-decoration: none;
 }
@@ -139,13 +145,13 @@ body {
   }
 }
 
-.latest_humanoids_section_container {
+.humanoids_section_container {
   margin: 60px 32px;
   padding: 0 0 0 19px;
   border-left: 1px solid #BFBFBF;
 }
 
-.latest_humanoids_container {
+.humanoids_container {
 display: flex;
     flex-wrap: nowrap;
     flex-direction: row-reverse;
@@ -165,14 +171,30 @@ display: flex;
   align-items: center;
 }
 
+.teaser_details_container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .second_stack {
   width: 45%;
   padding: 0 0 19px;
 }
 
+.humanoid_teaser {
+  cursor: pointer;
+}
+
 .second_stack .humanoid_teaser:not(:first-child) .teaser_content {
   display: inline-flex;
 }
+
+.second_stack .humanoid_teaser:not(:first-child) .teaser_content img {
+  width: 16vw;
+}
+
 
 .second_stack .humanoid_teaser:not(:first-child) {
   border-top: 1px solid #BFBFBF;
@@ -194,6 +216,7 @@ display: flex;
   border-radius: 25px;
   gap: 10px;
   margin-top: 1em;
+  width: 100%;
 }
 
 
@@ -202,12 +225,19 @@ display: flex;
   padding: 7px;
 }
 
+.teaser_image_container img:empty {
+  border-radius: 25px;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.212);
+}
+
 .teaser_image_container img {
   border-radius: 25px;
   width: 100%;
+  max-height: 130vh;
 }
 
-.latest_humanoid_name {
+.humanoid_name_container {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -223,6 +253,10 @@ display: flex;
     }
     .humanoid_name {
       color: black;
+    }
+    .second-feature-humanoid .featured-content {
+      background-size: 145vh !important;
+      background-position-y: -16vh;
     }
   }
 
@@ -244,16 +278,25 @@ display: flex;
       display: grid;
       gap: 10px;
     }
-    .category-container {
+        .second-feature-humanoid .featured-content {
+        background-size: 127vh !important;
+        background-position-y: -13vh;
+        background-position-x: -16vw;
+        }
+    .helper_stack {
+        border-right: none !important;
+        padding: 0 !important;
+      }
+    .category-button {
       width: fit-content;
     }
     
-    .latest_humanoids_container {
+    .humanoids_container {
         display: grid;
     }
 
-    .latest_humanoids_section_container {
-    margin: 60px 19px;
+    .humanoids_section_container {
+    margin: 60px 20px;
     padding: 0;
     border-left: none;
 }
@@ -267,12 +310,23 @@ display: flex;
     .second_stack {
       width: 100%;
     }
+    .second_stack .humanoid_teaser:not(:first-child) .teaser_content img {
+      width: 30vw;
+    }
   }
 
   @media only screen and (max-width: 450px) {
     .featured-content {
       background-position-y: -12vh;
       background-position-x: -17vw;
+    }
+    .second-feature-humanoid .featured-content {
+      background-size: 115vh !important;
+      background-position-y: -9vh;
+      background-position-x: -45vw;
+    }
+    .second-feature-humanoid .featured-content .humanoid_name {
+        font-size: 2em;
     }
   }
 
@@ -288,6 +342,10 @@ display: flex;
     .featured-content {
       background-position-y: -15vh;
       padding: 20px;
+    }
+    .second-feature-humanoid .featured-content {
+      background-position-y: -10vh;
+      background-position-x: -68vw;
     }
     }
 
@@ -305,13 +363,26 @@ display: flex;
       background-position-y: -2vh;
       font-size: small;
     }
-
-          .second_stack .humanoid_teaser:not(:first-child) .teaser_content {
-    display: block;
-}
+    .second-feature-humanoid .featured-content {
+      background-position-y: -9vh;
+      background-position-x: -92vw;
+    }
+    .second_stack .humanoid_teaser:not(:first-child) .teaser_content {
+      display: block;
+    }
+    .first_stack .teaser_details_container {
+      display: grid;
+    }
+    .teaser_details_container {
+      display: grid;
+    }
     }
 
     @media only screen and (max-width: 230px) {
+      .second-feature-humanoid .featured-content {
+        background-position-y: -4vh;
+        background-position-x: -116vw;
+      }
       .featured-content {
         padding: 10px;
         font-size: xx-small !important;
@@ -321,11 +392,11 @@ display: flex;
         background-position-x: -67vw;
       }
       .home_featured {
-        font-size: xx-small !important;
+        font-size: x-small !important;
         margin-left: -16px;
       }
 
-          .latest_humanoids_section_container {
+          .humanoids_section_container {
         margin: 40px 6px;
           }
 
@@ -333,7 +404,7 @@ display: flex;
           font-size: small;
       }
 
-      .category-link {
+      .category-button-name {
         font-size: x-small;
       }
     }
