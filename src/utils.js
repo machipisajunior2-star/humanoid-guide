@@ -1,4 +1,5 @@
     export function configeAnimation(c, c2, canvas1, canvas2, themeColor) {
+      console.log(themeColor)
       function resizeCanvas() {
         canvas1.width = window.innerWidth / 2;
         canvas1.height = window.innerHeight / 3;
@@ -39,10 +40,10 @@
         this.draw = function () {
           this.x = 5;
           this.num.forEach((num) => {
-            c.fillStyle = this.color === "#000000" ? "black" : "#FF4C00";
+            c.fillStyle = this.color.text === "#000000" ? "black" : "#FF4C00";
             c.fillText(num, this.x, this.y + this.space);
             c.font = "normal 9px DOTMATRI";
-            c2.fillStyle = this.color === "#000000" ? "black" : "#FF4C00";
+            c2.fillStyle = this.color.text === "#000000" ? "black" : "#FF4C00";
             c2.fillText(num, this.x, this.y + this.space);
             c2.font = "normal 9px DOTMATRI";    
             this.x += 5;

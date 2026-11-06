@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'ABC Favorit';
+  overflow-x: hidden;
 }
 
  .canvas-container {
