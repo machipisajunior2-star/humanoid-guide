@@ -1,12 +1,12 @@
-import category_color from "../../data/category-color.json";
 import { CHANGE_CATEGORY_COLOR } from "./categoryColorType";
 
 const initialState = {
-    color: category_color[0].color,
-    category: category_color[0].category
+    color: "",
+    category: ""
 }
 
 const categoryColorChangeReducer = (state = initialState, action) => {
+  console.log(action.category);
   switch (action.type) {
     case CHANGE_CATEGORY_COLOR:
       return action.category !== state.category

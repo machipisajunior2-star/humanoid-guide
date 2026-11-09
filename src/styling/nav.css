@@ -46,7 +46,7 @@
 .navigation-con {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding-right: 15px;
     min-width: 50vw;
 }
@@ -120,9 +120,9 @@ input:-webkit-autofill:active {
 }
 
 .navigation-con ul {
-    display: inline-flex;
-    list-style: circle;
-    list-style-position: inside;
+    display: block;
+    justify-content: space-evenly;
+    width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
@@ -134,81 +134,37 @@ input:-webkit-autofill:active {
 }
 
 .navigation-con ul li {
+    display: flex;
+    align-items: center;
     width: max-content;
-    margin-right: 5px;
-    margin-left: 10px;
 }
 
-.navigation-con ul li::marker {
-    font-size: 45px;
+.navigation-con ul li details summary span {
+    margin-right: 5px;
 }
 
 .navigation-con ul li a {
-    position: relative;
-    top: -8px;
-    margin: 0px 0 0 -40px;
-    font-size: 15px;
+    display: flex;
+    align-items: center;
 }
 
-.all_humanoids_nav:hover {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #FF4C00;
+.desktop-menu {
+    list-style: none;
 }
 
-.consumer_nav:hover {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #4C2365;
+.desktop-menu b {
+    font-size: 1.8em;
+    margin: 0 3px 0 0;
+    height: 1.4em !important;
 }
 
-.professional_nav:hover {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #2E7D32;
+.categories-list {
+    position: fixed;
+    width: min-content !important;
+    padding: 10px !important;
+    border-radius: 15px !important;
 }
 
-.research_nav:hover {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #E85D75;
-}
-
-.education_nav:hover {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #F5B52E;
-}
-
-.all_humanoids_current_page {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #FF4C00;
-}
-
-.consumer_current_page {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #4C2365;
-}
-
-.professional_current_page {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #2E7D32;
-}
-
-.research_current_page {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #E85D75;
-}
-
-.education_current_page {
-    list-style: disc;
-    list-style-position: inside; 
-    color: #F5B52E;
-}
 .color-con {
 display: inline-flex;
 }
@@ -216,7 +172,7 @@ display: inline-flex;
 .color-pick {
     display: none;
     position: fixed;
-    right: 9px;
+    right: 5px;
     top: 45px;
     background-color: color-mix(in hsl shorter hue, rgb(128, 64, 0) 50%, rgb(200, 255, 0) 50%);;
     border-radius: 20px;
@@ -244,7 +200,7 @@ display: inline-flex;
         scale: 1.2;
     }
 
-        .theme-selector path:hover, theme-selector {
+    .theme-selector path:hover, theme-selector {
         color:color-mix(in hsl shorter hue, rgb(128, 64, 0) 50%, rgb(200, 255, 0) 50%);
     }
 
@@ -268,14 +224,17 @@ display: inline-flex;
         font-size: 25px;
     }
     .navigation-con ul li a {
-    font-size: 12px;
-}
-        .search-nav-con p {
-    font-size: 13px;
-}
+        font-size: 12px;
+    }
+    .desktop-menu details > summary:first-of-type {
+        font-size: 12px;
+    }
+    .search-nav-con p {
+        font-size: 13px;
+    }
     }
 
-  @media only screen and (max-width: 950px) {
+    @media only screen and (max-width: 950px) {
     .search-input-con form {
         display: inline-flex;
     }
@@ -287,6 +246,9 @@ display: inline-flex;
     }
     .mobile-menu {
         display: flex;
+    }
+    .modal {
+        width: auto !important;
     }
     .theme-selector {
         margin-left: 4px;
@@ -307,22 +269,19 @@ display: inline-flex;
     font-size: 35px;
     }
     .navigation-con {
-    display: inline-flex;
-    align-items: center;
-            justify-content: end;
+        display: inline-flex;
+        align-items: center;
+        justify-content: end;
         gap: 10px;
         width: 25%;
         min-width: 0;
     }
-    .navigation-con ul li::marker {
-        font-size: 35px;
-    }
     .navigation-con ul {
         display: block;
         position: fixed;
-        padding-right: inherit;
-        padding-left: 9px;
-        padding-bottom: 20px;
+        padding: 10px;
+        padding-right: 12px;
+        padding-left: 12px;
         top: 40px;
         right: auto;
         border: 1px solid;
@@ -330,26 +289,45 @@ display: inline-flex;
         margin: 0;
         z-index: 2000;
     }
-    .navigation-con ul li {
-        margin: 0px 0 -16px 0px;
+    .categories-list {
+        position: inherit !important;
+        border: none !important;
+        padding: 0 !important;
     }
+
+    .modal details {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .modal details > summary:first-of-type {
+        font-size: x-small;
+    }
+    
     .navigation-con ul li a {
         font-size: x-small;
-        margin: 0 0 0 -25px;
+    }
+    
+    .navigation-con ul li a b {
+        margin-bottom: 3px;
+        margin-right: 5px;
+        font-size: 1.7em;
+    }
+    .desktop-menu details > summary:first-of-type {
+        font-size: x-small;
     }
     .color-pick {
         top: 36px;
-        right: 9px;
     }
   }
     @media only screen and (max-width: 700px) {
         .navigation-con {          
         gap: 5px;
         }
-    .search-input-con {
-        top: 8%;
-        right: 0%;
-    }
+        .search-input-con {
+            top: 8%;
+            right: 0%;
+        }
     }
 
     @media only screen and (max-width: 497px) {
@@ -380,31 +358,31 @@ display: inline-flex;
             font-size: 1em !important;
         }
         .app-navigation-con {
-    display: inline-grid;
-    justify-content: center;
-        padding-top: 10px;
+            display: inline-grid;
+            justify-content: center;
+            padding-top: 10px;
         }
         .navigation-con {
-width: 100vw;
-        justify-content: space-around;
-                    padding: 5px;
+            width: 100vw;
+            justify-content: space-around;
+            padding: 5px;
         }
-            .navigation-con ul {
-                        top: 63px;
-        left: 25%;
-            }
+        .navigation-con ul {
+            top: 63px;
+            left: 15%;
+        }
         .color-pick {
             right: auto;
-        top: 61px;
+            top: 61px;
         }
-            .search-input-con {
-        top: 11%;
-        right: auto;
-            }
-                .search-input-con input {
-        width: 45vw;
-        font-size: 15px;
-    }
+        .search-input-con {
+            top: 11%;
+            right: auto;
+        }
+        .search-input-con input {
+            width: 45vw;
+            font-size: 15px;
+        }
 
 
     }

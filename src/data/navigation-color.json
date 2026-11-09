@@ -1,0 +1,14 @@
+[
+  {
+    "color": "#FF4C00",
+    "navigation": "humanoids"
+  },
+  {
+    "color": "#27C3AE",
+    "navigation": "learn"
+  },
+  {
+    "color": "#4096C8",
+    "navigation": "news"
+  }
+]

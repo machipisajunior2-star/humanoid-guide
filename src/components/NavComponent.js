@@ -12,6 +12,7 @@ import Zoom from "react-reveal/Zoom";
 import Radium from "radium";
 import { setColor } from "../redux/themeColor/themeColorAction";
 import { setCategoryColor } from "../redux/categoryColor/categoryColorAction";
+import { setNavigationColor } from "../redux/navigationColor/navigationColorAction";
 import themeColors from "../data/theme-color-data.json";
 import categoryColors from "../data/category-color.json";
 import "../styling/nav.css";
@@ -22,9 +23,21 @@ function NavComponent() {
   let navigate = useNavigate();
   const colorState = useSelector((state) => state.themeColor.colorPalette);
   const categoryColorState = useSelector((state) => state.categoryColor);
+  const navigationColorState = useSelector((state) => state.navigationColor);
+  const [isCategoryButtonActive, setIsCategoryButtonActive] = useState(false);
+  const [isCategoryActive, setIsCategoryActive] = useState("");
+  const [isNavActive, setIsNavActive] = useState("");
   const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  if (location.pathname.slice(1).split("/")[0] === "category") {
+    const index = location.pathname.slice(1).indexOf("/");
+    const categoryParam = location.pathname.substring(index + 1).slice(1);
+    dispatch(setCategoryColor(categoryParam))
+  } else {
+    dispatch(setCategoryColor(""))
+  }
 
   useEffect(() => {
     const handleClick = (event) => {
@@ -38,7 +51,9 @@ function NavComponent() {
         event.target !==
           document.querySelector(".mobile-menu").querySelector("svg") &&
         event.target !==
-          document.querySelector(".mobile-menu").querySelector("path")
+          document.querySelector(".mobile-menu").querySelector("path") &&
+        event.target !== document.querySelector("details") &&
+        event.target !== document.querySelector("summary")
       ) {
         setIsModalOpen(false);
       } else if (
@@ -77,11 +92,21 @@ function NavComponent() {
         setIsSearchOpen(false);
       }
     };
+    function handleScroll() {
+      document
+        .querySelector(".desktop-menu")
+        .querySelector("details")
+        .removeAttribute("open");
+      setIsCategoryActive("");
+      setIsModalOpen(false);
+      setIsColorPickerOpen(false);
+    }
+
+    window.addEventListener("scroll", handleScroll);
     document.body.addEventListener("click", handleClick);
     return () => document.body.removeEventListener("click", handleClick);
   }, [isColorPickerOpen, isModalOpen, isSearchOpen]);
 
-  
   useEffect(() => {
     const handleResize = (event) => {
       const menu_button = document.querySelector(".mobile-menu");
@@ -121,11 +146,11 @@ function NavComponent() {
       }
     };
 
-    function handleVisibility () {
+    function handleVisibility() {
       const modal = document.querySelector(".modal");
       setIsModalOpen(false);
       if (modal) modal.style.display = "none";
-    } 
+    }
 
     document.body.addEventListener("click", handleResize);
     window.addEventListener("blur", handleVisibility);
@@ -134,51 +159,89 @@ function NavComponent() {
     return () => window.removeEventListener("resize", handleResize);
   }, [isSearchOpen, isModalOpen, isColorPickerOpen]);
 
-
-  const categories_desktop = []
+  const categories_desktop = [];
   categoryColors.forEach((category, id) => {
     categories_desktop.push(
       <li
-      key={id}
-        className={
-        `${categoryColorState.category === category.category ? 
-        `${category.category}_current_page` : 
-        `${category.category}_nav`}${colorState.text === "#000000" ? " black" : ""}`
-        }
+        key={id}
+        onMouseEnter={() => {
+          setIsCategoryActive(category.category);
+        }}
+        onMouseLeave={() => {
+          setIsCategoryActive("");
+        }}
       >
         <Link
-          onClick={dispatch(setCategoryColor(location.pathname))}
+          onClick={() => {
+            const desktopMenu = document.querySelector(".desktop-menu");
+            const details = desktopMenu.querySelector("details");
+            if (details) {
+              details.removeAttribute("open");
+            }
+          }}
           style={{ color: colorState.text }}
           to={`/category/${category.category}`}
         >
-          {
-            category.category === "all_humanoids" ?
-             "All" :
-             (category.category.charAt(0).toLocaleUpperCase() + category.category.slice(1))
-          }
+          <b
+            style={{
+              color:
+                categoryColorState.category === category.category ||
+                isCategoryActive === category.category
+                  ? category.color
+                  : colorState.text,
+            }}
+          >
+            {categoryColorState.category === category.category ||
+            isCategoryActive === category.category
+              ? "\u2022"
+              : "\u25CB"}
+          </b>
+          {category.category.charAt(0).toLocaleUpperCase() +
+            category.category.slice(1)}
         </Link>
       </li>,
     );
-  })
+  });
 
   const categories_mobile = [];
   categoryColors.forEach((category, id) => {
     categories_mobile.push(
       <li
         key={id}
-        className={`${categoryColorState.category === category.category ? 
-        `${category.category}_current_page` : 
-        `${category.category}_nav`}${colorState.text === "#000000" ? " black" : ""}`}
+        onMouseEnter={() => {
+          setIsCategoryActive(category.category);
+        }}
+        onMouseLeave={() => {
+          setIsCategoryActive("");
+        }}
       >
         <Link
-          onClick={() => setIsModalOpen(false)}
+          onClick={() => {
+            const desktopMenu = document.querySelector(".modal");
+            const details = desktopMenu.querySelector("details");
+            if (details) {
+              details.removeAttribute("open");
+            }
+          }}
           style={{ color: colorState.text }}
           to={`/category/${category.category}`}
         >
-          {category.category === "all_humanoids"
-            ? "All"
-            : category.category.charAt(0).toLocaleUpperCase() +
-              category.category.slice(1)}
+          <b
+            style={{
+              color:
+                categoryColorState.category === category.category ||
+                isCategoryActive === category.category
+                  ? category.color
+                  : colorState.text,
+            }}
+          >
+            {categoryColorState.category === category.category ||
+            isCategoryActive === category.category
+              ? "\u2022"
+              : "\u25CB"}
+          </b>
+          {category.category.charAt(0).toLocaleUpperCase() +
+            category.category.slice(1)}
         </Link>
       </li>,
     );
@@ -223,10 +286,7 @@ function NavComponent() {
         className={`heading${colorState.text === "#000000" ? " black" : ""}`}
       >
         <Link to="/">
-          <h1
-            style={{ color: colorState.text }}
-            className={homeClass("/")}
-          >
+          <h1 style={{ color: colorState.text }} className={homeClass("/")}>
             HUMANOIDS
           </h1>
         </Link>
@@ -304,18 +364,253 @@ function NavComponent() {
           <ul
             style={{
               display: isModalOpen ? "block" : "none",
+              color: colorState.text,
               backgroundColor: colorState.background,
             }}
             className="modal"
           >
-            {categories_mobile}
+            <li
+              onMouseEnter={() => {
+                setIsNavActive("humanoids");
+              }}
+              onMouseLeave={() => {
+                setIsNavActive("");
+              }}
+            >
+              <Link
+                onClick={dispatch(setNavigationColor(location.pathname))}
+                to="/humanoids"
+                style={{ color: colorState.text }}
+              >
+                <b
+                  style={{
+                    color:
+                      navigationColorState.navigation === "humanoids" ||
+                      isNavActive === "humanoids"
+                        ? "#FF4C00"
+                        : colorState.text,
+                  }}
+                >
+                  {navigationColorState.navigation === "humanoids" ||
+                  isNavActive === "humanoids"
+                    ? "\u2022"
+                    : "\u25CB"}
+                </b>
+                Humanoids
+              </Link>
+            </li>
+            <li>
+              <details
+                onClick={(e) => {
+                  setIsCategoryButtonActive((isActive) => !isActive);
+                }}
+              >
+                <summary
+                  style={{
+                    listStyle: "none",
+                  }}
+                >
+                  <span style={{ color: categoryColorState.color }}>
+                    {isCategoryButtonActive ? "\u25BC" : "\u25B6"}
+                  </span>
+                  Categories
+                </summary>
+                <ul
+                  style={{
+                    background: `${colorState.background}`,
+                  }}
+                  className="categories-list"
+                >
+                  {categories_mobile}
+                </ul>
+              </details>
+            </li>
+            <li
+              onMouseEnter={() => {
+                setIsNavActive("learn");
+              }}
+              onMouseLeave={() => {
+                setIsNavActive("");
+              }}
+            >
+              <Link
+                onClick={dispatch(setNavigationColor(location.pathname))}
+                to="/learn"
+                style={{ color: colorState.text }}
+              >
+                <b
+                  style={{
+                    color:
+                      navigationColorState.navigation === "learn" ||
+                      isNavActive === "learn"
+                        ? "#27C3AE"
+                        : colorState.text,
+                  }}
+                >
+                  {navigationColorState.navigation === "learn" ||
+                  isNavActive === "learn"
+                    ? "\u2022"
+                    : "\u25CB"}
+                </b>
+                Learn
+              </Link>
+            </li>
+            <li
+              onMouseEnter={() => {
+                setIsNavActive("news");
+              }}
+              onMouseLeave={() => {
+                setIsNavActive("");
+              }}
+            >
+              <Link
+                onClick={dispatch(setNavigationColor(location.pathname))}
+                to="/news"
+                style={{ color: colorState.text }}
+              >
+                <b
+                  style={{
+                    color:
+                      navigationColorState.navigation === "news" ||
+                      isNavActive === "news"
+                        ? "#4096C8"
+                        : colorState.text,
+                  }}
+                >
+                  {navigationColorState.navigation === "news" ||
+                  isNavActive === "news"
+                    ? "\u2022"
+                    : "\u25CB"}
+                </b>
+                News
+              </Link>
+            </li>
           </ul>
         </Zoom>
         <ul
           className="desktop-menu"
-          style={{ display: `${isSearchOpen ? "none" : "inline-flex"}` }}
+          style={{
+            display: `${isSearchOpen ? "none" : "inline-flex"}`,
+            color: colorState.text,
+          }}
         >
-          {categories_desktop}
+          <li
+            onMouseEnter={() => {
+              setIsNavActive("humanoids");
+            }}
+            onMouseLeave={() => {
+              setIsNavActive("");
+            }}
+          >
+            <Link
+              onClick={dispatch(setNavigationColor(location.pathname))}
+              to="/humanoids"
+              style={{ color: colorState.text }}
+            >
+              <b
+                style={{
+                  color:
+                    navigationColorState.navigation === "humanoids" ||
+                    isNavActive === "humanoids"
+                      ? "#FF4C00"
+                      : colorState.text,
+                }}
+              >
+                {navigationColorState.navigation === "humanoids" ||
+                isNavActive === "humanoids"
+                  ? "\u2022"
+                  : "\u25CB"}
+              </b>
+              Humanoids
+            </Link>
+          </li>
+          <li>
+            <details
+              onClick={() => {
+                setIsCategoryButtonActive((isActive) => !isActive);
+              }}
+            >
+              <summary
+                style={{
+                  listStyle: "none",
+                }}
+              >
+                <span style={{ color: categoryColorState.color }}>
+                  {isCategoryButtonActive ? "\u25BC" : "\u25B6"}
+                </span>
+                Categories
+              </summary>
+              <ul
+                style={{
+                  background: `${colorState.background}`,
+                  zIndex: "1000",
+                }}
+                className="categories-list"
+              >
+                {categories_desktop}
+              </ul>
+            </details>
+          </li>
+          <li
+            onMouseEnter={() => {
+              setIsNavActive("learn");
+            }}
+            onMouseLeave={() => {
+              setIsNavActive("");
+            }}
+          >
+            <Link
+              onClick={dispatch(setNavigationColor(location.pathname))}
+              to="/learn"
+              style={{ color: colorState.text }}
+            >
+              <b
+                style={{
+                  color:
+                    navigationColorState.navigation === "learn" ||
+                    isNavActive === "learn"
+                      ? "#27C3AE"
+                      : colorState.text,
+                }}
+              >
+                {navigationColorState.navigation === "learn" ||
+                isNavActive === "learn"
+                  ? "\u2022"
+                  : "\u25CB"}
+              </b>
+              Learn
+            </Link>
+          </li>
+          <li
+            onMouseEnter={() => {
+              setIsNavActive("news");
+            }}
+            onMouseLeave={() => {
+              setIsNavActive("");
+            }}
+          >
+            <Link
+              onClick={dispatch(setNavigationColor(location.pathname))}
+              to="/news"
+              style={{ color: colorState.text }}
+            >
+              <b
+                style={{
+                  color:
+                    navigationColorState.navigation === "news" ||
+                    isNavActive === "news"
+                      ? "#4096C8"
+                      : colorState.text,
+                }}
+              >
+                {navigationColorState.navigation === "news" ||
+                isNavActive === "news"
+                  ? "\u2022"
+                  : "\u25CB"}
+              </b>
+              News
+            </Link>
+          </li>
         </ul>
         <div
           className="color-con"
@@ -332,9 +627,7 @@ function NavComponent() {
                 setIsColorPickerOpen((isOpen) => !isOpen);
                 setIsSearchOpen(false);
               }}
-              color={
-                colorState.text === "#000000" ? "grey" : "#d9d9d9"
-              }
+              color={colorState.text === "#000000" ? "grey" : "#d9d9d9"}
               size={window.innerWidth < 600 ? "1em" : "1.1375em"}
             />
           </div>
