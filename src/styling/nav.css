@@ -137,6 +137,7 @@ input:-webkit-autofill:active {
     display: flex;
     align-items: center;
     width: max-content;
+    cursor: pointer;
 }
 
 .navigation-con ul li details summary span {
@@ -307,7 +308,7 @@ display: inline-flex;
     .navigation-con ul li a {
         font-size: x-small;
     }
-    
+
     .navigation-con ul li a b {
         margin-bottom: 3px;
         margin-right: 5px;

@@ -6,7 +6,6 @@ const initialState = {
 }
 
 const categoryColorChangeReducer = (state = initialState, action) => {
-  console.log(action.category);
   switch (action.type) {
     case CHANGE_CATEGORY_COLOR:
       return action.category !== state.category
