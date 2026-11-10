@@ -1,10 +1,11 @@
 import React, { useState} from "react"
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Radium from "radium";
 import humanoidsData from "../data/data.json";
 import "../styling/category.css"
 
-export default function Category() {
+function Category() {
   let navigate = useNavigate();
   const [isHumanoidActive, setIsHumanoidActive] = useState("");
   const themeColorState = useSelector((state) => state.themeColor.colorPalette);
@@ -105,3 +106,6 @@ export default function Category() {
     </main>
   );
 }
+
+
+export default Radium(Category)
