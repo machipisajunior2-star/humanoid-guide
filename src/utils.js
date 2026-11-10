@@ -1,3 +1,19 @@
+    
+    export function filterByEitherProperty(arr, prop1, prop2, targetValue) {
+      if (!Array.isArray(arr)) {
+        throw new TypeError("First argument must be an array");
+      }
+    
+      return arr.filter((obj) => {
+        if (typeof obj !== "object" || obj === null) return false;
+    
+        const val1 = obj[prop1];
+        const val2 = obj[prop2];
+    
+        return val1.toLowerCase().includes(targetValue.toLowerCase()) || val2.toLowerCase() === targetValue.toLowerCase();
+      });
+    }
+
     export function configeAnimation(c, c2, canvas1, canvas2, themeColor) {
       function resizeCanvas() {
         canvas1.width = window.innerWidth / 2;

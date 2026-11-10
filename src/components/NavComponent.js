@@ -294,7 +294,7 @@ function NavComponent() {
       <div className="navigation-con">
         <button
           className="search-nav-con"
-          onClick={() => setIsSearchOpen((isOpen) => !isOpen)}
+          onClick={() => {if (location.pathname.slice(1) !== "search") setIsSearchOpen((isOpen) => !isOpen);}}
           style={{ display: `${isSearchOpen ? "none" : "inline-flex"}` }}
         >
           <BsSearch
@@ -311,6 +311,7 @@ function NavComponent() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+                setIsSearchOpen(false)
                 navigate(`/search?q=${e.target[0].value}`);
               }}
             >
