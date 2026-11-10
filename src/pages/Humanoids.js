@@ -36,6 +36,7 @@ function Humanoids() {
               )
                 navigate(`/product/${data.slag}`);
             }}
+            key={`humanoid_teaser_${i}`}
           >
             <div
               className="teaser_content"
