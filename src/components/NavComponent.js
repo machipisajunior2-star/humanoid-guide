@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import React, { useState, useEffect } from "react";
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import {
@@ -25,8 +27,6 @@ function NavComponent() {
   const categoryColorState = useSelector((state) => state.categoryColor);
   const navigationColorState = useSelector((state) => state.navigationColor);
   const [isCategoryButtonActive, setIsCategoryButtonActive] = useState(false);
-  const [isCategoryActive, setIsCategoryActive] = useState("");
-  const [isNavActive, setIsNavActive] = useState("");
   const [isColorPickerOpen, setIsColorPickerOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -34,9 +34,9 @@ function NavComponent() {
   if (location.pathname.slice(1).split("/")[0] === "category") {
     const index = location.pathname.slice(1).indexOf("/");
     const categoryParam = location.pathname.substring(index + 1).slice(1);
-    dispatch(setCategoryColor(categoryParam))
+    dispatch(setCategoryColor(categoryParam));
   } else {
-    dispatch(setCategoryColor(""))
+    dispatch(setCategoryColor(""));
   }
 
   useEffect(() => {
@@ -97,7 +97,6 @@ function NavComponent() {
         .querySelector(".desktop-menu")
         .querySelector("details")
         .removeAttribute("open");
-      setIsCategoryActive("");
       setIsModalOpen(false);
       setIsColorPickerOpen(false);
     }
@@ -164,12 +163,12 @@ function NavComponent() {
     categories_desktop.push(
       <li
         key={id}
-        onMouseEnter={() => {
-          setIsCategoryActive(category.category);
-        }}
-        onMouseLeave={() => {
-          setIsCategoryActive("");
-        }}
+        css={css({
+          ":hover a::before": {
+            content: `"\\2B24"`,
+            color: category.color,
+          },
+        })}
       >
         <Link
           onClick={() => {
@@ -179,23 +178,17 @@ function NavComponent() {
               details.removeAttribute("open");
             }
           }}
-          style={{ color: colorState.text }}
           to={`/category/${category.category}`}
+          css={css({
+            color: colorState.text,
+            "::before": {
+              paddingRight: "10px",
+              color: `${categoryColorState.category === category.category ? category.color : ""}`,
+              content: `${categoryColorState.category === category.category ? `"\\2B24"` : '"\\1F785"'}`,
+              fontSize: "1em",
+            },
+          })}
         >
-          <b
-            style={{
-              color:
-                categoryColorState.category === category.category ||
-                isCategoryActive === category.category
-                  ? category.color
-                  : colorState.text,
-            }}
-          >
-            {categoryColorState.category === category.category ||
-            isCategoryActive === category.category
-              ? "\u2022"
-              : "\u25CB"}
-          </b>
           {category.category.charAt(0).toLocaleUpperCase() +
             category.category.slice(1)}
         </Link>
@@ -208,12 +201,12 @@ function NavComponent() {
     categories_mobile.push(
       <li
         key={id}
-        onMouseEnter={() => {
-          setIsCategoryActive(category.category);
-        }}
-        onMouseLeave={() => {
-          setIsCategoryActive("");
-        }}
+        css={css({
+          ":hover a::before": {
+            content: `"\\2B24"`,
+            color: category.color,
+          },
+        })}
       >
         <Link
           onClick={() => {
@@ -223,23 +216,17 @@ function NavComponent() {
               details.removeAttribute("open");
             }
           }}
-          style={{ color: colorState.text }}
           to={`/category/${category.category}`}
+          css={css({
+            color: colorState.text,
+            "::before": {
+              paddingRight: "10px",
+              color: `${categoryColorState.category === category.category ? category.color : ""}`,
+              content: `${categoryColorState.category === category.category ? `"\\2B24"` : '"\\1F785"'}`,
+              fontSize: "1em",
+            },
+          })}
         >
-          <b
-            style={{
-              color:
-                categoryColorState.category === category.category ||
-                isCategoryActive === category.category
-                  ? category.color
-                  : colorState.text,
-            }}
-          >
-            {categoryColorState.category === category.category ||
-            isCategoryActive === category.category
-              ? "\u2022"
-              : "\u25CB"}
-          </b>
           {category.category.charAt(0).toLocaleUpperCase() +
             category.category.slice(1)}
         </Link>
@@ -272,7 +259,7 @@ function NavComponent() {
   const style = {
     backgroundColor: `${colorState.text === "#000000" ? "#CFCFCA" : "#404040"}`,
     ":focus": {
-      border: `2px solid ${categoryColorState.color ? categoryColorState.color : categoryColors[0].color}`,
+      border: `2px solid ${categoryColorState.color ? categoryColorState.color : "#FF4C00"}`,
     },
   };
 
@@ -294,7 +281,10 @@ function NavComponent() {
       <div className="navigation-con">
         <button
           className="search-nav-con"
-          onClick={() => {if (location.pathname.slice(1) !== "search") setIsSearchOpen((isOpen) => !isOpen);}}
+          onClick={() => {
+            if (location.pathname.slice(1) !== "search")
+              setIsSearchOpen((isOpen) => !isOpen);
+          }}
           style={{ display: `${isSearchOpen ? "none" : "inline-flex"}` }}
         >
           <BsSearch
@@ -311,7 +301,7 @@ function NavComponent() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                setIsSearchOpen(false)
+                setIsSearchOpen(false);
                 navigate(`/search?q=${e.target[0].value}`);
               }}
             >
@@ -371,32 +361,26 @@ function NavComponent() {
             className="modal"
           >
             <li
-              onMouseEnter={() => {
-                setIsNavActive("humanoids");
-              }}
-              onMouseLeave={() => {
-                setIsNavActive("");
-              }}
+              css={css({
+                ":hover a::before": {
+                  content: `"\\2B24"`,
+                  color: "#FF4C00",
+                },
+              })}
             >
               <Link
                 onClick={dispatch(setNavigationColor(location.pathname))}
                 to="/humanoids"
-                style={{ color: colorState.text }}
+                css={css({
+                  color: colorState.text,
+                  "::before": {
+                    paddingRight: "10px",
+                    color: `${navigationColorState.navigation === "humanoids" ? "#FF4C00" : ""}`,
+                    content: `${navigationColorState.navigation === "humanoids" ? `"\\2B24"` : '"\\1F785"'}`,
+                    fontSize: "1em",
+                  },
+                })}
               >
-                <b
-                  style={{
-                    color:
-                      navigationColorState.navigation === "humanoids" ||
-                      isNavActive === "humanoids"
-                        ? "#FF4C00"
-                        : colorState.text,
-                  }}
-                >
-                  {navigationColorState.navigation === "humanoids" ||
-                  isNavActive === "humanoids"
-                    ? "\u2022"
-                    : "\u25CB"}
-                </b>
                 Humanoids
               </Link>
             </li>
@@ -419,6 +403,7 @@ function NavComponent() {
                 <ul
                   style={{
                     background: `${colorState.background}`,
+                    borderRadius: "none !important"
                   }}
                   className="categories-list"
                 >
@@ -427,62 +412,50 @@ function NavComponent() {
               </details>
             </li>
             <li
-              onMouseEnter={() => {
-                setIsNavActive("learn");
-              }}
-              onMouseLeave={() => {
-                setIsNavActive("");
-              }}
+              css={css({
+                ":hover a::before": {
+                  content: `"\\2B24"`,
+                  color: "#27C3AE",
+                },
+              })}
             >
               <Link
                 onClick={dispatch(setNavigationColor(location.pathname))}
                 to="/learn"
-                style={{ color: colorState.text }}
+                css={css({
+                  color: colorState.text,
+                  "::before": {
+                    paddingRight: "10px",
+                    color: `${navigationColorState.navigation === "learn" ? "#27C3AE" : ""}`,
+                    content: `${navigationColorState.navigation === "learn" ? `"\\2B24"` : '"\\1F785"'}`,
+                    fontSize: "1em",
+                  },
+                })}
               >
-                <b
-                  style={{
-                    color:
-                      navigationColorState.navigation === "learn" ||
-                      isNavActive === "learn"
-                        ? "#27C3AE"
-                        : colorState.text,
-                  }}
-                >
-                  {navigationColorState.navigation === "learn" ||
-                  isNavActive === "learn"
-                    ? "\u2022"
-                    : "\u25CB"}
-                </b>
                 Learn
               </Link>
             </li>
             <li
-              onMouseEnter={() => {
-                setIsNavActive("news");
-              }}
-              onMouseLeave={() => {
-                setIsNavActive("");
-              }}
+              css={css({
+                ":hover a::before": {
+                  content: `"\\2B24"`,
+                  color: "#4096C8",
+                },
+              })}
             >
               <Link
                 onClick={dispatch(setNavigationColor(location.pathname))}
                 to="/news"
-                style={{ color: colorState.text }}
+                css={css({
+                  color: colorState.text,
+                  "::before": {
+                    paddingRight: "10px",
+                    color: `${navigationColorState.navigation === "news" ? "#4096C8" : ""}`,
+                    content: `${navigationColorState.navigation === "news" ? `"\\2B24"` : '"\\1F785"'}`,
+                    fontSize: "1em",
+                  },
+                })}
               >
-                <b
-                  style={{
-                    color:
-                      navigationColorState.navigation === "news" ||
-                      isNavActive === "news"
-                        ? "#4096C8"
-                        : colorState.text,
-                  }}
-                >
-                  {navigationColorState.navigation === "news" ||
-                  isNavActive === "news"
-                    ? "\u2022"
-                    : "\u25CB"}
-                </b>
                 News
               </Link>
             </li>
@@ -496,32 +469,26 @@ function NavComponent() {
           }}
         >
           <li
-            onMouseEnter={() => {
-              setIsNavActive("humanoids");
-            }}
-            onMouseLeave={() => {
-              setIsNavActive("");
-            }}
+            css={css({
+              ":hover a::before": {
+                content: `"\\2B24"`,
+                color: "#FF4C00",
+              },
+            })}
           >
             <Link
               onClick={dispatch(setNavigationColor(location.pathname))}
               to="/humanoids"
-              style={{ color: colorState.text }}
+              css={css({
+                color: colorState.text,
+                "::before": {
+                  paddingRight: "10px",
+                  color: `${navigationColorState.navigation === "humanoids" ? "#FF4C00" : ""}`,
+                  content: `${navigationColorState.navigation === "humanoids" ? `"\\2B24"` : '"\\1F785"'}`,
+                  fontSize: "1em",
+                },
+              })}
             >
-              <b
-                style={{
-                  color:
-                    navigationColorState.navigation === "humanoids" ||
-                    isNavActive === "humanoids"
-                      ? "#FF4C00"
-                      : colorState.text,
-                }}
-              >
-                {navigationColorState.navigation === "humanoids" ||
-                isNavActive === "humanoids"
-                  ? "\u2022"
-                  : "\u25CB"}
-              </b>
               Humanoids
             </Link>
           </li>
@@ -553,62 +520,50 @@ function NavComponent() {
             </details>
           </li>
           <li
-            onMouseEnter={() => {
-              setIsNavActive("learn");
-            }}
-            onMouseLeave={() => {
-              setIsNavActive("");
-            }}
+            css={css({
+              ":hover a::before": {
+                content: `"\\2B24"`,
+                color: "#27C3AE",
+              },
+            })}
           >
             <Link
               onClick={dispatch(setNavigationColor(location.pathname))}
               to="/learn"
-              style={{ color: colorState.text }}
+              css={css({
+                color: colorState.text,
+                "::before": {
+                  paddingRight: "10px",
+                  color: `${navigationColorState.navigation === "learn" ? "#27C3AE" : ""}`,
+                  content: `${navigationColorState.navigation === "learn" ? `"\\2B24"` : '"\\1F785"'}`,
+                  fontSize: "1em",
+                },
+              })}
             >
-              <b
-                style={{
-                  color:
-                    navigationColorState.navigation === "learn" ||
-                    isNavActive === "learn"
-                      ? "#27C3AE"
-                      : colorState.text,
-                }}
-              >
-                {navigationColorState.navigation === "learn" ||
-                isNavActive === "learn"
-                  ? "\u2022"
-                  : "\u25CB"}
-              </b>
               Learn
             </Link>
           </li>
           <li
-            onMouseEnter={() => {
-              setIsNavActive("news");
-            }}
-            onMouseLeave={() => {
-              setIsNavActive("");
-            }}
+            css={css({
+              ":hover a::before": {
+                content: `"\\2B24"`,
+                color: "#4096C8",
+              },
+            })}
           >
             <Link
               onClick={dispatch(setNavigationColor(location.pathname))}
               to="/news"
-              style={{ color: colorState.text }}
+              css={css({
+                color: colorState.text,
+                "::before": {
+                  paddingRight: "10px",
+                  color: `${navigationColorState.navigation === "news" ? "#4096C8" : ""}`,
+                  content: `${navigationColorState.navigation === "news" ? `"\\2B24"` : '"\\1F785"'}`,
+                  fontSize: "1em",
+                },
+              })}
             >
-              <b
-                style={{
-                  color:
-                    navigationColorState.navigation === "news" ||
-                    isNavActive === "news"
-                      ? "#4096C8"
-                      : colorState.text,
-                }}
-              >
-                {navigationColorState.navigation === "news" ||
-                isNavActive === "news"
-                  ? "\u2022"
-                  : "\u25CB"}
-              </b>
               News
             </Link>
           </li>

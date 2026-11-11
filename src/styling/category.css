@@ -13,7 +13,7 @@
   grid-auto-rows: min-content;
   grid-row-gap: 20px;
   gap: 10px;
-  border-left: 1px solid #BFBFBF;
+  border-left: 1px solid #404040;
   padding-left: 10px;
   width: 100%;
 }
@@ -28,7 +28,7 @@
 }
 
 .category_page_container .humanoid_teaser:not(:nth-child(3n)) {
-    border-right: 1px solid #BFBFBF;
+    border-right: 1px solid #404040;
 }
 
   @media only screen and (max-width: 920px) {
@@ -42,7 +42,7 @@
 }
 
 .category_page_container .humanoid_teaser:nth-child(odd) {
-    border-right: 1px solid #BFBFBF;
+    border-right: 1px solid #404040;
 }
 .category_page_container .humanoid_teaser:nth-child(even) {
     border-right: none;

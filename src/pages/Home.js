@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -14,8 +16,6 @@ import "../styling/home.css";
 function Home() {
   let navigate = useNavigate();
   const [isActive, setIsActive] = useState(false);
-  const [isHumanoidActive, setIsHumanoidActive] = useState("");
-  const [isArticleActive, setIsArticleActive] = useState("");
   const [humanoidPicker, setHumanoidPicker] = useState({
     first: Math.floor(Math.random() * 31),
     second: Math.floor(Math.random() * 31),
@@ -25,9 +25,11 @@ function Home() {
   const canvasRef2 = useRef(null);
 
   function generateNumbers() {
-    const one = Math.floor(Math.random() * 31)
+    const one = Math.floor(Math.random() * 31);
     const two = Math.floor(Math.random() * 31);
-    if (one !== two) {setHumanoidPicker({first: one, second: two})} else {
+    if (one !== two) {
+      setHumanoidPicker({ first: one, second: two });
+    } else {
       generateNumbers();
     }
   }
@@ -69,11 +71,11 @@ function Home() {
           backgroundImage: `url(${data[id].image[0]})`,
         }}
         onClick={(e) => {
-            if (
-              e.target.className !== "category-button-name" &&
-              e.target.className !== "category-button"
-            )
-              navigate(`/product/${data[id].slag}`);
+          if (
+            e.target.className !== "category-button-name" &&
+            e.target.className !== "category-button"
+          )
+            navigate(`/product/${data[id].slag}`);
         }}
       >
         <div className="home_featured_humanoid_container">
@@ -105,9 +107,9 @@ function Home() {
             </div>
           </div>
           <button
-                onClick={() => navigate(
-                  `/category/${data[id].useType.toLowerCase()}`,
-                )}
+            onClick={() =>
+              navigate(`/category/${data[id].useType.toLowerCase()}`)
+            }
             className="category-button"
             key={`category-button${id}`}
             style={{
@@ -134,111 +136,118 @@ function Home() {
   }
 
   function createArticle(id) {
-      return (
-        <article
-          className="humanoid_teaser"
-          onMouseEnter={() => {
-            setIsHumanoidActive(data[id].name);
+    return (
+      <article
+        className="humanoid_teaser"
+        onClick={(e) => {
+          if (
+            e.target.className !== "category-button-name" &&
+            e.target.className !== "category-button"
+          )
+            navigate(`/product/${data[id].slag}`);
+        }}
+        key={`humanoid_teaser_${id}`}
+        css={css({
+          ":hover .humanoid_name_container h2::before": {
+            content: `"\\2B24"`,
+            color: colorPicker(data[id].useType.toLowerCase()),
+          },
+        })}
+      >
+        <div
+          className="teaser_content"
+          key={`teaser_content${id}`}
+          style={{
+            ":active": {
+              outline: `2px solid ${colorPicker(data[id].useType.toLowerCase())}`,
+              borderRadius: "25px",
+            },
           }}
-          onMouseLeave={(e) => {
-            e.stopPropagation();
-            setIsHumanoidActive("");
-          }}
-          onClick={(e) => {
-            if (
-              e.target.className !== "category-button-name" &&
-              e.target.className !== "category-button"
-            )
-              navigate(`/product/${data[id].slag}`);
-          }}
-          key={`humanoid_teaser_${id}`}
         >
-          <div
-            className="teaser_content"
-            key={`teaser_content${id}`}
-            style={{
-              ":active": {
-                outline: `2px solid ${colorPicker(data[id].useType.toLowerCase())}`,
-                borderRadius: "25px",
-              },
-            }}
-          >
-            <div className="teaser_image_container">
-              <img src={data[id].image[0]} alt={data[id].name}></img>
-            </div>
-            <div className="teaser_details_container">
-              <div className="humanoid_name_container">
-                <b
-                  key={`humanoid_name_container${id}`}
-                  style={{
-                    color:
-                      isHumanoidActive === data[id].name
-                        ? colorPicker(data[id].useType.toLowerCase())
-                        : "",
-                    fontSize: "2em",
-                  }}
-                >
-                  {isHumanoidActive === data[id].name ? "\u2022" : "\u25CB"}
-                </b>
-                <h2>{data[id].name}</h2>
-              </div>
-              <button
-                onClick={() => navigate(
-                  `/category/${data[id].useType.toLowerCase()}`,
-                )}
-                key={`category-button${id}`}
-                className="category-button"
-                style={{
-                  border: `1px solid ${themeColorState.text}`,
-                  ":hover": {
-                    background: colorPicker(data[id].useType.toLowerCase()),
-                    border: "transparent",
+          <div className="teaser_image_container">
+            <img src={data[id].image[0]} alt={data[id].name}></img>
+          </div>
+          <div className="teaser_details_container">
+            <div className="humanoid_name_container">
+              <h2
+                css={css({
+                  color: themeColorState.text,
+                  "::before": {
+                    paddingRight: "10px",
+                    content: '"\\1F785"',
+                    fontSize: "1em",
                   },
+                })}
+              >
+                {data[id].name}
+              </h2>
+            </div>
+            <button
+              onClick={() =>
+                navigate(`/category/${data[id].useType.toLowerCase()}`)
+              }
+              key={`category-button${id}`}
+              className="category-button"
+              style={{
+                border: `1px solid ${themeColorState.text}`,
+                ":hover": {
+                  background: colorPicker(data[id].useType.toLowerCase()),
+                  border: "transparent",
+                },
+              }}
+            >
+              <span
+                className="category-button-name"
+                style={{
+                  color: themeColorState.text,
                 }}
               >
-                <span
-                  className="category-button-name"
-                  style={{
-                    color: themeColorState.text,
-                  }}
-                >
-                  {data[id].useType}
-                </span>
-              </button>
-            </div>
+                {data[id].useType}
+              </span>
+            </button>
           </div>
-        </article>
-      );
+        </div>
+      </article>
+    );
   }
 
   function createLearnArticle(id) {
     return (
       <article
         className="article_teaser"
-        onMouseEnter={() => {
-          setIsArticleActive(articleData[id].title);
-        }}
-        onMouseLeave={(e) => {
-          e.stopPropagation();
-          setIsArticleActive("");
-        }}
         onClick={() => {
           const params = articleData[id].title.replace("?", "%3f");
           navigate(`/learn/${params}`);
         }}
         key={`article_teaser_${id}`}
+        css={css({
+          ":hover .article_text header h2::before": {
+            content: `"\\2B24"`,
+            color: "#27C3AE",
+          },
+        })}
       >
         <div className="article_text">
           <header>
-            <span style={{ color: isArticleActive === articleData[id].title ? "#27C3AE" : ""}}>
-              {isArticleActive === articleData[id].title ? "\u2022" : "\u25CB"}
-            </span>
-            <h2>{articleData[id].title}</h2>
+            <h2
+              css={css({
+                color: themeColorState.text,
+                "::before": {
+                  paddingRight: "10px",
+                  content: '"\\1F785"',
+                  fontSize: "1em",
+                },
+              })}
+            >
+              {articleData[id].title}
+            </h2>
           </header>
           <p>{articleData[id].description}</p>
         </div>
         <div className="article_image_container">
-          <img src={`${articleData[id].image}`} alt={`article-${id}`} />
+          {articleData[id].image && (
+            <img src={`${articleData[id].image}`} alt={`article-${id}`} />
+          )}
         </div>
       </article>
     );
@@ -275,7 +284,7 @@ function Home() {
           <div
             className="first_stack, helper_stack"
             style={{
-              borderRight: "1px solid #BFBFBF",
+              borderRight: "1px solid #404040",
               borderLeft: "none",
               padding: "0 19px 0 0",
             }}
@@ -300,8 +309,8 @@ function Home() {
           </Link>
         </header>
         <div className="articles_container">
-          <div className="article_container">{createLearnArticle(0)}</div>
-          <div className="article_container">{createLearnArticle(3)}</div>
+          <div className="article_container">{createLearnArticle(7)}</div>
+          <div className="article_container">{createLearnArticle(8)}</div>
           <div className="article_container">{createLearnArticle(2)}</div>
           <div className="article_container">{createLearnArticle(1)}</div>
         </div>
@@ -341,13 +350,6 @@ function Home() {
           <div className="second_stack" id="random_teaser">
             <article
               className="humanoid_teaser"
-              onMouseEnter={() => {
-                setIsHumanoidActive(data[humanoidPicker.first].name);
-              }}
-              onMouseLeave={(e) => {
-                e.stopPropagation();
-                setIsHumanoidActive("");
-              }}
               onClick={(e) => {
                 if (
                   e.target.className !== "category-button-name" &&
@@ -356,6 +358,14 @@ function Home() {
                   navigate(`/product/${data[humanoidPicker.first].slag}`);
               }}
               key={`humanoid_teaser_random1${humanoidPicker.first}`}
+              css={css({
+                ":hover .humanoid_name_container h2::before": {
+                  content: `"\\2B24"`,
+                  color: colorPicker(
+                    data[humanoidPicker.first].useType.toLowerCase(),
+                  ),
+                },
+              })}
             >
               <div
                 className="teaser_content"
@@ -375,25 +385,18 @@ function Home() {
                 </div>
                 <div className="teaser_details_container">
                   <div className="humanoid_name_container">
-                    <b
-                      key={`humanoid_name_container_random1${humanoidPicker.first}`}
-                      style={{
-                        color:
-                          isHumanoidActive === data[humanoidPicker.first].name
-                            ? colorPicker(
-                                data[
-                                  humanoidPicker.first
-                                ].useType.toLowerCase(),
-                              )
-                            : "",
-                        fontSize: "2em",
-                      }}
+                    <h2
+                      css={css({
+                        color: themeColorState.text,
+                        "::before": {
+                          paddingRight: "10px",
+                          content: '"\\1F785"',
+                          fontSize: "1em",
+                        },
+                      })}
                     >
-                      {isHumanoidActive === data[humanoidPicker.first].name
-                        ? "\u2022"
-                        : "\u25CB"}
-                    </b>
-                    <h2>{data[humanoidPicker.first].name}</h2>
+                      {data[humanoidPicker.first].name}
+                    </h2>
                   </div>
                   <button
                     onClick={() =>
@@ -429,13 +432,6 @@ function Home() {
           <div className="first_stack" id="random_teaser">
             <article
               className="humanoid_teaser"
-              onMouseEnter={() => {
-                setIsHumanoidActive(data[humanoidPicker.second].name);
-              }}
-              onMouseLeave={(e) => {
-                e.stopPropagation();
-                setIsHumanoidActive("");
-              }}
               onClick={(e) => {
                 if (
                   e.target.className !== "category-button-name" &&
@@ -444,6 +440,14 @@ function Home() {
                   navigate(`/product/${data[humanoidPicker.second].slag}`);
               }}
               key={`humanoid_teaser_random2${humanoidPicker.second}`}
+              css={css({
+                ":hover .humanoid_name_container h2::before": {
+                  content: `"\\2B24"`,
+                  color: colorPicker(
+                    data[humanoidPicker.second].useType.toLowerCase(),
+                  ),
+                },
+              })}
             >
               <div
                 className="teaser_content"
@@ -463,25 +467,18 @@ function Home() {
                 </div>
                 <div className="teaser_details_container">
                   <div className="humanoid_name_container">
-                    <b
-                      key={`humanoid_name_container_random2${humanoidPicker.second}`}
-                      style={{
-                        color:
-                          isHumanoidActive === data[humanoidPicker.second].name
-                            ? colorPicker(
-                                data[
-                                  humanoidPicker.second
-                                ].useType.toLowerCase(),
-                              )
-                            : "",
-                        fontSize: "2em",
-                      }}
+                    <h2
+                      css={css({
+                        color: themeColorState.text,
+                        "::before": {
+                          paddingRight: "10px",
+                          content: '"\\1F785"',
+                          fontSize: "1em",
+                        },
+                      })}
                     >
-                      {isHumanoidActive === data[humanoidPicker.second].name
-                        ? "\u2022"
-                        : "\u25CB"}
-                    </b>
-                    <h2>{data[humanoidPicker.second].name}</h2>
+                      {data[humanoidPicker.second].name}
+                    </h2>
                   </div>
                   <button
                     onClick={() =>
@@ -538,25 +535,34 @@ function Home() {
               color: themeColorState.text,
               background:
                 themeColorState.text === "#000000" ? "#CFCFCA" : "#404040",
-            }}>Research</Link>
+            }}
+          >
+            Research
+          </Link>
           <Link
             to="category/professional"
             style={{
               color: themeColorState.text,
               background:
                 themeColorState.text === "#000000" ? "#CFCFCA" : "#404040",
-            }}>Professional</Link>
+            }}
+          >
+            Professional
+          </Link>
           <Link
             to="category/education"
             style={{
               color: themeColorState.text,
               background:
                 themeColorState.text === "#000000" ? "#CFCFCA" : "#404040",
-            }}>Education</Link>
+            }}
+          >
+            Education
+          </Link>
         </div>
       </section>
     </main>
   );
 }
 
-export default Radium(Home)
+export default Radium(Home);
