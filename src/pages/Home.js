@@ -9,8 +9,8 @@ import Slide from "react-reveal/Slide";
 import Radium from "radium";
 import { configeAnimation } from "../utils";
 import data from "../data/data.json";
-import categoryColors from "../data/category-color.json";
 import articleData from "../data/articles.json";
+import { colorPicker } from "../utils";
 import "../styling/home.css";
 
 function Home() {
@@ -41,13 +41,6 @@ function Home() {
     const c = canvas1.getContext("2d");
     configeAnimation(c, c2, canvas1, canvas2, themeColorState);
   }, [themeColorState]);
-
-  function colorPicker(category) {
-    const colorData = categoryColors.filter(
-      (data) => data.category === category,
-    );
-    return colorData[0].color;
-  }
 
   function createFeatureHumanoid(id) {
     return (

@@ -1,0 +1,77 @@
+#learn_page_container header h1 {
+    margin: 15px 60px 0 32px;
+    font-size: 74px;
+    color: #27C3AE;
+}
+
+#learn_page_container .learn_article_section_container {
+    margin: 30px 32px 60px 32px;
+}
+
+#learn_page_section_conatiner .learn_article_heading_container h2 {
+    color: #27C3AE;
+}
+
+#learn_page_section_conatiner .articles_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#articles-container {
+    grid-template-columns: repeat(3, 1fr) !important;
+    row-gap: 3vh;
+}
+
+#learn_page_section_conatiner .article_container {
+    width: 90%;
+}
+
+
+  @media only screen and (max-width: 900px) {
+    #articles-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    #learn_page_section_conatiner .articles_container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    #articles-container {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+    #learn_page_section_conatiner .article_container:not(:first-child) {
+        border-left: none;
+    }
+    #learn_page_container header h1 {
+       margin: 30px 30px;
+       font-size: 38px;
+    }
+    #learn_page_section_conatiner {
+        margin: 30px 30px;
+    }
+    #learn_page_section_conatiner .article_container {
+        width: 95%;
+    }
+    
+    #learn_page_container .learn_article_section_container {
+        margin: 15px 16px 30px 30px;
+    }
+  }
+
+
+  @media only screen and (max-width: 250px) { 
+    #learn_page_container .learn_article_section_container {
+        margin: 3px 4px 7px 4px;
+    }
+    #learn_page_container header h1 {
+      margin: 10px 6px;
+      font-size: 18px;
+    }
+    #learn_page_section_conatiner {
+        margin: 10px 6px;
+    }
+    #learn_page_section_conatiner .article_text h2 {
+        font-size: small;
+    }
+  }

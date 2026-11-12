@@ -31,13 +31,16 @@ function NavComponent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  if (location.pathname.slice(1).split("/")[0] === "category") {
-    const index = location.pathname.slice(1).indexOf("/");
-    const categoryParam = location.pathname.substring(index + 1).slice(1);
-    dispatch(setCategoryColor(categoryParam));
-  } else {
-    dispatch(setCategoryColor(""));
-  }
+  useEffect(() => {
+    if (location.pathname.slice(1).split("/")[0] === "category") {
+      const index = location.pathname.slice(1).indexOf("/");
+      const categoryParam = location.pathname.substring(index + 1).slice(1);
+      dispatch(setCategoryColor(categoryParam));
+    } else {
+      dispatch(setCategoryColor(""));
+    }
+    dispatch(setNavigationColor(location.pathname))
+  }, [dispatch, location.pathname])
 
   useEffect(() => {
     const handleClick = (event) => {
@@ -45,6 +48,7 @@ function NavComponent() {
         .querySelector(".search-input-con")
         .querySelector("label")
         .focus();
+      console.log(event.target)
       if (
         event.target !== document.querySelector(".modal") &&
         isModalOpen &&
@@ -272,7 +276,7 @@ function NavComponent() {
       <div
         className={`heading${colorState.text === "#000000" ? " black" : ""}`}
       >
-        <Link to="/">
+        <Link to="/" key="home_page_button">
           <h1 style={{ color: colorState.text }} className={homeClass("/")}>
             HUMANOIDS
           </h1>
@@ -369,7 +373,7 @@ function NavComponent() {
               })}
             >
               <Link
-                onClick={dispatch(setNavigationColor(location.pathname))}
+                key="humanoids_nav_button"
                 to="/humanoids"
                 css={css({
                   color: colorState.text,
@@ -420,7 +424,7 @@ function NavComponent() {
               })}
             >
               <Link
-                onClick={dispatch(setNavigationColor(location.pathname))}
+                key="learn_nav_link"
                 to="/learn"
                 css={css({
                   color: colorState.text,
@@ -444,7 +448,7 @@ function NavComponent() {
               })}
             >
               <Link
-                onClick={dispatch(setNavigationColor(location.pathname))}
+                key="news_nav_link"
                 to="/news"
                 css={css({
                   color: colorState.text,
@@ -477,7 +481,7 @@ function NavComponent() {
             })}
           >
             <Link
-              onClick={dispatch(setNavigationColor(location.pathname))}
+              key="humanoids_nav_desktop_link"
               to="/humanoids"
               css={css({
                 color: colorState.text,
@@ -528,7 +532,7 @@ function NavComponent() {
             })}
           >
             <Link
-              onClick={dispatch(setNavigationColor(location.pathname))}
+              key="learn_nav_link_desktop"
               to="/learn"
               css={css({
                 color: colorState.text,
@@ -552,7 +556,7 @@ function NavComponent() {
             })}
           >
             <Link
-              onClick={dispatch(setNavigationColor(location.pathname))}
+              key="news_nav_link_desktop"
               to="/news"
               css={css({
                 color: colorState.text,

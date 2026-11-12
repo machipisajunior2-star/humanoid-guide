@@ -1,10 +1,11 @@
 .category_page_wrapper {
-  margin: 20px 30px 32px 30px;
+    margin: 20px 16px 32px 16px;
 }
 
 .category_heading {
-    font-size: 4em;
-    margin-top: 0;
+    margin: 15px 60px 0 32px;
+    font-size: 74px;
+    color: #27C3AE;
 }
 
 .category_page_container {
@@ -33,7 +34,7 @@
 
   @media only screen and (max-width: 920px) {
 .category_page_wrapper {
-    margin: 20px 10px 32px 18px;
+    margin: 20px 16px 32px 16px;
 }
 .category_page_container {
   grid-template-columns: repeat(2, 1fr);
@@ -61,21 +62,17 @@
     border-right: none;
 }
 .category_heading {
-    font-size: 3em;
+    margin: 30px 17px;
+    font-size: 38px;
 }
 }
 
-@media only screen and (max-width: 400px) {
-.category_heading {
-    font-size: 2em;
-}
-
-}
 @media only screen and (max-width: 250px) {
 .category_page_wrapper {
     margin: 5px 5px 5px 3px;
 }
 .category_heading {
-    font-size: 1.1em;
+      margin: 10px 6px;
+      font-size: 18px;
 }
 }

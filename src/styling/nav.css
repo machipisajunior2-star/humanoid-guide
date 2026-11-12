@@ -12,7 +12,7 @@
 
 .heading h1 {
     margin: 0;
-    padding: 0 16px 0 16px;
+    padding: 0 16px 0 30px;
   font-family: 'ObliqueOutline';
 }
 
@@ -47,7 +47,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 15px;
+    padding-right: 30px;
     min-width: 50vw;
 }
 
@@ -176,7 +176,7 @@ display: inline-flex;
 .color-pick {
     display: none;
     position: fixed;
-    right: 5px;
+    right: 19px;
     top: 45px;
     background-color: color-mix(in hsl shorter hue, rgb(128, 64, 0) 50%, rgb(200, 255, 0) 50%);;
     border-radius: 20px;
@@ -258,6 +258,9 @@ display: inline-flex;
         margin-left: 4px;
         padding-top: 5px;
     }
+    .color-con {
+        margin-left: 10px;
+    }
     .mobile-menu-active {
         transition: rotate 0.5s ease-in-out;
         -webkit-transition: rotate 0.5s ease-in-out;
@@ -320,7 +323,7 @@ display: inline-flex;
         font-size: x-small;
     }
     .color-pick {
-        top: 36px;
+        top: 40px;
     }
   }
     @media only screen and (max-width: 700px) {
@@ -333,7 +336,7 @@ display: inline-flex;
         }
     }
 
-    @media only screen and (max-width: 497px) {
+    @media only screen and (max-width: 530px) {
     .search-nav-con p {
         display: none;
     }
@@ -346,13 +349,13 @@ display: inline-flex;
     font-size: 22px !important;
     }
     .heading h1 {
-    padding: 0 8px 0 8px;
+    padding: 0 8px 0 16px;
 
-        font-size: 17px;
+        font-size: 19px;
     }
     }
 
-    @media only screen and (max-width: 315px) {
+    @media only screen and (max-width: 350px) {
         .heading {
             text-align: center;
             width: 100%;

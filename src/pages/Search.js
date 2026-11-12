@@ -6,9 +6,8 @@ import {
 } from "react-icons/bs";
 import Radium from "radium";
 import data from "../data/data.json";
-import categoryColors from "../data/category-color.json";
 import "../styling/search.css"
-import { filterByEitherProperty } from "../utils"
+import { filterByEitherProperty, colorPicker } from "../utils"
 
 function Search() {
   const ref = useRef(null)
@@ -22,12 +21,6 @@ function Search() {
     const [searchData, setSearchData] = useState(filterByEitherProperty(data, "name", "useType", query));
     const [isHumanoidActive, setIsHumanoidActive] = useState("");
 
-    function colorPicker(category) {
-      const colorData = categoryColors.filter(
-        (data) => data.category === category,
-      ); 
-      return colorData[0].color;
-    }
 
    function createArticle(data, i) {
         return (
