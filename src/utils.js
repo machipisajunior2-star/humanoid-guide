@@ -1,4 +1,12 @@
-    
+    import categoryColors from "./data/category-color.json";
+
+    export function colorPicker(category) {
+      const colorData = categoryColors.filter(
+        (data) => data.category === category,
+      );
+      return colorData[0].color;
+    }
+
     export function filterByEitherProperty(arr, prop1, prop2, targetValue) {
       if (!Array.isArray(arr)) {
         throw new TypeError("First argument must be an array");
