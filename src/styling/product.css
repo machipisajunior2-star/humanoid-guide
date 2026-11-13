@@ -1,0 +1,127 @@
+.product_wrapper {
+    margin: 20px 30px 32px 30px;
+}
+.product_details_section {
+    display: block;
+    border-left: 1px solid #404040;
+    padding-left: 15px;
+}
+.product_details_container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+}
+
+.product_details {
+    display: grid;
+    width: 30%;
+    border-right: 1px solid #404040;
+    padding-right: 15px;
+    margin-right: 10px;
+    gap: 4vh;
+    overflow-wrap: anywhere;
+}
+
+.product_name {
+    font-size: 74px;
+    margin: 0;
+}
+
+.product_details p {
+    margin: 0;
+}
+
+.deatils_container {
+    display: grid;
+    gap: 5px;
+}
+
+.deatils_container small {
+    color: #8C8C8C;
+}
+
+.manufacturer_link {
+    color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+    width: max-content;
+}
+.manufacturer_link span {
+    text-decoration:none;
+    display: inline-block;
+}
+
+.manufacturer_link:hover {
+    color: #FF4C00;
+    text-decoration-thickness: 2px;
+}
+
+.manufacturer_link:hover span {
+  animation-name: shift_span;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes shift_span {
+  from {
+    position: relative;
+    top: inherit;
+    right: inherit;
+  }
+
+  to {
+    position: relative;
+    top: -5px;
+    right: -5px;
+  }
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .product_details {
+        width: 40%;
+    }
+}
+
+
+@media only screen and (max-width: 920px) {
+    .product_details_section {
+    border-left: none; 
+    padding-left: 0;
+    }
+.product_details_container {
+    display: block;
+}
+    .product_details {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+.product_name {
+       font-size: 38px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .product_wrapper {
+    margin: 0 16px 0 16px;
+}
+.embla__viewport {
+    height: 66vh;
+}
+}
+
+
+
+@media only screen and (max-width: 250px) {
+.product_name {
+      font-size: 18px;
+}
+    .product_wrapper {
+            margin:0 10px 0 2px;
+            font-size: smaller;
+    }
+}

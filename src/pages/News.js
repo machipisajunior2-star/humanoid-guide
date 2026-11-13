@@ -2,12 +2,15 @@
 import { css } from "@emotion/react";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { ThreeCircles } from "react-loader-spinner";
 import { fetchNews } from "../redux/news/newsActions";
 import "../styling/news.css"
 
 function News() {
-  const newsData = useSelector((state) => state.news.news.news);
-  console.log(newsData)
+  const error = useSelector((state) => state.news.error);
+  const loading = useSelector((state) => state.news.loading)
+  const newsData = useSelector((state) => state.news?.news?.news ?? null);
+  console.log(error)
   const themeColorState = useSelector(
     (state) => state.themeColor.colorPalette.text,
   );
@@ -86,13 +89,25 @@ function News() {
   return (
     <main className="news_wrapper">
       <header>
-        <h1 id="news_title" className="article_title">Humanoid News</h1>
+        <h1 id="news_title" className="article_title">
+          Humanoid News
+        </h1>
       </header>
       <section className="news_container">
         {newsData ? (
           newsData.map((data, i) => createNews(data, i))
+        ) : loading ? (
+          <ThreeCircles
+            height="80"
+            width="80"
+            color="#4096C8"
+            ariaLabel="rotating-square-loading"
+            wrapperStyle={{}}
+            wrapperClass="loader-wrapper-class"
+            visible={true}
+          />
         ) : (
-          <h1>Loading...</h1>
+          <h2>No news today. Please try again later.</h2>
         )}
       </section>
     </main>

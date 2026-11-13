@@ -281,21 +281,23 @@ display: flex;
  text-decoration: none;
 }
 
-.learn_article_heading_container a:hover {
-  animation-name: shift-out;
+.learn_article_heading_container a:hover span {
+  animation-name: shift-out-a-span;
   animation-duration: 1s;
   animation-direction: alternate;
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
 }
 
-@keyframes shift-out {
+@keyframes shift-out-a-span {
   from {
-    gap: 0;
+    position: relative;
+    right: inherit;
   }
 
   to {
-    gap: 8px;
+    position: relative;
+    right: -10px;
   }
 }
 

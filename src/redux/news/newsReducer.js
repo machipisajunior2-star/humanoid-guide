@@ -5,9 +5,10 @@ import {
 } from "./newsType";
 
 const storage = JSON.parse(localStorage.getItem("news"));
+console.log(storage)
 const initialState = {
   loading: false,
-  news: storage ? storage.news : {},
+  news: {},
   error: "",
 };
 
@@ -27,6 +28,7 @@ const newsReducer = (state = initialState, action) => {
     case FETCH_NEWS_FAILURE:
       return {
         loading: false,
+        news: storage,
         error: action.payload,
       };
     default:

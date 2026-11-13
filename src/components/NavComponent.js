@@ -40,6 +40,7 @@ function NavComponent() {
       dispatch(setCategoryColor(""));
     }
     dispatch(setNavigationColor(location.pathname))
+    window.scrollTo(0, 0);
   }, [dispatch, location.pathname])
 
   useEffect(() => {
@@ -48,7 +49,6 @@ function NavComponent() {
         .querySelector(".search-input-con")
         .querySelector("label")
         .focus();
-      console.log(event.target)
       if (
         event.target !== document.querySelector(".modal") &&
         isModalOpen &&

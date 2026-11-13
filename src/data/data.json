@@ -43,8 +43,8 @@
     "slag": "agibot-x1",
     "useType": "RESEARCH",
     "image": [
-      "https://humanoid.guide/wp-content/uploads/2025/08/AgiBot-X1-humanoid-robot-humanoid.guide-Featured-Image-1200x1200.webp",
       "https://lookingglassxr.com/wp-content/uploads/2024/12/Agibot-Lingxi-X1.png",
+      "https://humanoid.guide/wp-content/uploads/2025/08/AgiBot-X1-humanoid-robot-humanoid.guide-Featured-Image-1200x1200.webp",
       "https://tse2.mm.bing.net/th/id/OIP.Ztz564R3VD-r-3CUdGAvpgHaKI?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
     ],
     "videos": [
@@ -235,11 +235,11 @@
     "slag": "galbot-g1",
     "useType": "PROFESSIONAL",
     "image": [
-      "http://www.galbot.com/_nuxt/g1-spec-robot.BYUAn6RQ.jpg",
+      "https://res.cloudinary.com/db8jz0ojq/image/upload/v1769277707/robots/galbot-g1-by-galbot-robotics/ev9zwxpll3r85tlc3juq.webp",
       "https://tse3.mm.bing.net/th/id/OIP.lR95pYKNuiYJSbtY5oNrVAHaHc?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
       "https://www.worldrobotconference.com/profile/robot/download/2025/07/04/e_20250704181549A836.jpg",
-      "https://res.cloudinary.com/db8jz0ojq/image/upload/v1769277707/robots/galbot-g1-by-galbot-robotics/ev9zwxpll3r85tlc3juq.webp",
-      "https://tse3.mm.bing.net/th/id/OIP.2_jDD8-u3Y5DdKblwrydngHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+      "https://tse3.mm.bing.net/th/id/OIP.2_jDD8-u3Y5DdKblwrydngHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "http://www.galbot.com/_nuxt/g1-spec-robot.BYUAn6RQ.jpg"
     ],
     "videos": [
       "9ML9mOcHSQA",
@@ -397,11 +397,11 @@
     "slag": "pudu-d9",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://bclj1gvgmsjtdkc5.public.blob.vercel-storage.com/robots/pudu-robotics-d9-1768494044707.png",
       "https://pudu-file-host.oss-cn-beijing.aliyuncs.com/official_website/%E6%96%B0%E9%97%BB%E5%B0%81%E9%9D%A2%E5%9B%BE1184_752%20_2024-12-19_17%3A42%3A42.png",
       "https://aitech365.com/wp-content/uploads/2024/12/Pudu-Robotics-introduces-the-PUDU-D9-A-full-size-humanoid-robot-with-commercially-viable-embodied-intelligence-12.webp",
       "https://pudu-file-host.oss-cn-beijing.aliyuncs.com/official_website/D9%20Specification_2024-12-19_15%3A26%3A31.png",
-      "https://aisecretsexposed.com/wp-content/uploads/2024/12/the-most-powerful-ai-humanoid-robot-yet-pudu-d9-better-than-optimus-AsUzGyzGSjk.jpg"
+      "https://aisecretsexposed.com/wp-content/uploads/2024/12/the-most-powerful-ai-humanoid-robot-yet-pudu-d9-better-than-optimus-AsUzGyzGSjk.jpg",
+      "https://bclj1gvgmsjtdkc5.public.blob.vercel-storage.com/robots/pudu-robotics-d9-1768494044707.png"
     ],
     "videos": [
       "gd5DdfJX_RM",
@@ -515,13 +515,13 @@
     "slag": "tokyo-torobo",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://robotics.tokyo/_astro/torobo2.z_s_-U0O_Z1oElgF.webp",
       "https://robotics.tokyo/_astro/torobo2_size.DDOqPJz7_Z1ua5YY.webp",
       "https://robotics.tokyo/_astro/torobo2_head_types.D5Nx_OQU_9xcvA.webp",
       "https://robotics.tokyo/_astro/torobo_gripper.DZhCh_IQ_1sluIi.webp",
       "https://robotics.tokyo/_astro/torobo2_c2_size.EVmy85TQ_Z2ENgL.webp",
       "https://robotics.tokyo/_astro/torobo2_software.C0415sD3_Z2rCPVu.webp",
-      "https://robotics.tokyo/_astro/torobo2_in_mujoco.D6rfauV0_Z1pqVTP.webp"
+      "https://robotics.tokyo/_astro/torobo2_in_mujoco.D6rfauV0_Z1pqVTP.webp",
+      "https://robotics.tokyo/_astro/torobo2.z_s_-U0O_Z1oElgF.webp"
     ],
     "videos": [
       "B_I2k7MZEKg",
