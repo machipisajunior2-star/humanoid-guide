@@ -30,8 +30,8 @@
 .embla__slide__number {
   border: 0.2rem solid var(--detail-medium-contrast);
   border-radius: 1.8rem;
-  font-size: 4rem;
-  font-weight: 600;
+  font-size: 1.7rem;
+  font-weight: 100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,7 +141,7 @@
 }
 
 .embla__dot:after {
-  /* border: 0.2rem solid white; */
+  border: 0.2rem solid;
   opacity: 0;
 }
 
@@ -173,7 +173,14 @@
 } */
 }
 
-
+@media only screen and (max-width: 550px) {
+.embla__viewport {
+    height: 55vh;
+}
+.embla_slide_number {
+    height: 110%;
+}
+}
 
 @media only screen and (max-width: 450px) {
 
@@ -216,5 +223,11 @@
 }
 .embla__buttons {
     gap: 0rem;
+}
+}
+
+@media only screen and (max-width: 250px) {
+.best_for_scroller_container .embla__slide__number {
+  font-size: 0.8rem;
 }
 }

@@ -4,10 +4,10 @@ import { useSelector } from "react-redux";
 import {
   BsSearch,
 } from "react-icons/bs";
-import Radium from "radium";
+import HumanoidComponent from "../components/HumanoidComponent";
 import data from "../data/data.json";
+import { filterByEitherProperty } from "../utils";
 import "../styling/search.css"
-import { filterByEitherProperty, colorPicker } from "../utils"
 
 function Search() {
   const ref = useRef(null)
@@ -19,93 +19,13 @@ function Search() {
     const initialQuery = params.get("q") || "";
     const [query, setQuery] = useState(initialQuery);
     const [searchData, setSearchData] = useState(filterByEitherProperty(data, "name", "useType", query));
-    const [isHumanoidActive, setIsHumanoidActive] = useState("");
 
-
-   function createArticle(data, i) {
-        return (
-          <article
-            className="humanoid_teaser"
-            onMouseEnter={() => {
-              setIsHumanoidActive(data.name);
-            }}
-            onMouseLeave={(e) => {
-              e.stopPropagation();
-              setIsHumanoidActive("");
-            }}
-            onClick={(e) => {
-              if (
-                e.target.className !== "category-button-name" &&
-                e.target.className !== "category-button"
-              )
-                navigate(`/product/${data.slag}`);
-            }}
-            key={`humanoid_teaser_${i}`}
-          >
-            <div
-              className="teaser_content"
-              key={`humanoid_content_all${i}`}
-              style={{
-                ":active": {
-                  outline: `2px solid ${colorPicker(data.useType.toLowerCase())}`,
-                  borderRadius: "25px",
-                },
-              }}
-            >
-              <div className="teaser_image_container">
-                <img src={data.image[0]} alt={data.name}></img>
-              </div>
-              <div className="teaser_details_container">
-                <div className="humanoid_name_container">
-                  <b
-                    key={`all_humanoid_container${i}`}
-                    style={{
-                      color:
-                        isHumanoidActive === data.name
-                          ? colorPicker(data.useType.toLowerCase())
-                          : "",
-                      fontSize: "2em",
-                    }}
-                  >
-                    {isHumanoidActive === data.name ? "\u2022" : "\u25CB"}
-                  </b>
-                  <h2>{data.name}</h2>
-                </div>
-                <button
-                  onClick={() =>
-                    navigate(`/category/${data.useType.toLowerCase()}`)
-                  }
-                  key={`humanoid-button-all${i}`}
-                  className="category-button"
-                  style={{
-                    border: `1px solid ${colorState.text}`,
-                    ":hover": {
-                      background: colorPicker(data.useType.toLowerCase()),
-                      border: "transparent",
-                    },
-                  }}
-                >
-                  <span
-                    className="category-button-name"
-                    style={{
-                      color: colorState.text,
-                    }}
-                  >
-                    {data.useType}
-                  </span>
-                </button>
-              </div>
-            </div>
-          </article>
-        );
-   }
-
-  const style = {
+  const css = ({
     backgroundColor: `${colorState.text === "#000000" ? "#CFCFCA" : "#404040"}`,
     ":focus": {
       border: `2px solid ${categoryColorState.color ? categoryColorState.color : "#FF4C00"}`,
     },
-  };
+  });
   useEffect(() => {
     ref.current.addEventListener("search", (e) => clearResults(e));
     function clearResults(e) {
@@ -123,7 +43,7 @@ function Search() {
                 navigate(`/search?q=${e.target[0].value}`);
               }}
             >
-              <label style={style}>
+              <label style={css}>
                 <BsSearch
                   size={window.innerWidth < 600 ? "0.9em" : "1.5375em"}
                   color={`${colorState.text === "#000000" ? "#262626" : "#d9d9d9"}`}
@@ -156,7 +76,7 @@ function Search() {
           </div>
           <div className="data_container">
             {searchData.length > 0 ? (
-              searchData.map((humanoid, i) => createArticle(humanoid, i))
+              searchData.map((humanoid, i) => <HumanoidComponent data={humanoid} i={i} />)
             ) : (
               <div className="suggestions_conatiner">
                 <p>
@@ -267,4 +187,4 @@ function Search() {
     );
 }
 
-export default Radium(Search)
+export default Search

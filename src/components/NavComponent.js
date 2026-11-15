@@ -11,7 +11,6 @@ import {
 } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import Zoom from "react-reveal/Zoom";
-import Radium from "radium";
 import { setColor } from "../redux/themeColor/themeColorAction";
 import { setCategoryColor } from "../redux/categoryColor/categoryColorAction";
 import { setNavigationColor } from "../redux/navigationColor/navigationColorAction";
@@ -260,12 +259,12 @@ function NavComponent() {
   const homeClass = (path) =>
     `${location.pathname === path ? "home_heading" : ""}`;
 
-  const style = {
+  const style = css({
     backgroundColor: `${colorState.text === "#000000" ? "#CFCFCA" : "#404040"}`,
     ":focus": {
       border: `2px solid ${categoryColorState.color ? categoryColorState.color : "#FF4C00"}`,
     },
-  };
+  });
 
   if (location.pathname === "/404") {
     return null;
@@ -605,4 +604,4 @@ function NavComponent() {
   );
 }
 
-export default Radium(NavComponent);
+export default NavComponent;

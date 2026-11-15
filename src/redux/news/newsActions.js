@@ -23,15 +23,15 @@ export const fetchNewsFailure = (error) => {
   };
 };
 
-export const fetchNews = () => {
+export const fetchNews = (keyword, amount) => {
   return (dispatch) => {
     dispatch(fetchNewsRequest());
     axios
       .get("https://api.currentsapi.services/v1/search", {
         params: {
           apiKey: "xWNpiP7C8U-omRRh5D9r5ch-hyLrokkL-g50H8KFnKNeVraQ",
-          keywords: "Humanoid Robotics",
-          page_size: "20",
+          keywords: keyword,
+          page_size: amount,
           language: "en",
         },
       })

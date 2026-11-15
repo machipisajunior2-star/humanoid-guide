@@ -28,7 +28,7 @@ const EmblaCarousel = (props) => {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((index, i) => (
-            <div className="embla__slide" key={index}>
+            <div className="embla__slide" key={`${index}_${i}`}>
               <div className="embla__slide__number">
                 <img
                   className="embla_humanoid_image"
@@ -56,7 +56,7 @@ const EmblaCarousel = (props) => {
                 index === selectedIndex ? " embla__dot--selected" : "",
               )}
               css={css({
-                "&:after": { border: `0.2rem solid ${props.color}` },
+                "&:after": { borderColor: props.color, backgroundColor: props.color },
               })}
             />
           ))}
