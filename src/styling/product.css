@@ -78,11 +78,155 @@
   }
 }
 
+.best_for_section_container {
+    border-left: 1px solid #404040;
+    padding-left: 15px;
+}
+
+.best-for_details_container {
+    display: inline-flex;
+}
+
+.best_for_section_container .embla {
+    width: 100%;
+}
+
+.best_for_scroller_container .embla__slide__number {
+    height: 45%;
+}
+
+.best_for_scroller_container .embla__button {
+  /* transform: rotate(0deg); */
+}
+
+.best_for_scroller_container .embla__controls {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+.best_for_scroller_container {
+    width: 40%;
+}
+
+.best_for_images {
+    width: 60%;
+    border-left: 1px solid #404040;
+    padding-left: 15px;
+}
+
+.best_for_images .video_thumbnail {
+    max-height: max-content;
+    margin-bottom: 3vh;
+}
+
+.faq_section_container {
+    display: inline-flex;
+    margin-top: 5vh;
+}
+
+.faq_details_container {
+    width: 40%;
+    border-left: 1px solid #404040;
+    padding: 0 15px 0 15px;
+}
+
+.faq_images_container {
+    display: grid;
+    gap: 5vh;
+    width: 60%;
+    border-left: 1px solid #404040;
+    padding: 0 15px 0 15px;
+}
+
+.question {
+    color: #8C8C8C;
+    font-size: small;
+}
+
+.limitations_container ul {
+    display: grid;
+    margin: 0;
+    padding: 0 0 0 20px;
+    gap: 15px;
+}
+
+.limitations_container h4 {
+    margin-top: 5vh;
+}
+
+.specs_section_container {
+    border-left: 1px solid #404040;
+    padding: 0 15px 0 15px;
+}
+
+.pillar_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    word-wrap: anywhere;
+}
+
+.pillar_container div:not(:first-child) {
+    border-left: 1px solid #404040;
+    padding: 0 15px 0 15px;
+}
+
+.pillar_container div:first-child {
+    padding-right: 15px;
+}
+
+.pillar_container div span:not(.manufacturer_link span) {
+    color: #8C8C8C;
+    font-size: smaller;
+}
+
+.pillar_container div p {
+  margin-top: 5px;
+}
+
+
+.specs_first_pillar {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.specs_first_pillar .manufacturer_link {
+    display: block;
+    margin-bottom: 5vh;
+}
+
+.specs_second_pillar {
+    display: block;
+}
+
+.specs_second_pillar p {
+    font-size: xx-large;
+}
+
+.specs_third_pillar {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.specs_fourth_pillar {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
 
 @media only screen and (max-width: 1100px) {
     .product_details {
         width: 40%;
     }
+    .pillar_container {
+    grid-template-columns: repeat(2, 1fr);
+}
+.specs_third_pillar {
+    border-left: none !important;
+    padding: 0 15px 0 0 !important;
+}
 }
 
 
@@ -94,6 +238,23 @@
 .product_details_container {
     display: block;
 }
+
+.faq_section_container {
+    display: block;
+}
+
+.faq_details_container {
+    width: 100%;
+    border-left: none;
+    padding: 0;
+}
+
+.faq_images_container {
+    margin-top: 5vh;
+    width: 100%;
+    border-left: none;
+    padding: 0;
+}
     .product_details {
         width: 100%;
         margin: 0;
@@ -103,17 +264,61 @@
 .product_name {
        font-size: 38px;
     }
+
+    .best_for_section_container {
+    padding-left: 0;
+}
+    
+.best_for_section_container .embla {
+    --slide-size: 67%;
+}
+
+.best-for_details_container {
+    display: block;
+}
+.best_for_section_container {
+    border-left: none;
+}
+.best_for_scroller_container {
+    width: 100%;
+}
+
+.best_for_images {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+}
+
+.best_for_scroller_container .embla__slide__number {
+    height: 35%;
+}
+
+.best_for_scroller_container .embla__viewport {
+    height: 40vh;
+}
+}
+
+
+@media only screen and (max-width: 600px) {
+    .specs_section_container {
+    border-left: none;
+    padding: 0;
+}
+    .pillar_container {
+    grid-template-columns: repeat(1, 100%);
+}
+.pillar_container div:not(:first-child) {
+    border-left: none;
+    padding: 0;
+}
+.specs_second_pillar p {
+    font-size: x-large;
+}
 }
 
 @media only screen and (max-width: 550px) {
     .product_wrapper {
     margin: 0 16px 0 16px;
-}
-.embla__viewport {
-    height: 55vh;
-}
-.embla_slide_number {
-    height: 110%;
 }
 }
 
