@@ -286,9 +286,7 @@ display: inline-flex;
     .navigation-con ul {
         display: block;
         position: fixed;
-        padding: 10px;
-        padding-right: 12px;
-        padding-left: 12px;
+        padding: 12px 12px 0 12px;
         top: 40px;
         right: auto;
         border: 1px solid;
