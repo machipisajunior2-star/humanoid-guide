@@ -1,6 +1,27 @@
 import { Observable } from "rxjs";
 import categoryColors from "./data/category-color.json";
 
+export function removeDuplicatesByProperty(arr, prop) {
+  if (!Array.isArray(arr)) {
+    throw new TypeError("First argument must be an array");
+  }
+  if (typeof prop !== "string") {
+    throw new TypeError("Property name must be a string");
+  }
+
+  const seen = new Set();
+  return arr.filter((item) => {
+    if (item === null || typeof item !== "object") return false;
+
+    const value = item[prop];
+    if (seen.has(value)) {
+      return false;
+    }
+    seen.add(value);
+    return true;
+  });
+}
+
 export function getVideoData$(ytId) {
   return new Observable((observer) => {
     let embed = document.createElement("iframe");
@@ -19,25 +40,18 @@ export function getVideoData$(ytId) {
       embed.contentWindow.postMessage(message, "https://www.youtube.com");
     };
     function parseData(e) {
-      console.log(e.data)
         const { event, id, info } = JSON.parse(e?.data);
-        // console.log(JSON.parse(e.data))
         if (event === "initialDelivery" && id === 99)
           observer.next(info.videoData);
     }
-    document.body.appendChild(embed); // load iframe
-    window.addEventListener("message", parseData); // add Api listener for initialDelivery
+    document.body.appendChild(embed);
+    window.addEventListener("message", parseData);
     return function cleanup() {
       window.removeEventListener("message", parseData);
       document.body.removeChild(embed);
     };
   });
 }
-// export async function getVideoDataFromUrl(url) {
-//   const videoId = parseYoutubeUrl(url);
-//   if (!videoId) return false;
-//   let videoData = await firstValueFrom(getVideoData$(videoId)); // await video data
-// }
 
 export function parseYoutubeUrl(url) {
   var p =
