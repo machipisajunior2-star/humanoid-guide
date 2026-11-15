@@ -1,114 +1,162 @@
-    import categoryColors from "./data/category-color.json";
+import { Observable } from "rxjs";
+import categoryColors from "./data/category-color.json";
 
-    export function colorPicker(category) {
-      const colorData = categoryColors.filter(
-        (data) => data.category === category,
-      );
-      return colorData[0].color;
+export function getVideoData$(ytId) {
+  return new Observable((observer) => {
+    let embed = document.createElement("iframe");
+    embed.style.display = "none";
+    embed.setAttribute(
+      "src",
+      `https://www.youtube.com/embed/${ytId}?enablejsapi=1&widgetid=99`,
+    );
+    embed.cssText = "position: absolute; display: hidden";
+    embed.onload = function () {
+      var message = JSON.stringify({
+        event: "listening",
+        id: 99,
+        channel: "widget",
+      });
+      embed.contentWindow.postMessage(message, "https://www.youtube.com");
+    };
+    function parseData(e) {
+      console.log(e.data)
+        const { event, id, info } = JSON.parse(e?.data);
+        // console.log(JSON.parse(e.data))
+        if (event === "initialDelivery" && id === 99)
+          observer.next(info.videoData);
     }
+    document.body.appendChild(embed); // load iframe
+    window.addEventListener("message", parseData); // add Api listener for initialDelivery
+    return function cleanup() {
+      window.removeEventListener("message", parseData);
+      document.body.removeChild(embed);
+    };
+  });
+}
+// export async function getVideoDataFromUrl(url) {
+//   const videoId = parseYoutubeUrl(url);
+//   if (!videoId) return false;
+//   let videoData = await firstValueFrom(getVideoData$(videoId)); // await video data
+// }
 
-    export function filterByEitherProperty(arr, prop1, prop2, targetValue) {
-      if (!Array.isArray(arr)) {
-        throw new TypeError("First argument must be an array");
+export function parseYoutubeUrl(url) {
+  var p =
+    /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+  let urlMatch = url.match(p);
+  if (urlMatch) return urlMatch[1];
+  return false;
+}
+
+export function colorPicker(category) {
+  const colorData = categoryColors.filter((data) => data.category === category);
+  return colorData[0].color;
+}
+
+export function filterByEitherProperty(arr, prop1, prop2, targetValue) {
+  if (!Array.isArray(arr)) {
+    throw new TypeError("First argument must be an array");
+  }
+
+  return arr.filter((obj) => {
+    if (typeof obj !== "object" || obj === null) return false;
+
+    const val1 = obj[prop1];
+    const val2 = obj[prop2];
+
+    return (
+      val1.toLowerCase().includes(targetValue.toLowerCase()) ||
+      val2.toLowerCase() === targetValue.toLowerCase()
+    );
+  });
+}
+
+export function configeAnimation(c, c2, canvas1, canvas2, themeColor) {
+  function resizeCanvas() {
+    canvas1.width = window.innerWidth / 2;
+    canvas1.height = window.innerHeight / 3;
+    canvas2.width = window.innerWidth / 2;
+    canvas2.height = window.innerHeight / 3;
+  }
+
+  resizeCanvas();
+
+  window.addEventListener("resize", function () {
+    resizeCanvas();
+  });
+
+  window.addEventListener("orientationchange", function () {
+    resizeCanvas();
+  });
+
+  let cods = [];
+  const num = ["0", "1"];
+  for (let i = 0; i < 29; i++) {
+    num.push(" ");
+  }
+
+  function Cod(num) {
+    this.y = 0;
+    this.x = 5;
+    this.space = 9;
+    this.num = num;
+    this.color = themeColor;
+
+    this.update = function (i) {
+      if (this.y >= canvas1.height || this.y >= canvas2.height) {
+        cods.splice(i, 1);
+      } else {
+        this.draw();
       }
-    
-      return arr.filter((obj) => {
-        if (typeof obj !== "object" || obj === null) return false;
-    
-        const val1 = obj[prop1];
-        const val2 = obj[prop2];
-    
-        return val1.toLowerCase().includes(targetValue.toLowerCase()) || val2.toLowerCase() === targetValue.toLowerCase();
+    };
+    this.draw = function () {
+      this.x = 5;
+      this.num.forEach((num) => {
+        c.fillStyle = this.color.text === "#000000" ? "black" : "#FF4C00";
+        c.fillText(num, this.x, this.y + this.space);
+        c.font = "normal 9px DOTMATRI";
+        c2.fillStyle = this.color.text === "#000000" ? "black" : "#FF4C00";
+        c2.fillText(num, this.x, this.y + this.space);
+        c2.font = "normal 9px DOTMATRI";
+        this.x += 5;
       });
-    }
+      this.y = this.y + this.space;
+    };
+  }
 
-    export function configeAnimation(c, c2, canvas1, canvas2, themeColor) {
-      function resizeCanvas() {
-        canvas1.width = window.innerWidth / 2;
-        canvas1.height = window.innerHeight / 3;
-        canvas2.width = window.innerWidth / 2;
-        canvas2.height = window.innerHeight / 3;
-      }
-
-      resizeCanvas();
-
-      window.addEventListener("resize", function () {
-        resizeCanvas();
-      });
-
-      window.addEventListener("orientationchange", function () {
-        resizeCanvas();
-      });
-
-      let cods = [];
-      const num = ["0", "1"];
-      for (let i = 0; i < 29; i++) {
-        num.push(" ");
-      }
-
-      function Cod(num) {
-        this.y = 0;
-        this.x = 5;
-        this.space = 9;
-        this.num = num;
-        this.color = themeColor;
-
-        this.update = function (i) {
-          if (this.y >= canvas1.height || this.y >= canvas2.height) {
-            cods.splice(i, 1);
-          } else {
-            this.draw();
-          }
-        };
-        this.draw = function () {
-          this.x = 5;
-          this.num.forEach((num) => {
-            c.fillStyle = this.color.text === "#000000" ? "black" : "#FF4C00";
-            c.fillText(num, this.x, this.y + this.space);
-            c.font = "normal 9px DOTMATRI";
-            c2.fillStyle = this.color.text === "#000000" ? "black" : "#FF4C00";
-            c2.fillText(num, this.x, this.y + this.space);
-            c2.font = "normal 9px DOTMATRI";    
-            this.x += 5;
-          });
-          this.y = this.y + this.space;
-        };
-      }
-
-      function createCod() {
-        let numArr = [];
-        for (let i = 0; i < canvas1.width / 5; i++) {
-          const digit = num[Math.round(Math.random() * 30)];
-          if (cods.length !== 0) {
-            if (cods[cods.length - 1].num[i] !== " " && digit !== " ") {
-              numArr.push(digit);
-            } else if (cods[cods.length - 1].num[i] === " " && digit === " ") {
-              numArr.push(" ");
-            } else if (cods[cods.length - 1].num[i] === " " && digit !== " ") {
-              numArr.push(digit);
-            } else if (cods[cods.length - 1].num[i] !== " " && digit === " ") {
-              numArr.push(num[Math.round(Math.random())]);
-            }
-          }
-
-          if (cods.length === 0) numArr.push(digit);
+  function createCod() {
+    let numArr = [];
+    for (let i = 0; i < canvas1.width / 5; i++) {
+      const digit = num[Math.round(Math.random() * 30)];
+      if (cods.length !== 0) {
+        if (cods[cods.length - 1].num[i] !== " " && digit !== " ") {
+          numArr.push(digit);
+        } else if (cods[cods.length - 1].num[i] === " " && digit === " ") {
+          numArr.push(" ");
+        } else if (cods[cods.length - 1].num[i] === " " && digit !== " ") {
+          numArr.push(digit);
+        } else if (cods[cods.length - 1].num[i] !== " " && digit === " ") {
+          numArr.push(num[Math.round(Math.random())]);
         }
-        cods.push(new Cod(numArr));
       }
 
-      function animate() {
-        setTimeout(() => {
-          requestAnimationFrame(animate);
-        }, 60);
-        c.clearRect(0, 0, canvas1.width, canvas1.height);
-        c2.clearRect(0, 0, canvas2.width, canvas2.height);
-
-        createCod();
-
-        cods.forEach((cod, i) => {
-          cod.update(i);
-        });
-      }
-
-      animate();
+      if (cods.length === 0) numArr.push(digit);
     }
+    cods.push(new Cod(numArr));
+  }
+
+  function animate() {
+    setTimeout(() => {
+      requestAnimationFrame(animate);
+    }, 60);
+    c.clearRect(0, 0, canvas1.width, canvas1.height);
+    c2.clearRect(0, 0, canvas2.width, canvas2.height);
+
+    createCod();
+
+    cods.forEach((cod, i) => {
+      cod.update(i);
+    });
+  }
+
+  animate();
+}
