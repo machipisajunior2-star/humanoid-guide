@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import React, { useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchProduct } from "../redux/product/productActions";
 import humanoids from "../data/data.json";
@@ -17,13 +17,13 @@ export default function Product() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.product.product);
   const themeColorState = useSelector((state) => state.themeColor.colorPalette);
-  const humanoidImagesData = humanoids.filter(
+  const humanoidData = humanoids.filter(
     (humanoid) => humanoid.slag === productSlag,
   );
   console.log(data);
 
   const OPTIONS = { axis: "y" };
-  const SLIDES = humanoidImagesData[0].image;
+  const SLIDES = humanoidData[0].image;
   const currentDateObj = new Date(data.announcedAt);
   const year = currentDateObj.getFullYear();
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Product() {
             className="product_name"
             style={{ color: colorPicker(data.userType.toLowerCase()) }}
           >
-            {humanoidImagesData[0].name}
+            {humanoidData[0].name}
           </h1>
         </header>
         <div className="product_details_container">
@@ -101,19 +101,16 @@ export default function Product() {
             </div>
             <div className="deatils_container">
               <small>LOCOMOTION TYPE</small>
-                <p>
-                  {data.locomotionType}
-                </p>
+              <p>{data.locomotionType}</p>
             </div>
           </div>
         </div>
       </section>
-      <section className="humanoid_videos_secction">
-
-      </section>
-      {/* <h1>Product</h1>
-      <p>{data.name}</p>
-      <Videos /> */}
+      <Videos
+        video_id={humanoidData[0].videos}
+        color={colorPicker(data.userType.toLowerCase())}
+        theme={themeColorState}
+      />
     </main>
   );
 }

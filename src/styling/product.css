@@ -110,7 +110,10 @@
     margin: 0 16px 0 16px;
 }
 .embla__viewport {
-    height: 66vh;
+    height: 55vh;
+}
+.embla_slide_number {
+    height: 110%;
 }
 }
 
