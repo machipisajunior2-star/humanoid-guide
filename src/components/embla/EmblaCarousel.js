@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {
   NextButton,
@@ -12,9 +12,27 @@ import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 const EmblaCarousel = (props) => {
   const { slides, options } = props;
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
+  const [dotCount, setDotCount] = useState(0);
 
-  const { selectedIndex, scrollSnaps, onDotButtonClick } =
-    useDotButton(emblaApi);
+  const { selectedIndex } =
+      useDotButton(emblaApi);
+
+    const updateDotCount = useCallback(() => {
+        if (!emblaApi) return;
+        setDotCount(emblaApi.scrollSnapList().length);
+        emblaApi.scrollTo(0, true | false, "forward" | "backward");
+      }, [emblaApi]);
+
+    useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on('slidesChanged', updateDotCount);
+
+    updateDotCount();
+
+    return () => {
+      emblaApi.off('slidesChanged', updateDotCount);
+    };
+  }, [emblaApi, updateDotCount]);
 
   const {
     prevBtnDisabled,
@@ -48,15 +66,18 @@ const EmblaCarousel = (props) => {
         </div>
 
         <div className="embla__dots">
-          {scrollSnaps.map((_, index) => (
+          {Array.from({ length: dotCount }).map((_, index) => (
             <DotButton
               key={index}
-              onClick={() => onDotButtonClick(index)}
+              onClick={() => emblaApi && emblaApi.scrollTo(index)}
               className={"embla__dot".concat(
                 index === selectedIndex ? " embla__dot--selected" : "",
               )}
               css={css({
-                "&:after": { borderColor: props.color, backgroundColor: props.color },
+                "&:after": {
+                  borderColor: props.color,
+                  backgroundColor: props.color,
+                },
               })}
             />
           ))}

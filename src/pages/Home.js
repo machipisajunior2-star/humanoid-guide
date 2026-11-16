@@ -52,17 +52,17 @@ function Home() {
         </header>
         <div className="humanoids_container">
           <div className="first_stack">
-            <HumanoidComponent data={data[25]} i={25} />
+            <HumanoidComponent data={data[6]} i={6} />
           </div>
           <div className="second_stack">
-            <HumanoidComponent data={data[9]} i={9} />
+            <HumanoidComponent data={data[11]} i={11} />
             <HumanoidComponent data={data[3]} i={3} />
             <HumanoidComponent data={data[14]} i={14} />
           </div>
         </div>
       </section>
       <section className="second-feature-humanoid">
-        <FeautureHumanoid id={6} />
+        <FeautureHumanoid id={28} />
       </section>
       <section className="humanoids_section_container">
         <header className="section_heading_container">
@@ -77,12 +77,12 @@ function Home() {
               padding: "0 19px 0 0",
             }}
           >
-            <HumanoidComponent data={data[15]} i={15} />
+            <HumanoidComponent data={data[27]} i={27} />
           </div>
           <div className="second_stack">
-            <HumanoidComponent data={data[27]} i={27} />
+            <HumanoidComponent data={data[15]} i={15} />
             <HumanoidComponent data={data[4]} i={4} />
-            <HumanoidComponent data={data[11]} i={11} />
+            <HumanoidComponent data={data[9]} i={9} />
           </div>
         </div>
       </section>

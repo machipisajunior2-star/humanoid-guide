@@ -33,7 +33,7 @@ export default function HumanoidComponent(props) {
         css={css({
           ":active": {
             outline: `2px solid ${colorPicker(data.useType.toLowerCase())}`,
-            borderRadius: "25px",
+            borderRadius: "12.5px",
           },
         })}
       >

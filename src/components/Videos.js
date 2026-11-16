@@ -63,6 +63,11 @@ export default function Videos(props) {
 
   useEffect(() => {
     getVideoDataFromUrl(`https://www.youtube.com/embed/${video_id[0]}`);
+    setActiveThumbnailImage(thumbnail(video_id[0]));
+    setFocusVideo(video_id[0])
+    setActiveVideo("")
+    document.querySelector("#yt").style.display = "none";
+    playerRef.current.style.display = "flex";
   }, [video_id]);
 
   return (

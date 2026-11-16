@@ -259,12 +259,12 @@ function NavComponent() {
   const homeClass = (path) =>
     `${location.pathname === path ? "home_heading" : ""}`;
 
-  const style = css({
-    backgroundColor: `${colorState.text === "#000000" ? "#CFCFCA" : "#404040"}`,
-    ":focus": {
-      border: `2px solid ${categoryColorState.color ? categoryColorState.color : "#FF4C00"}`,
-    },
-  });
+  // const style = css({
+  //   backgroundColor: `${colorState.text === "#000000" ? "#CFCFCA" : "#404040"}`,
+  //   ":focus": {
+  //     border: `2px solid ${categoryColorState.color ? categoryColorState.color : "#FF4C00"}`,
+  //   },
+  // });
 
   if (location.pathname === "/404") {
     return null;
@@ -308,7 +308,14 @@ function NavComponent() {
                 navigate(`/search?q=${e.target[0].value}`);
               }}
             >
-              <label style={style}>
+              <label
+                css={css({
+                  backgroundColor: `${colorState.text === "#000000" ? "#CFCFCA" : "#404040"}`,
+                  "&:focus-within": {
+                    border: `2px solid ${categoryColorState.color ? categoryColorState.color : "#FF4C00"}`,
+                  },
+                })}
+              >
                 <BsSearch
                   size={window.innerWidth < 600 ? "0.9em" : "0.9375em"}
                   color={`${colorState.text === "#000000" ? "#262626" : "#d9d9d9"}`}
@@ -406,7 +413,7 @@ function NavComponent() {
                 <ul
                   style={{
                     background: `${colorState.background}`,
-                    borderRadius: "none !important"
+                    borderRadius: "none !important",
                   }}
                   className="categories-list"
                 >
