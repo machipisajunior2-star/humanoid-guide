@@ -54,7 +54,7 @@ padding: 10px 0 10px 0;
     color: inherit;
     gap: 3vw;
     padding: 10px;
-    border-radius: 25px;
+    border-radius: 12.5px;
     width: stretch;
 }
 
@@ -82,7 +82,7 @@ padding: 10px 0 10px 0;
 .news_link_container a img {
     width: inherit;
     height: 30vh;
-   border-radius: 25px;
+   border-radius: 12.5px;
 }
 
 .news_link_container:first-child  a img {

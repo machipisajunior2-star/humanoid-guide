@@ -22,7 +22,7 @@
 .youtube_iframe {
   width: 100%;
   min-height: 95vh;
-  border-radius: 25px;
+  border-radius: 12.5px;
 }
 
 .more_videos_label {
@@ -41,7 +41,7 @@
 .video_thumbnail {
     width: 100%;
 height: auto;
-    border-radius: 25px;
+    border-radius: 12.5px;
   max-height: 95vh;
 }
 
