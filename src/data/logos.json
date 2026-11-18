@@ -1,0 +1,117 @@
+[
+  {
+    "company_name": "1X Technologies",
+    "logo_url": "https://www.1x.tech/icons/1xLogo.svg",
+    "company_url": "https://www.1x.tech"
+  },
+  {
+    "company_name": "AgiBot",
+    "logo_url": "https://cdn.brandfetch.io/idx0ecjkQP/w/243/h/58/theme/light/logo.png?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url":  "https://www.agibot.com"
+  },
+  {
+    "company_name": "CASBOT S1",
+    "logo_url": "https://www.casbot.tech/uploads/1791425882578-vksxweg3np.png",
+    "company_url":  "https://www.casbot.tech"
+},
+  {
+    "company_name": "CASBOT W1",
+    "logo_url": "https://www.casbot.tech/images/index/p-title-w1.png",
+    "company_url":  "https://www.casbot.tech" 
+},
+  {
+    "company_name": "DOBOT Robotics",
+    "logo_url": "https://cdn.brandfetch.io/idjMU147xK/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url":  "https://www.dobot-robots.com"
+},
+  {
+    "company_name": "DexForce",
+    "logo_url": "https://cdn.brandfetch.io/idnfvZfgRn/w/820/h/258/theme/light/logo.png?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.dexforce.com"
+},
+  {
+    "company_name": "Figure AI",
+    "logo_url": "https://cdn.brandfetch.io/idwI63-U6U/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.figure.ai"
+},
+  {
+    "company_name": "Galbot",
+    "logo_url": "https://cdn.brandfetch.io/idWvFRo2WK/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.galbot.com"
+},
+  {
+    "company_name": "SKL Robotics",
+    "logo_url": "https://cdn.brandfetch.io/idM3LCbkvT/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://thehumanoid.ai"
+},
+  {
+    "company_name": "Weave Robotics",
+    "logo_url": "https://cdn.brandfetch.io/idYQSaW4UE/w/180/h/180/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.weaverobotics.com"
+},
+  {
+    "company_name": "LimX Dynamics",
+    "logo_url": "https://gbaike-image.cdn.bcebos.com/7e3e6709c93d70cf3bc71691e581c600baa1cc11fda0/7e3e6709c93d70cf3bc71691e581c600baa1cc11fda0_16_9?x-bce-process=image/format,f_auto",
+    "company_url": "https://www.limxdynamics.com"
+},
+  {
+    "company_name": "Muks Robotics",
+    "logo_url": "https://cdn.brandfetch.io/id1skO-z4Y/w/337/h/337/theme/light/logo.png?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://muksrobotics.com"
+},
+  {
+    "company_name": "Pudu Robotics",
+    "logo_url": "https://cdn.brandfetch.io/id1AhyTp4E/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.pudurobotics.com" 
+},
+  {
+    "company_name": "PsiBot",
+    "logo_url": "https://cdn.brandfetch.io/idjKlu3EHe/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.psibot.ai" 
+},
+  {
+    "company_name": "Rainbow Robotics",
+    "logo_url": "https://cdn.brandfetch.io/idaVQ_WMxu/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://rainbow-robotics.com"
+},
+  {
+    "company_name": "Fauna Robotics",
+    "logo_url": "https://cdn.brandfetch.io/idE0y8hLBw/w/256/h/256/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://faunarobotics.com"
+},
+  {
+    "company_name": "WorkFar",
+    "logo_url": "https://cdn.brandfetch.io/idecHjY13Q/w/2500/h/833/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.workfar.com"
+},
+  {
+    "company_name": "PAL Robotics",
+    "logo_url": "https://cdn.brandfetch.io/idneJrAD9g/w/219/h/59/theme/dark/logo.png?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://pal-robotics.com"
+},
+  {
+    "company_name": "Tokyo Robotics",
+    "logo_url": "https://cdn.prod.website-files.com/68835962f272eff6d5e9270e/6926b0958b7c1e2a7881a179_Tokyo-Robotics_Logo.svg",
+    "company_url": "https://www.robotics.tokyo"
+},
+  {
+    "company_name": "Unitree Robotics",
+    "logo_url": "https://cdn.brandfetch.io/idVm7L6xsv/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.unitree.com/g1"
+},
+  {
+    "company_name": "Astribot",
+    "logo_url": "https://cdn.brandfetch.io/idKYEp3YRI/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://astribot.com"
+},
+  {
+    "company_name": "Booster Robotics",
+    "logo_url": "https://cdn.brandfetch.io/idpcr0yeDT/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.booster.tech" 
+},
+  {
+    "company_name": "Agility Robotics",
+    "logo_url": "https://cdn.brandfetch.io/id_Gf7LN71/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+    "company_url": "https://www.agilityrobotics.com"
+}
+]
