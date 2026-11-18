@@ -259,13 +259,6 @@ function NavComponent() {
   const homeClass = (path) =>
     `${location.pathname === path ? "home_heading" : ""}`;
 
-  // const style = css({
-  //   backgroundColor: `${colorState.text === "#000000" ? "#CFCFCA" : "#404040"}`,
-  //   ":focus": {
-  //     border: `2px solid ${categoryColorState.color ? categoryColorState.color : "#FF4C00"}`,
-  //   },
-  // });
-
   if (location.pathname === "/404") {
     return null;
   }

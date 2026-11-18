@@ -417,6 +417,10 @@ gap: 10px;
 .related_news_container .news_details_container header h1 {
     font-size: larger !important;
 }
+.more_images_section_container {
+    border-left: none;
+    padding: 0;
+}
 }
 
 

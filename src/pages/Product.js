@@ -205,7 +205,9 @@ export default function Product() {
         {humanoidData[0].image.length > 4 ? (
           <>
             <header>
-              <h3>MORE IMAGES</h3>
+              <h3 style={{ color: colorPicker(data.userType.toLowerCase()) }}>
+                MORE IMAGES
+              </h3>
             </header>
             <div className="more_images_container">
               <img
@@ -380,7 +382,7 @@ export default function Product() {
       <section className="related_content">
         <div className="related_news_container">
           <header>
-            <h3 color={{ color: colorPicker(data.userType.toLowerCase()) }}>
+            <h3 style={{ color: colorPicker(data.userType.toLowerCase()) }}>
               RELATED NEWS
             </h3>
           </header>
@@ -404,7 +406,7 @@ export default function Product() {
         </div>
         <div className="related_humanoids_container">
           <header>
-            <h3 color={{ color: colorPicker(data.userType.toLowerCase()) }}>
+            <h3 style={{ color: colorPicker(data.userType.toLowerCase()) }}>
               RELATED HUMANOIDS
             </h3>
           </header>
