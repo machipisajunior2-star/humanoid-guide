@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Product from "./pages/Product";
-import Support from "./pages/Support";
+import Contact from "./pages/Contact";
 import Humanoids from "./pages/Humanoids";
 import Category from "./pages/Category";
 import Search from "./pages/Search";
@@ -29,7 +29,7 @@ function App() {
     { path: "learn/:article", element: <Article /> },
     { path: "news", element: <News /> },
     { path: "about", element: <About /> },
-    { path: "support", element: <Support /> },
+    { path: "contact", element: <Contact /> },
     { path: "/404", element: <Error404 /> },
     { path: "*", element: <Navigate to="/404" /> },
   ]);
