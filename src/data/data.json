@@ -4,10 +4,10 @@
     "slag": "1x-neo",
     "useType": "CONSUMER",
     "image": [
-      "https://www.1x.tech/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fqka6yvsc%2Fproduction%2Fc1a93f30beb4c513da832bcd886db94419e06be2-4096x2731.webp%3Fq%3D100%26fit%3Dmax%26auto%3Dformat&w=3840&q=100",
-      "https://www.presse-citron.net/app/uploads/2025/10/1x-tech-neo-robot.jpg",
-      "https://s.hdnux.com/photos/01/54/76/01/28565576/3/1920x0.jpg",
-      "https://cms.interestingengineering.com/wp-content/uploads/2024/08/Untitled-design-79-2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/1x-neo1.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/1x-tech-neo2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/1x-neo3.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/1x-neo4.webp",
       "https://www.1x.tech/_next/image?url=https:%2F%2Fcdn.sanity.io%2Fimages%2Fqka6yvsc%2Fproduction%2Ff8fe2d844edc62e4ab86f9613b281d93e21c0aaa-2048x1058.jpg%3Frect%3D281%2C0%2C1487%2C1058%26w%3D2024%26h%3D1440%26q%3D100%26fit%3Dmax%26auto%3Dformat&w=3840&q=100",
       "https://www.1x.tech/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fqka6yvsc%2Fproduction%2F8353aa0348b725209afd88990b7d51ca050176e2-4096x2730.jpg&w=750&q=90",
       "https://www.1x.tech/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fqka6yvsc%2Fproduction%2Ff195d31c59c24f31a4168efdf28526ea9a192ace-3351x2234.webp&w=750&q=90",
@@ -28,11 +28,11 @@
     "slag": "agibot-a2",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://www.image2url.com/r2/default/images/1795017443314-452fb5b6-391d-4935-a968-d09bcf9f8633.jpg",
-      "https://www.image2url.com/r2/default/images/1795017274443-1b8f5987-ad67-4de1-9323-38a5d5fdb4b7.png",
-      "https://store.agibot.com/cdn/shop/files/3_2d26b845-0a00-427e-9e4f-d9afb5f317fe.png?v=1766128167&width=2000",
-      "https://store.agibot.com/cdn/shop/files/5_3e15c3a2-e94e-424f-939c-ddd099081251.png?v=1766128146&width=1000",
-      "https://store.agibot.com/cdn/shop/files/A2_1d5a2ab2-55d7-436e-9815-e72ae6cf1d8f.png?v=1765521163&width=1000",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/agibot_a2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/agibot_2.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/agibot_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/agibot_a2_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/agibot_a2_5.webp",
       "https://tse3.mm.bing.net/th/id/OIP.IyCV5wLla4kH_HqtFQWn8wHaMF?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
     ],
     "videos": [
@@ -45,66 +45,15 @@
     "tagline": "AgiBot A2 is a bipedal robot with 40 degrees of freedom and a 15 kg rated payload."
   },
   {
-    "name": "CASBOT 02",
-    "slag": "casbot-02",
-    "useType": "PROFESSIONAL",
-    "image": [
-      "https://www.casbot.tech/images/02/02-3.png",
-      "https://www.casbot.tech/images/02/02-4.jpg",
-      "https://www.casbot.tech/images/02/02-6.jpg",
-      "https://www.casbot.tech/images/02/02-5.jpg",
-      "https://www.casbot.tech/images/02/mobile/slice_6.png"
-    ],
-    "videos": ["NNWmVmq5gs8", "sQLSAzqKGAk"],
-    "tagline": "CASBOT 02 is a bipedal robot with 37 degrees of freedom and a 3 kg rated payload."
-  },
-  {
-    "name": "CASBOT W1",
-    "slag": "casbot-w1",
-    "useType": "PROFESSIONAL",
-    "image": [
-      "https://www.casbot.tech/images/index/wuzhong.jpg",
-      "https://www.casbot.tech/images/scene/industry/industry_7.png",
-      "https://www.casbot.tech/images/scene/industry/industry_2.png",
-      "https://www.casbot.tech/uploads/1791425865780-herbryvfko.jpg",
-      "https://www.casbot.tech/images/w1/mobile/slice_1.png",
-      "https://www.casbot.tech/images/w1/mobile/slice_4.png",
-      "https://www.casbot.tech/images/w1/mobile/slice_5.png",
-      "https://www.casbot.tech/images/w1/mobile/slice_7.png"
-    ],
-    "videos": ["awgV-Ldc7h8", "Ew_g8VqFFG0"],
-    "tagline": "CASBOT W1 is a wheeled robot with 20 degrees of freedom and a 10 kg rated payload."
-  },
-  {
-    "name": "DOBOT ATOM",
-    "slag": "dobot-atom",
-    "useType": "PROFESSIONAL",
-    "image": [
-      "https://www.dobot-robots.com/media/upload/2025/07/atom/tab.jpg",
-      "https://www.dobot-robots.com/media/upload/2025/06/atom/Trainer-mo.png",
-      "https://eu.robotshop.com/cdn/shop/files/pp_4504779.webp?v=1777647432&width=1024",
-      "https://cdn.robotshop.com/media/d/dot/rb-dot-107/img/dobot-atom-max-research-humanoid-robot-3-panel-05.webp",
-      "https://cdn.robotshop.com/media/d/dot/rb-dot-107/img/dobot-atom-max-research-humanoid-robot-3-panel-02.webp"
-    ],
-    "videos": [
-      "CrDyoVR2dnk",
-      "lntCendiCzU",
-      "-xK5l0kPyTE",
-      "DW9Z_exdhLY",
-      "FUPmQPSBMgY"
-    ],
-    "tagline": "DOBOT ATOM is a bipedal robot for professional use in manufacturing."
-  },
-  {
     "name": "DexForce W1 Pro",
     "slag": "dexforce-w1-pro",
     "useType": "PROFESSIONAL",
     "image": [
       "https://www.image2url.com/r2/default/images/1795024950088-92a91f56-664d-4473-932a-71bd26a83fd8.webp",
-      "https://dexforce.com/w1/w1-frame/w1_00000.webp",
-      "https://www.worldrobotconference.com/profile/robot/download/2025/07/18/20250718152436000830_20250718152436A068.png",
-      "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/W1%20Pro%2001-MtYx5wUL.png",
-      "https://dexforce.com/w1/redesign/spec-core.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175279/dexforce_w1_pro_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175344/dexforce_w1_pro_2.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175395/dexforce_w1_pro_3.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175461/dexforce_w1_pro_4.png",
       "https://www.robotsj.cn/uploads/20250530/144d60fe2714a518decffe2c7608e24c.jpeg",
       "https://www.cenr.com.cn/UploadFiles/hz/2025/8/202508092103375089.jpg"
     ],
@@ -118,15 +67,66 @@
     "tagline": "DexForce W1 Pro is a wheeled robot with 40 degrees of freedom and 300 TOPS AI compute."
   },
   {
+    "name": "DOBOT ATOM",
+    "slag": "dobot-atom",
+    "useType": "PROFESSIONAL",
+    "image": [
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175083/dobot_atom_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795174843/dobot_atom_2.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175002/dobot_atom_3.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175146/dobot_atom_5.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795174776/dobot_atom_1.jpg"
+    ],
+    "videos": [
+      "CrDyoVR2dnk",
+      "lntCendiCzU",
+      "-xK5l0kPyTE",
+      "DW9Z_exdhLY",
+      "FUPmQPSBMgY"
+    ],
+    "tagline": "DOBOT ATOM is a bipedal robot for professional use in manufacturing."
+  },
+  {
+    "name": "CASBOT 02",
+    "slag": "casbot-02",
+    "useType": "PROFESSIONAL",
+    "image": [
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/casbot_02_1.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/casbot_02_2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/casbot_02_3.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/casbot_02_4.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/f_auto/q_auto/casbot_02_5.png"
+    ],
+    "videos": ["NNWmVmq5gs8", "sQLSAzqKGAk"],
+    "tagline": "CASBOT 02 is a bipedal robot with 37 degrees of freedom and a 3 kg rated payload."
+  },
+  {
+    "name": "CASBOT W1",
+    "slag": "casbot-w1",
+    "useType": "PROFESSIONAL",
+    "image": [
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795174428/casbot_w1_1.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795174486/casbot_w1_2.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795174529/casbot_w1_3.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795174631/casbot_w1_4.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795174702/casbot_w1_5.png",
+      "https://www.casbot.tech/images/w1/mobile/slice_4.png",
+      "https://www.casbot.tech/images/w1/mobile/slice_5.png",
+      "https://www.casbot.tech/images/w1/mobile/slice_7.png"
+    ],
+    "videos": ["awgV-Ldc7h8", "Ew_g8VqFFG0"],
+    "tagline": "CASBOT W1 is a wheeled robot with 20 degrees of freedom and a 10 kg rated payload."
+  },
+  {
     "name": "Figure 03",
     "slag": "figure-03",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://www.blessthisstuff.com/imagens/listagem/2025/grande/grande_figure-03-humanoid-robot.jpg",
-      "https://images.techeblog.com/wp-content/uploads/2025/10/09084131/figure-03-humanoid-robot-reveal.jpg",
-      "https://images.ctfassets.net/qx5k8y1u9drj/6rREWE2DjWe7W3AFbZYSyH/21889f6a8f17464410b45c9ae12b718a/human-form-module-figure-3-image-v3.png?fm=webp&w=3840&q=70",
-      "https://images.ctfassets.net/qx5k8y1u9drj/VVC0MrP2b4i0eC7jVaNyc/fb1b20a57c15495fc4ec0d37a7e8197c/extended-footer-background-v2.jpg?fm=webp&w=3840&q=70",
-      "https://d18e5vrcqydw4b.cloudfront.net/2025/10/xvjWEJYrNhg2Jvo97muHic-1.jpg"
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175530/figure_03_1.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175579/figure_03_2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175649/figure_03_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175692/figure_03_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175747/figure_03_5.jpg"
     ],
     "videos": [
       "IlG3X8zRI2I",
@@ -142,11 +142,11 @@
     "slag": "galbot-g1",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://oss-cn-beijing.galbot.com/online/portal/website/g1/feature-battery-endurance.webp",
-      "https://www.worldrobotconference.com/profile/robot/download/2025/07/04/e_20250704181549A836.jpg",
-      "https://oss-cn-beijing.galbot.com/online/portal/website/g1/feature-multi-scenario-adaptation.webp",
-      "https://oss-cn-beijing.galbot.com/online/portal/website/g1/feature-human-robot-collaboration.webp",
-      "https://res.cloudinary.com/db8jz0ojq/image/upload/v1769277707/robots/galbot-g1-by-galbot-robotics/ev9zwxpll3r85tlc3juq.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175813/galbot_g1_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175884/galbot_g1_2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175941/galbot_g1_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795175999/galbot_g1_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176059/galbot_g1_5.webp",
       "http://www.galbot.com/_nuxt/g1-spec-robot.BYUAn6RQ.jpg"
     ],
     "videos": [
@@ -163,11 +163,11 @@
     "slag": "galbot-s1",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://oss-cn-beijing.galbot.com/online/portal/website/s1/s1-capability-three-finger-gripper.webp",
-      "https://oss-cn-beijing.galbot.com/online/portal/website/s1/s1-capability-continuous-operation.webp",
-      "https://unibot.ru/upload/iblock/bf2/zuejjeh2ubzwxm0pwpswtuw5kdfrom05.png",
-      "https://oss-cn-beijing.galbot.com/online/portal/website/s1/s1-capability-flexible-operation.webp",
-      "https://oss-cn-beijing.galbot.com/online/portal/website/s1/s1-capability-auto-battery-swap.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176123/galbot_s1_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176174/galbot_s1_2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176219/galbot_s1_3.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176265/galbot_s1_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176315/galbot_s1_5.webp",
       "http://www.galbot.com/_nuxt/s1-spec-robot-v2.BSvgtlns.webp",
       "https://cnevpost.com/wp-content/uploads/2026/06/2026062412581669.jpg"
     ],
@@ -185,11 +185,11 @@
     "slag": "hmnd-01",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://res.cloudinary.com/db8jz0ojq/image/upload/v1764750715/robots/hmnd-01-alpha-bipedal-by-humanoid/vlwkd1ad7czs9unvsxqw.jpg",
-      "https://thehumanoid.ai/wp-content/themes/SKLTech/src/assets/images/redisign/RETOUCH-V1.png",
-      "https://thehumanoid.ai/wp-content/uploads/2025/09/Background-2.jpg",
-      "https://media.theresanaiforthat.com/robot-media/hmnd-01-alpha-bipedal-mwiw9w4.png",
-      "https://thehumanoid.ai/wp-content/themes/SKLTech/src/assets/images/redisign/product/Group%20147%20(3).png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176417/HMND_01_Alpha_Bipedal_1.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176523/HMND_01_Alpha_Bipedal_2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176601/HMND_01_Alpha_Bipedal_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176642/HMND_01_Alpha_Bipedal_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176737/HMND_01_Alpha_Bipedal_5.webp",
       "https://thehumanoid.ai/wp-content/themes/SKLTech/src/assets/images/redisign/product/bipedal/bipedal-slider/10-11.jpg",
       "https://thehumanoid.ai/wp-content/themes/SKLTech/src/assets/images/redisign/product/bipedal/Copy%20of%20Bipedal_Naked_Grey%201.png"
     ],
@@ -207,10 +207,10 @@
     "slag": "weave-isaac-1",
     "useType": "CONSUMER",
     "image": [
-      "https://www.weaverobotics.com/videos/posters/isaac-1/isaac1-tidyup.jpg",
-      "https://images.techeblog.com/wp-content/uploads/2026/07/02100832/weave-robotics-isaac-1-robot-launch.jpg",
-      "https://www.weaverobotics.com/videos/posters/isaac-1/isaac1-laundry.jpg",
-      "https://www.weaverobotics.com/videos/posters/isaac-1/isaac1-at-home.jpg"
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176832/Isaac_1_1.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176921/Isaac_1_2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795176978/Isaac_1_3.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177020/isaac_1_4.jpg"
     ],
     "videos": [
       "m7pZr90BQw4",
@@ -226,11 +226,11 @@
     "slag": "limx-luna",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://images.techeblog.com/wp-content/uploads/2026/05/30111833/limx-luna-humanoid-robot-2.jpg",
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/m_luna-3-2.png",
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/luna-11-2.png",
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/luna-11-3.png",
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/luna-11-4.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177095/limx_luna_1.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177150/limx_luna_2.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177203/limx_luna_3.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177250/limx_luna_4.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177296/limx_luna_5.png",
       "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/luna-banner.png",
       "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/luna-6-4.png",
       "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/m_luna-3-1.png",
@@ -250,13 +250,13 @@
     "slag": "limx-oli",
     "useType": "RESEARCH",
     "image": [
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/img2-2.webp",
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/oli-bg.webp",
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/img-1.webp",
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/img2-3.webp",
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/img-5.webp",
-      "https://api.robomercato.com/api/robots/media/robot_images/uploaded_LimX_Dynamics_Oli_hero_1771234318_b855751a.jpg",
-      "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/img-3.webp"
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177375/limx_oli_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177422/limx_oli_2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177468/limx_oli_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177510/limx_oli_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177563/limx_oli_5.webp",
+      "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/img-3.webp",
+      "https://api.robomercato.com/api/robots/media/robot_images/uploaded_LimX_Dynamics_Oli_hero_1771234318_b855751a.jpg"
     ],
     "videos": [
       "AsBL9xMPQ_E",
@@ -272,11 +272,11 @@
     "slag": "muks-spaceo-m1",
     "useType": "EDUCATION",
     "image": [
-      "https://framerusercontent.com/images/W6idlX4d5ryh27vMApsbNbdBJ8.png?width=1696&height=954",
-      "https://framerusercontent.com/images/ZgrPuxtxxnP5TA6bkJlu6YrznZ4.png?width=3375&height=3375",
-      "https://framerusercontent.com/images/aBndJaBolDVmnlKMqBppXJG2l8M.png?scale-down-to=2048&width=2177&height=2671",
-      "https://framerusercontent.com/images/rgS8mZwUTzylGYIz6Hsd3KCL7go.png?width=2560&height=1536",
-      "https://framerusercontent.com/images/Rlfjr9KVS11GTvl2Iae5Zdv4ws.png?width=2559&height=1536",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177696/Muks_Spaceo_M1_1.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177754/Muks_Spaceo_M1_2.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177793/Muks_Spaceo_M1_3.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177844/Muks_Spaceo_M1_4.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177889/Muks_Spaceo_M1_5.avif",
       "https://framerusercontent.com/images/EARfKaU7zCMPHhXUtsAsIQlq7ks.png?width=2562&height=1536",
       "https://framerusercontent.com/images/2DJz0XuY5NAEb3beQHYkZPruA.png?width=2560&height=1536"
     ],
@@ -294,11 +294,11 @@
     "slag": "pudu-d7",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://cdn.pudutech.com/S3_2ab36a93de.webp",
-      "https://cdn.pudutech.com/S10_1_EN_44cb72e704.webp",
-      "https://cdn.pudutech.com/S7_1_2ad95dadbc.webp",
-      "https://cdn.pudutech.com/S10_2_EN_4b68cedaa7.webp",
-      "https://cdn.pudutech.com/S12_906d45ef10.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177953/PUDU_D7_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795177997/PUDU_D7_2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178038/PUDU_D7_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178079/PUDU_D7_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178129/PUDU_D7_5.png",
       "https://www.startupselfie.net/wp-content/uploads/2024/09/Pudu-Robotics-PUDU-D7-Semi-Humanoid-Robot-1024x682.jpg",
       "https://gurutecno.com/wp-content/uploads/2026/06/PUDU-D7-4-1024x683.webp"
     ],
@@ -316,14 +316,14 @@
     "slag": "pudu-d9",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://cdn.pudutech.com/official-website/d9/section1_bg.webp",
-      "https://pudu-file-host.oss-cn-beijing.aliyuncs.com/official_website/D9%20Specification_2024-12-19_15%3A26%3A31.png",
-      "https://cdn.pudutech.com/official-website/d9/section6_3.webp",
-      "https://cdn.pudutech.com/official-website/d9/section6_1.webp",
-      "https://cdn.pudutech.com/official-website/d9/section4_front_hand.webp",
-      "https://bclj1gvgmsjtdkc5.public.blob.vercel-storage.com/robots/pudu-robotics-d9-1768494044707.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178197/PUDU_D9_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178249/PUDU_D9_2.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178295/PUDU_D9_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178338/PUDU_D9_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178390/PUDU_D9_5.webp",
       "https://cdn.pudutech.com/official-website/d9/section6_2.webp",
-      "https://cdn.pudutech.com/official-website/d9/d9.webp"
+      "https://cdn.pudutech.com/official-website/d9/d9.webp",
+      "https://bclj1gvgmsjtdkc5.public.blob.vercel-storage.com/robots/pudu-robotics-d9-1768494044707.png"
     ],
     "videos": [
       "gd5DdfJX_RM",
@@ -339,10 +339,10 @@
     "slag": "psibot-v1",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://news.cgtn.com/news/2025-07-18/WAIC-preview-Mahjong-delivery-robots-highlight-China-s-embodied-AI-1F6GJCcRdWE/img/ceba9998d5ef4fe0a9bcb4b68153e95d/ceba9998d5ef4fe0a9bcb4b68153e95d.png",
-      "https://humanoid.guide/wp-content/uploads/2026/04/screenshot-13.jpg",
-      "https://media.theresanaiforthat.com/robot-media/psi-v1-gxlw214.png",
-      "https://img.originofbots.com/db8jz0ojq/image/upload/v1778334675/robots/psi-v1-by-psibot/a0bba0axek1pkovjkx7n.webp"
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178468/Psi_V1_1.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178531/Psi_V1_2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178571/Psi_V1_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178617/Psi_V1_4.webp"
     ],
     "videos": [
       "N2Y0iemUgtA",
@@ -359,11 +359,11 @@
     "slag": "rainbow-rb-y1",
     "useType": "RESEARCH",
     "image": [
-      "https://rainbow-robotics.com/wp-content/uploads/2026/05/RB-Y1-03.jpg",
-      "https://rainbow-robotics.com/wp-content/uploads/2026/06/Artboard-1@4x-100-1-1024x562.jpg",
-      "https://rainbow-robotics.com/wp-content/uploads/rainbow-media-kit/2026-08/rby-rb-y1-front-1024x1024.png",
-      "https://rainbow-robotics.com/wp-content/uploads/2026/06/RBY-Series-%EA%B8%B0%EC%88%A0-%ED%95%98%EC%9D%B4%EB%9D%BC%EC%9D%B4%ED%8A%B8_1.png",
-      "https://rainbow-robotics.com/wp-content/uploads/2026/03/RB-Y1-tabs01.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178678/RB-Y1_1.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178724/RB-Y1_2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178780/RB-Y1_3.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178838/RB-Y1_4.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795178888/RB-Y1_5.png",
       "https://rainbow-robotics.com/wp-content/uploads/2026/07/rby-hero-scaled.png",
       "https://rainbow-robotics.com/wp-content/uploads/rainbow-media-kit/2026-08/rby-rb-y1-rear-1024x1024.png",
       "https://rainbow-robotics.com/wp-content/uploads/2026/05/RB-Y1-05.jpg",
@@ -383,11 +383,11 @@
     "slag": "fauna-sprout",
     "useType": "EDUCATION",
     "image": [
-      "https://img-cdn.inc.com/image/upload/f_webp,c_fit,w_1920,q_auto/vip/2026/01/sprout-fauna-robotics-inc.jpg",
-      "https://cdn.prod.website-files.com/6931911db0300aa6e7e3fc81/696e378cc7a067b6ce6ed901_image%201152-p-800.avif",
-      "https://mensgear.net/wp-content/uploads/2026/02/6968aafecf1b8eecbe19a291_Shot_2023.png",
-      "https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/696f743ad80d7b14c630c733_Shot%2035.avif",
-      "https://cdn.prod.website-files.com/6931911db0300aa6e7e3fc81/696e373e111530353e2d2af8_Sprout_Renderings_Rd4_6_MAIN_MINTCODE_W-FLAG.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179117/Sprout_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179155/Sprout_2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179198/Sprout_3.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179251/Sprout_4.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179308/Sprout_5.avif",
       "https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69776e1541b03771e6de16ab_productpage-locomotion-1-desktop.webp",
       "https://cdn.prod.website-files.com/6931911db0300aa6e7e3fc81/6969128e1dce2c2c9a13c195_Fader.avif",
       "https://lifestyle.inquirer.net/files/2026/01/Sprout-robot-1.jpg",
@@ -408,11 +408,11 @@
     "slag": "workfar-syntro",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://www.workfar.com/wp-content/uploads/2024/08/pr_pic4.png",
-      "https://www.workfar.com/wp-content/uploads/2025/07/SW-transBG.png",
-      "https://www.workfar.com/wp-content/uploads/2026/01/new_home_vision_no_shadow2.png",
-      "https://www.workfar.com/wp-content/uploads/2024/12/syntro_conference_h.png",
-      "https://www.workfar.com/wp-content/uploads/2026/01/store_6_3.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179380/Syntro_1.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179436/Syntro_2.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179487/Syntro_3.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179528/Syntro_4.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179577/Syntro_5.png",
       "https://www.workfar.com/wp-content/uploads/2026/01/VR_1_w_teleoperator2.png",
       "https://www.workfar.com/wp-content/uploads/2026/01/store_8.png",
       "https://www.workfar.com/wp-content/uploads/2026/01/new_store_second.png",
@@ -432,11 +432,11 @@
     "slag": "pal-talos",
     "useType": "RESEARCH",
     "image": [
-      "https://cdn.sanity.io/images/7p2whiua/production/840c5cbc83ffc3fab617d96ab6dd595f168fa5a9-1280x720.jpg?w=2000&auto=format",
-      "https://pal-robotics.com/wp-content/uploads/2024/04/TALOS-Robot-918x1024.webp",
-      "https://pal-robotics.com/wp-content/uploads/2024/04/TALOS-wbc-2-1536x997.webp",
-      "https://pal-robotics.com/wp-content/uploads/2022/06/TALOS-AI-in-service-robotics-730x487.webp",
-      "https://robots.ros.org/assets/img/robots/talos/TALOS-Wave.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179682/TALOS_1.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179730/TALOS_2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179781/TALOS_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179832/TALOS_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179878/TALOS_5.jpg",
       "https://pal-robotics.com/wp-content/uploads/2024/04/TALOS-features-torque-529x600.webp",
       "https://pal-robotics.com/wp-content/uploads/2023/12/01-BLOG-Talos-730x365.webp",
       "https://pal-robotics.com/wp-content/uploads/2024/04/TALOS_datasheets-rayos-342x600.webp",
@@ -456,11 +456,11 @@
     "slag": "tokyo-torobo",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://robotics.tokyo/_astro/torobo2_head_types.D5Nx_OQU_9xcvA.webp",
-      "https://robotics.tokyo/_astro/torobo2_size.DDOqPJz7_Z1ua5YY.webp",
-      "https://robotics.tokyo/_astro/torobo_banner.36Q2WhNb_20DvBk.webp",
-      "https://robotics.tokyo/_astro/torobo2_c2_size.EVmy85TQ_Z2ENgL.webp",
-      "https://robotics.tokyo/_astro/torobo_gripper.DZhCh_IQ_1sluIi.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179953/Torobo_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795179995/Torobo_2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795180043/Torobo_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795180105/Torobo_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795180156/Torobo_5.webp",
       "https://robotics.tokyo/_astro/torobo2_software.C0415sD3_Z2rCPVu.webp",
       "https://robotics.tokyo/_astro/torobo2_in_mujoco.D6rfauV0_Z1pqVTP.webp",
       "https://robotics.tokyo/_astro/torobo2.z_s_-U0O_Z1oElgF.webp"
@@ -479,11 +479,11 @@
     "slag": "unitree-g1",
     "useType": "RESEARCH",
     "image": [
-      "https://www.unitree.com/images/1b4845e7443b407b825edd8e9e6cf0ab_3840x2160.jpg?x-oss-process=image/format,webp",
-      "https://unifolm-cdn.unitree.com/forum/static/2026/2/24/ba51b6efc9c44b728bd205a7971ddd57_1920x2482.jpg",
-      "https://ares.shiftdelete.net/2025/01/insansi-robot-unitree-g1-tanitildi1.webp",
-      "https://www.unitree.com/images/a20ba1ebc0724df8a8135744dee8bbea_2740x1720.jpg",
-      "https://www.unitree.com/images/ee3fc23204054aa491c7950bfa399c1a_2740x1720.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795180244/Unitree_G1_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795180297/Unitree_G1_2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795180367/Unitree_G1_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795180810/Unitree_G1_4.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795180884/Unitree_G1_5.jpg",
       "https://www.unitree.com/images/a0e8042bd2df4c47af28ff371bb6b4fa_2740x1720.jpg",
       "https://www.unitree.com/images/f38cf975d6a242a489079fc2160f4a83_2740x1720.jpg",
       "https://www.unitree.com/images/8992fd91eed0495696ca876f86699523_2740x1720.jpg"
@@ -502,11 +502,11 @@
     "slag": "unitree-h1",
     "useType": "RESEARCH",
     "image": [
-      "https://d2cdo4blch85n8.cloudfront.net/wp-content/uploads/2023/12/Unitree-H1-Humanoid-Robot.jpg",
-      "https://www.unitree.com/images/da1ecbd107434a03b068aa503311f43a_3840x7000.jpg?x-oss-process=image/quality,q_80/format,webp",
-      "https://www.crkennedy.co.nz/ts1773273134/attachments/Product/45820/uth1.tag.1.webp",
-      "https://www.unitree.com/images/0b235c5ba3f64996a2731dd69e3cd90a_800x800.png",
-      "https://www.crkennedy.co.nz/ts1773273135/attachments/Product/45820/uth1.tag.2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183199/Unitree_H1_1.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183261/Unitree_H1_02.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183316/Unitree_H1_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183380/Unitree_H1_4.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183441/Unitree_H1_5.webp",
       "https://3ddevice.com.ua/image/cache/catalog/products/unitree/00-00013721/unitree-h1-2-2-1000x1000.png"
     ],
     "videos": [
@@ -523,11 +523,11 @@
     "slag": "unitree-h2",
     "useType": "RESEARCH",
     "image": [
-      "https://www.unitree.com/images/6164ed6861cc443a9c598a875b1372f5_3840x2160.jpg?x-oss-process=image/format,webp",
-      "https://www.unitree.com/images/a89249d4e2284243b8379205259bcd0c_1920x1877.png",
-      "https://bubbles.technology/assets/img/unitree/www.unitree.com/images/H2/c2717bb005da48348e3eb0701d411aa4_838x1282.png",
-      "https://www.mybotshop.de/media/image/product/8747/lg/unitree-h2-humanoid-robot.jpg",
-      "https://www.unitree.com/images/32686742408341c5af3b5dc2f4c85b0e_3840x2160.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183531/Unitree_H2_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183581/Unitree_H2_2.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183635/Unitree_H2_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183722/Unitree_H2_4.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183779/Unitree_H2_5.jpg",
       "https://roboticsandautomationnews.com/wp-content/uploads/2025/10/unitree-h2-destiny-awakening-humanoid-robot-1.png",
       "https://images.techeblog.com/wp-content/uploads/2025/10/20071224/unitree-h2-humanoid-robot-reveal.jpg"
     ],
@@ -545,11 +545,11 @@
     "slag": "unitree-r1",
     "useType": "RESEARCH",
     "image": [
-      "https://www.unitree.com/images/5ff59387aa7647a1ae159ca9ad5b7774_3840x2160.jpg?x-oss-process=image/quality,q_60/format,webp",
-      "https://www.unitree.com/images/33afe80044274b51b5617da3f0262d88_1851x2910.png",
-      "https://www.unitree.com/images/8d21f2c204704b84847694457b7c26e4_1010x608.jpg",
-      "https://www.unitree.com/images/920433c1a6c743cf8265fb2ec2eb41a0_1920x1301.png?x-oss-process=image/quality,q_60/format,webp",
-      "https://res.cloudinary.com/db8jz0ojq/image/upload/v1762950932/robots/unitree-r1-by-unitree-robotics/zgzhoqg5t9hnkmougivm.jpg?cache=604800",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183853/Unitree_R1_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183912/Unitree_R1_2.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795183959/Unitree_R1_3.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184005/Unitree_R1_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184062/Unitree_R1_5.jpg",
       "https://www.unitree.com/images/eec8d82f279b440ea170982ffa80b3fa_3840x2160.jpg?x-oss-process=image/quality,q_60/format,webp",
       "https://www.unitree.com/images/2f7d65a5229f40a5b9ba3ce7328f3c8d_3840x2160.jpg?x-oss-process=image/quality,q_60/format,webp",
       "https://survey.crkennedy.com.au/product_image/ts1756083204/raw/UTR1BASIC/unitree-r1-basic-humanoid-robot--non-programmable-.webp",
@@ -569,11 +569,11 @@
     "slag": "astribot-s1",
     "useType": "RESEARCH",
     "image": [
-      "https://www.geeky-gadgets.com/wp-content/uploads/2024/04/Astribot-S1-AI-Humanoid-robot.webp",
-      "https://www.astribot.com/_nuxt/describe-s4-img1.B7j1XrFW.jpg",
-      "https://i.ytimg.com/vi/AePEcHIIk9s/maxresdefault.jpg#auto",
-      "https://lh7-us.googleusercontent.com/qWisfYDik8COwhmKauS58e46WMFccOWgE2qD-u-DQnFGu6scOz14TrwSy83SPE-2mcpLUW0dW_3OjP7_BHLQAjkBMp8XFZ4bZG8MnY7hi68H_p3zzuQf4TTaYGhs6vbHH2JXp6oeXqXY9TfaBePFlzM",
-      "https://www.astribot.com/_nuxt/describe-s4-img2.WXZrQ61c.jpg"
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184152/Astribot_S1_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184207/Astribot_S1_2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184262/Astribot_S1_3.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184311/Astribot_S1_4.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184358/Astribot_S1_5.jpg"
     ],
     "videos": [
       "6X-s4Qsn1z4",
@@ -589,11 +589,11 @@
     "slag": "booster-t1",
     "useType": "RESEARCH",
     "image": [
-      "https://fe-cdn.booster.tech/booster-official-website/release-0.1.13/_astro/agent-store.DUjrLMMi.webp",
-      "https://www.robotshop.com/cdn/shop/files/pp_4403474.webp?v=1772048902&width=750",
-      "https://www.robotshop.com/cdn/shop/files/pp_4386184.webp?v=1772048902&width=750",
-      "https://www.robotshop.com/cdn/shop/files/pp_4386186.webp?v=1772048902&width=750",
-      "https://www.robotshop.com/cdn/shop/files/pp_4386191_f5db662c-5d0f-4261-a153-1247770214b1.webp?v=1772048902&width=750",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184431/Booster_T1_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184501/Booster_T1_2.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184564/Booster_T1_3.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184627/Booster_T1_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184674/Booster_T1_5.webp",
       "https://www.robotshop.com/cdn/shop/files/pp_4386189.webp?v=1772048902&width=750"
     ],
     "videos": [
@@ -610,11 +610,11 @@
     "slag": "booster-t2",
     "useType": "EDUCATION",
     "image": [
-      "https://fe-cdn.booster.tech/booster-official-website/release-0.1.9/_astro/hero-t2-mobile.BL_xEmBC.webp",
-      "https://fe-cdn.booster.tech/booster-official-website/release-0.1.13/_astro/detail-arm.DMDYQZj9.jpg",
-      "https://fe-cdn.booster.tech/booster-official-website/release-0.1.13/_astro/detail-head.C_xo2NqC.jpg",
-      "https://fe-cdn.booster.tech/booster-official-website/release-0.1.13/_astro/platform-01.DR65F4sK.webp",
-      "https://fe-cdn.booster.tech/booster-official-website/release-0.1.13/_astro/robot-delivery.B9EgsvaE.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184749/Booster_T2_1.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184806/Booster_T2_2.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184862/Booster_T2_3.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184944/Booster_T2_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795184991/Booster_T2_5.webp",
       "https://fe-cdn.booster.tech/booster-official-website/release-0.1.13/_astro/platform-04.D7vE5dMS.webp",
       "https://fe-cdn.booster.tech/booster-official-website/release-0.1.13/_astro/powerful-compute.B--k4gGU.webp"
     ],
@@ -634,9 +634,9 @@
     "image": [
       "https://www.image2url.com/r2/default/images/1795022390708-5612416a-cead-4064-a4b6-a970fa5e1814.webp",
       "https://www.image2url.com/r2/default/images/1795023354173-a40dd9ab-33b1-4dc1-bcdb-c2e060b71bf4.jpeg",
-      "https://static.tildacdn.com/tild6662-3639-4065-a237-653435303364/Lingxi-X1.jpg",
-      "https://lookingglassxr.com/wp-content/uploads/2024/12/Agibot-Lingxi-X1.png",
-      "https://www.ies.org.sg/wp-content/uploads/Agibot.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795185125/AgiBot_X1_3.jpg",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795185175/AgiBot_X1_4.png",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795185242/AgiBot_X1_5.webp",
       "https://www.image2url.com/r2/default/images/1795023593816-be1f28a1-1ba4-4331-bf2d-dd09a072a4c7.jpg",
       "https://www.image2url.com/r2/default/images/1795021856679-afcddbab-f38f-42d4-bf08-9fefb8f8f084.webp",
       "https://www.image2url.com/r2/default/images/1795021615332-50f5b262-fe5e-4827-8041-4653d3d1e3b6.jpg"
@@ -649,11 +649,11 @@
     "slag": "agility-digit",
     "useType": "PROFESSIONAL",
     "image": [
-      "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/6aa6b7013da4674c7583074a_cooperative-safety-p-1600.avif",
-      "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/6aa6b7013da4674c75830739_data-security-p-1600.avif",
-      "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/6aa6a2f99071f36b97f5953e_Solutions.avif",
-      "https://spectrum.ieee.org/media-library/a-relatively-bulky-humanoid-robot-worker-with-a-white-head-simple-grippers-and-reversed-legs-stands-for-a-portrait-looking-dir.jpg?id=68441369&width=980",
-      "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/6aa6b70027f3ee081dff46df_card-industrial.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795185314/Agility_Robotics_Digit_1.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795185365/Agility_Robotics_Digit_2.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795185414/Agility_Robotics_Digit_3.avif",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795185521/Agility_Robotics_Digit_4.webp",
+      "https://res.cloudinary.com/il1pnlny/image/upload/v1795185574/Agility_Robotics_Digit_5.avif",
       "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/6aa6b70097ee19af5dd9db6c_card-autonomous.avif",
       "https://techcrunch.com/wp-content/uploads/2023/03/Agility-Robotics-DIGIT-3.jpg",
       "https://tse1.mm.bing.net/th/id/OIP.Qk1Vo5Y2YONJfx_HQu8pPQHaMZ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
