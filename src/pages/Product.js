@@ -27,12 +27,7 @@ export default function Product() {
   const [humanoidData, setHumanoidData] = useState(humanoids.filter(
     (humanoid) => humanoid.slag === productSlag,
   ))
-  // const humanoidData = humanoids.filter(
-  //   (humanoid) => humanoid.slag === productSlag,
-  // );
   const relatedHumanoids = humanoids.filter((humanoid) => humanoid.useType === humanoidData[0].useType && humanoid.name !== humanoidData[0].name)
-  // console.log(humanoidData[0])
-  // console.log(data);
 
   const OPTIONS = { axis: "y" };
   const SLIDES = humanoidData[0].image;
@@ -42,12 +37,17 @@ export default function Product() {
   const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
 
   useEffect(() => {
+    const selectedHumanoid = humanoids.find(
+      (humanoid) => humanoid.slag === productSlag,
+    );
     setHumanoidData(
       humanoids.filter((humanoid) => humanoid.slag === productSlag),
     );
-    dispatch(fetchNews(`${humanoidData[0].useType} humanoids`, 4));
+    if (selectedHumanoid) {
+      dispatch(fetchNews(`${selectedHumanoid.useType} humanoids`, 4));
+    }
     dispatch(fetchProduct(productSlag));
-  }, [productSlag]);
+  }, [productSlag, dispatch]);
 
   return !data || Object.keys(data).length === 0 ? (
     <div className="loader_con">

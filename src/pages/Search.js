@@ -22,12 +22,6 @@ function Search() {
     filterByEitherProperty(data, "name", "useType", query),
   );
 
-  // const css = ({
-  //   backgroundColor: `${colorState.text === "#000000" ? "#CFCFCA" : "#404040"}`,
-  //   "&:focus-within": {
-  //     border: `2px solid ${categoryColorState.color ? categoryColorState.color : "#FF4C00"}`,
-  //   },
-  // });
   useEffect(() => {
     ref.current.addEventListener("search", (e) => clearResults(e));
     function clearResults(e) {

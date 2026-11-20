@@ -190,6 +190,9 @@ width: 100px;
         left: 38%;
             padding: 8px 8px 8px 11px
 }
+    .youtube_iframe {
+        min-height: 45vh;
+    }
 }
 
 @media only screen and (max-width: 300px) {

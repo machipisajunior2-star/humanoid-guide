@@ -14,6 +14,7 @@ export default function Footer() {
   if (location.pathname === "/404") {
     return null;
   }
+  
   return (
     <section className="footer_section_wrapper">
       <div className="humanoid_companies_container">

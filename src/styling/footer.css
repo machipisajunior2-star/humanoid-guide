@@ -3,6 +3,10 @@
     --item-position: 0;
 }
 
+.footer_section_wrapper {
+    margin-top: 5vh;
+}
+
 .footer_section_wrapper small {
     font-size: 12px;
 }
@@ -118,7 +122,8 @@
     display: block;
    }
    .foot_nav_con div {
-    margin-bottom: 0;
+    margin-top: 13px;
+    margin-bottom: 13px;
 }
   }
 

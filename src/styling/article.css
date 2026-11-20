@@ -56,13 +56,13 @@
 .article_title {
     color: #27C3AE;
     font-size: 74px;
-    margin: 0;
+    margin: 3vh 0 0 0;
 }
 
 .article_content_container img {
     width: 100%;
     border-radius: 12.5px;
-    margin: 15px 0 20px 0
+    margin: 7vh 0 7vh 0;
 }
 
 .article_stamp {

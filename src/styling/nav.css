@@ -75,7 +75,7 @@
 }
 
 .search-input-con {
-    position: fixed;
+    /* position: fixed; */
     display: inline-flex;
     align-items: center;
     z-index: 1000;
@@ -321,18 +321,22 @@ display: inline-flex;
         font-size: x-small;
     }
     .color-pick {
-        top: 40px;
+        top: 45px;
     }
   }
-    @media only screen and (max-width: 700px) {
+    @media only screen and (max-width: 750px) {
         .navigation-con {          
         gap: 5px;
         }
         .search-input-con {
             top: 8%;
-            right: 0%;
+            right: auto;
         }
+        
+.search-input-con {
+     position: fixed;
     }
+}
 
     @media only screen and (max-width: 530px) {
     .search-nav-con p {

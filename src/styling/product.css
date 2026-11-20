@@ -338,6 +338,7 @@ gap: 10px;
 
 .faq_section_container {
     display: block;
+    margin-top: 5vh;
 }
 
 .faq_details_container {
@@ -360,6 +361,7 @@ gap: 10px;
     }
 .product_name {
        font-size: 38px;
+        margin-top: 4vh;
     }
 
     .best_for_section_container {
@@ -367,7 +369,7 @@ gap: 10px;
 }
     
 .best_for_section_container .embla {
-    --slide-size: 67%;
+    --slide-size: 92%;
 }
 
 .best-for_details_container {
@@ -375,6 +377,7 @@ gap: 10px;
 }
 .best_for_section_container {
     border-left: none;
+    margin-top: 7vh;
 }
 .best_for_scroller_container {
     width: 100%;
@@ -387,7 +390,7 @@ gap: 10px;
 }
 
 .best_for_scroller_container .embla__slide__number {
-    height: 35%;
+    height: 43%;
 }
 
 .best_for_scroller_container .embla__viewport {
@@ -396,6 +399,7 @@ gap: 10px;
 
 .related_content {
     display: block;
+    margin-top: 5vh;
 }
 
 .related_news_container {
@@ -408,7 +412,7 @@ gap: 10px;
     width: 100%;
     border: none;
     padding: 0;
-    margin-top: 10vh;
+    margin-top: 5vh;
 }
 
 .related_humanoids .teaser_image_container img:empty {
@@ -428,6 +432,7 @@ gap: 10px;
     .specs_section_container {
     border-left: none;
     padding: 0;
+    margin-top: 5vh;
 }
     .pillar_container {
     grid-template-columns: repeat(1, 100%);

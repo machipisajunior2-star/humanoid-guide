@@ -10,6 +10,7 @@
 
 #learn_page_section_conatiner .learn_article_heading_container h2 {
     color: #27C3AE;
+    margin: 0;
 }
 
 #learn_page_section_conatiner .articles_container {

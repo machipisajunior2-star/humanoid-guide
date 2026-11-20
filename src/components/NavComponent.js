@@ -102,6 +102,7 @@ function NavComponent() {
         .removeAttribute("open");
       setIsModalOpen(false);
       setIsColorPickerOpen(false);
+      if (window.innerWidth < 750) setIsSearchOpen(false)
     }
 
     window.addEventListener("scroll", handleScroll);
@@ -111,31 +112,41 @@ function NavComponent() {
 
   useEffect(() => {
     const handleResize = (event) => {
-      const menu_button = document.querySelector(".mobile-menu");
+    const menu_button = document.querySelector(".mobile-menu");
       const modal = document.querySelector(".modal");
       const color_picker = document.querySelector(".color-pick");
       const theme_selector = document.querySelector(".theme-selector");
 
-      if (window.innerWidth < 700) {
+      if (window.innerWidth < 750) {
         theme_selector.style.display = "flex";
-      } else if (isSearchOpen && window.innerWidth > 700) {
+      }
+      if (isSearchOpen && window.innerWidth > 750) {
+        if (window.innerWidth < 950) {
+          menu_button.style.display = "none";
+          theme_selector.style.display = "none";
+        }
         if (event.type === "resize") {
           if (menu_button) menu_button.style.display = "none";
           theme_selector.style.display = "none";
         }
-      } else if (window.innerWidth > 700) {
-        if (theme_selector) theme_selector.style.display = "flex";
-      } else if (window.innerWidth < 950) {
+      }
+      if (window.innerWidth > 750) {
+        if (theme_selector && !isSearchOpen) theme_selector.style.display = "flex";
+      }
+      if (window.innerWidth < 950) {
+        if (!isSearchOpen) menu_button.style.display = "flex";
         if ((isModalOpen || isColorPickerOpen) && event.type === "resize") {
           if (isModalOpen && event.type === "resize") {
             modal.style.display = "none";
             setIsModalOpen(false);
-          } else {
+          } else if (window.innerWidth > 750) {
             color_picker.style.display = "none";
             setIsColorPickerOpen(false);
           }
         }
-      } else if (window.innerWidth > 950) {
+      }
+      if (window.innerWidth > 950) {
+          if (menu_button) menu_button.style.display = "none";
         if (modal) modal.style.display = "none";
         theme_selector.style.display = "flex";
         if (isModalOpen) {
@@ -157,8 +168,6 @@ function NavComponent() {
     document.body.addEventListener("click", handleResize);
     window.addEventListener("blur", handleVisibility);
     window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
   }, [isSearchOpen, isModalOpen, isColorPickerOpen]);
 
   const categories_desktop = [];
@@ -284,7 +293,7 @@ function NavComponent() {
           style={{ display: `${isSearchOpen ? "none" : "inline-flex"}` }}
         >
           <BsSearch
-            size={window.innerWidth < 600 ? "0.8em" : "0.9375em"}
+            size={window.innerWidth < 600 ? "0.9em" : "1.1em"}
             color={colorState.text}
           />
           <p style={{ color: colorState.text }}>Search</p>
@@ -337,8 +346,7 @@ function NavComponent() {
             </button>
           </Zoom>
         </div>
-        {((!isSearchOpen && window.innerWidth < 950) ||
-          window.innerWidth < 700) && (
+        {
           <div
             className={`mobile-menu${isModalOpen ? " mobile-menu-active" : " mobile-menu-inactive"}`}
           >
@@ -352,7 +360,7 @@ function NavComponent() {
               color={colorState.text}
             />
           </div>
-        )}
+        }
 
         <Zoom>
           <ul
@@ -574,7 +582,7 @@ function NavComponent() {
         <div
           className="color-con"
           style={{
-            display: `${isSearchOpen && window.innerWidth > 700 ? "none" : "inline-flex"}`,
+            display: `${isSearchOpen && window.innerWidth > 750 ? "none" : "inline-flex"}`,
           }}
         >
           <div

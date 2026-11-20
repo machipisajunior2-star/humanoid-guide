@@ -174,9 +174,9 @@
 }
 
 @media only screen and (max-width: 550px) {
-.embla__viewport {
+/* .embla__viewport {
     height: 55vh;
-}
+} */
 .embla_slide_number {
     height: 110%;
 }
@@ -185,11 +185,15 @@
 @media only screen and (max-width: 450px) {
 
     .embla {
-        --slide-spacing: 5.5rem;
+        --slide-spacing: 0rem;
+    }
+    .embla__container > :first-child .embla_humanoid_image {
+        height: initial;
+        width: 150%;
     }
     .embla_humanoid_image {
-        height: auto;
-        width: 100%;
+      height: inherit;
+      width: auto;
     }
   .embla__dot:before,
 .embla__dot:after {

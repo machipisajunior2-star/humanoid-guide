@@ -30,8 +30,10 @@ export default function Videos(props) {
   };
   const onPlayerReady = (event) => {
     youtubePlayerRef.current = event.target;
-    document.querySelector(".youtube_iframe").parentElement.style.width =
-      "100%";
+    const iframe = document.querySelector(".youtube_iframe");
+    if (iframe?.parentElement) {
+      iframe.parentElement.style.width = "100%";
+    }
     // document.querySelector(".youtube_iframe").parentElement.style.height = "100%";
   };
 
